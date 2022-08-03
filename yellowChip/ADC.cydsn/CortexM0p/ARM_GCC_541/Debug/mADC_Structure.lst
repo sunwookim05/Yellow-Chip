@@ -1,0 +1,989 @@
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFAHG2o.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0plus
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"mADC_Structure.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.mADC_DsInitialize,"ax",%progbits
+  20              		.align	2
+  21              		.global	mADC_DsInitialize
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	mADC_DsInitialize, %function
+  25              	mADC_DsInitialize:
+  26              	.LFB1:
+  27              		.file 1 "Generated_Source\\PSoC4\\mADC_Structure.c"
+   1:Generated_Source\PSoC4/mADC_Structure.c **** /***************************************************************************//**
+   2:Generated_Source\PSoC4/mADC_Structure.c **** * \file mADC_Structure.c
+   3:Generated_Source\PSoC4/mADC_Structure.c **** * \version 7.0
+   4:Generated_Source\PSoC4/mADC_Structure.c **** *
+   5:Generated_Source\PSoC4/mADC_Structure.c **** * \brief
+   6:Generated_Source\PSoC4/mADC_Structure.c **** *   This file defines the data structure global variables and provides implementation
+   7:Generated_Source\PSoC4/mADC_Structure.c **** *   for the high-level and low-level APIs of the Data Structure module.
+   8:Generated_Source\PSoC4/mADC_Structure.c **** *
+   9:Generated_Source\PSoC4/mADC_Structure.c **** * \see mADC v7.0 Datasheet
+  10:Generated_Source\PSoC4/mADC_Structure.c **** *
+  11:Generated_Source\PSoC4/mADC_Structure.c **** *//*****************************************************************************
+  12:Generated_Source\PSoC4/mADC_Structure.c **** * Copyright (2016-2019), Cypress Semiconductor Corporation.
+  13:Generated_Source\PSoC4/mADC_Structure.c **** ********************************************************************************
+  14:Generated_Source\PSoC4/mADC_Structure.c **** * This software is owned by Cypress Semiconductor Corporation (Cypress) and is
+  15:Generated_Source\PSoC4/mADC_Structure.c **** * protected by and subject to worldwide patent protection (United States and
+  16:Generated_Source\PSoC4/mADC_Structure.c **** * foreign), United States copyright laws and international treaty provisions.
+  17:Generated_Source\PSoC4/mADC_Structure.c **** * Cypress hereby grants to licensee a personal, non-exclusive, non-transferable
+  18:Generated_Source\PSoC4/mADC_Structure.c **** * license to copy, use, modify, create derivative works of, and compile the
+  19:Generated_Source\PSoC4/mADC_Structure.c **** * Cypress Source Code and derivative works for the sole purpose of creating
+  20:Generated_Source\PSoC4/mADC_Structure.c **** * custom software in support of licensee product to be used only in conjunction
+  21:Generated_Source\PSoC4/mADC_Structure.c **** * with a Cypress integrated circuit as specified in the applicable agreement.
+  22:Generated_Source\PSoC4/mADC_Structure.c **** * Any reproduction, modification, translation, compilation, or representation of
+  23:Generated_Source\PSoC4/mADC_Structure.c **** * this software except as specified above is prohibited without the express
+  24:Generated_Source\PSoC4/mADC_Structure.c **** * written permission of Cypress.
+  25:Generated_Source\PSoC4/mADC_Structure.c **** *
+  26:Generated_Source\PSoC4/mADC_Structure.c **** * Disclaimer: CYPRESS MAKES NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, WITH
+  27:Generated_Source\PSoC4/mADC_Structure.c **** * REGARD TO THIS MATERIAL, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  28:Generated_Source\PSoC4/mADC_Structure.c **** * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  29:Generated_Source\PSoC4/mADC_Structure.c **** * Cypress reserves the right to make changes without further notice to the
+  30:Generated_Source\PSoC4/mADC_Structure.c **** * materials described herein. Cypress does not assume any liability arising out
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFAHG2o.s 			page 2
+
+
+  31:Generated_Source\PSoC4/mADC_Structure.c **** * of the application or use of any product or circuit described herein. Cypress
+  32:Generated_Source\PSoC4/mADC_Structure.c **** * does not authorize its products for use as critical components in life-support
+  33:Generated_Source\PSoC4/mADC_Structure.c **** * systems where a malfunction or failure may reasonably be expected to result in
+  34:Generated_Source\PSoC4/mADC_Structure.c **** * significant injury to the user. The inclusion of Cypress' product in a life-
+  35:Generated_Source\PSoC4/mADC_Structure.c **** * support systems application implies that the manufacturer assumes all risk of
+  36:Generated_Source\PSoC4/mADC_Structure.c **** * such use and in doing so indemnifies Cypress against all charges. Use may be
+  37:Generated_Source\PSoC4/mADC_Structure.c **** * limited by and subject to the applicable Cypress software license agreement.
+  38:Generated_Source\PSoC4/mADC_Structure.c **** *******************************************************************************/
+  39:Generated_Source\PSoC4/mADC_Structure.c **** 
+  40:Generated_Source\PSoC4/mADC_Structure.c **** #include <string.h>
+  41:Generated_Source\PSoC4/mADC_Structure.c **** #include <cytypes.h>
+  42:Generated_Source\PSoC4/mADC_Structure.c **** #include "CyLib.h"
+  43:Generated_Source\PSoC4/mADC_Structure.c **** #include "mADC_Structure.h"
+  44:Generated_Source\PSoC4/mADC_Structure.c **** #include "mADC_Configuration.h"
+  45:Generated_Source\PSoC4/mADC_Structure.c **** 
+  46:Generated_Source\PSoC4/mADC_Structure.c **** #if (mADC_ENABLE == mADC_ADC_EN)
+  47:Generated_Source\PSoC4/mADC_Structure.c ****     #include "mADC_Adc.h"
+  48:Generated_Source\PSoC4/mADC_Structure.c **** #endif /* (mADC_ENABLE == mADC_ADC_EN) */
+  49:Generated_Source\PSoC4/mADC_Structure.c **** 
+  50:Generated_Source\PSoC4/mADC_Structure.c **** /*******************************************************************************
+  51:Generated_Source\PSoC4/mADC_Structure.c **** * Defines the RAM Data Structure variables and their init data in flash
+  52:Generated_Source\PSoC4/mADC_Structure.c **** *******************************************************************************/
+  53:Generated_Source\PSoC4/mADC_Structure.c **** 
+  54:Generated_Source\PSoC4/mADC_Structure.c **** /**
+  55:Generated_Source\PSoC4/mADC_Structure.c **** * \cond SECTION_GLOBAL_VARIABLES
+  56:Generated_Source\PSoC4/mADC_Structure.c **** * \addtogroup group_global_variables
+  57:Generated_Source\PSoC4/mADC_Structure.c **** * \{
+  58:Generated_Source\PSoC4/mADC_Structure.c **** */
+  59:Generated_Source\PSoC4/mADC_Structure.c **** 
+  60:Generated_Source\PSoC4/mADC_Structure.c **** /**
+  61:Generated_Source\PSoC4/mADC_Structure.c **** * The variable that contains the mADC configuration, settings and
+  62:Generated_Source\PSoC4/mADC_Structure.c **** * scanning results. mADC_dsRam represents RAM Data Structure.
+  63:Generated_Source\PSoC4/mADC_Structure.c **** */
+  64:Generated_Source\PSoC4/mADC_Structure.c **** mADC_RAM_STRUCT mADC_dsRam;
+  65:Generated_Source\PSoC4/mADC_Structure.c **** 
+  66:Generated_Source\PSoC4/mADC_Structure.c **** /** \}
+  67:Generated_Source\PSoC4/mADC_Structure.c **** * \endcond */
+  68:Generated_Source\PSoC4/mADC_Structure.c **** 
+  69:Generated_Source\PSoC4/mADC_Structure.c **** /**
+  70:Generated_Source\PSoC4/mADC_Structure.c **** * \cond SECTION_API_CONSTANTS
+  71:Generated_Source\PSoC4/mADC_Structure.c **** * \addtogroup group_api_constants
+  72:Generated_Source\PSoC4/mADC_Structure.c **** * \{
+  73:Generated_Source\PSoC4/mADC_Structure.c **** */
+  74:Generated_Source\PSoC4/mADC_Structure.c **** 
+  75:Generated_Source\PSoC4/mADC_Structure.c **** 
+  76:Generated_Source\PSoC4/mADC_Structure.c **** /**
+  77:Generated_Source\PSoC4/mADC_Structure.c ****  *  The array of the pointers to the ADC input channels specific register.
+  78:Generated_Source\PSoC4/mADC_Structure.c ****  */
+  79:Generated_Source\PSoC4/mADC_Structure.c **** const mADC_FLASH_IO_STRUCT mADC_adcIoList[mADC_ADC_TOTAL_CHANNELS] =
+  80:Generated_Source\PSoC4/mADC_Structure.c **** {
+  81:Generated_Source\PSoC4/mADC_Structure.c ****     {
+  82:Generated_Source\PSoC4/mADC_Structure.c ****         (reg32 *)mADC_AdcInput__0__HSIOM,
+  83:Generated_Source\PSoC4/mADC_Structure.c ****         (reg32 *)mADC_AdcInput__0__PC,
+  84:Generated_Source\PSoC4/mADC_Structure.c ****         (reg32 *)mADC_AdcInput__0__DR,
+  85:Generated_Source\PSoC4/mADC_Structure.c ****         (reg32 *)mADC_AdcInput__0__PS,
+  86:Generated_Source\PSoC4/mADC_Structure.c ****         mADC_AdcInput__0__HSIOM_MASK,
+  87:Generated_Source\PSoC4/mADC_Structure.c ****         mADC_AdcInput__0__MASK,
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFAHG2o.s 			page 3
+
+
+  88:Generated_Source\PSoC4/mADC_Structure.c ****         mADC_AdcInput__0__HSIOM_SHIFT,
+  89:Generated_Source\PSoC4/mADC_Structure.c ****         (uint8)mADC_AdcInput__0__SHIFT,
+  90:Generated_Source\PSoC4/mADC_Structure.c ****         (uint8)mADC_AdcInput__0__SHIFT * 3u,
+  91:Generated_Source\PSoC4/mADC_Structure.c ****     },
+  92:Generated_Source\PSoC4/mADC_Structure.c ****     {
+  93:Generated_Source\PSoC4/mADC_Structure.c ****         (reg32 *)mADC_AdcInput__1__HSIOM,
+  94:Generated_Source\PSoC4/mADC_Structure.c ****         (reg32 *)mADC_AdcInput__1__PC,
+  95:Generated_Source\PSoC4/mADC_Structure.c ****         (reg32 *)mADC_AdcInput__1__DR,
+  96:Generated_Source\PSoC4/mADC_Structure.c ****         (reg32 *)mADC_AdcInput__1__PS,
+  97:Generated_Source\PSoC4/mADC_Structure.c ****         mADC_AdcInput__1__HSIOM_MASK,
+  98:Generated_Source\PSoC4/mADC_Structure.c ****         mADC_AdcInput__1__MASK,
+  99:Generated_Source\PSoC4/mADC_Structure.c ****         mADC_AdcInput__1__HSIOM_SHIFT,
+ 100:Generated_Source\PSoC4/mADC_Structure.c ****         (uint8)mADC_AdcInput__1__SHIFT,
+ 101:Generated_Source\PSoC4/mADC_Structure.c ****         (uint8)mADC_AdcInput__1__SHIFT * 3u,
+ 102:Generated_Source\PSoC4/mADC_Structure.c ****     },
+ 103:Generated_Source\PSoC4/mADC_Structure.c **** };
+ 104:Generated_Source\PSoC4/mADC_Structure.c **** 
+ 105:Generated_Source\PSoC4/mADC_Structure.c **** 
+ 106:Generated_Source\PSoC4/mADC_Structure.c **** 
+ 107:Generated_Source\PSoC4/mADC_Structure.c **** /** \}
+ 108:Generated_Source\PSoC4/mADC_Structure.c **** * \endcond */
+ 109:Generated_Source\PSoC4/mADC_Structure.c **** 
+ 110:Generated_Source\PSoC4/mADC_Structure.c **** 
+ 111:Generated_Source\PSoC4/mADC_Structure.c **** /*******************************************************************************
+ 112:Generated_Source\PSoC4/mADC_Structure.c **** * Function Name: mADC_DsInitialize
+ 113:Generated_Source\PSoC4/mADC_Structure.c **** ****************************************************************************//**
+ 114:Generated_Source\PSoC4/mADC_Structure.c **** *
+ 115:Generated_Source\PSoC4/mADC_Structure.c **** * \brief
+ 116:Generated_Source\PSoC4/mADC_Structure.c **** *   This function initializes the Data Structure storage.
+ 117:Generated_Source\PSoC4/mADC_Structure.c **** *
+ 118:Generated_Source\PSoC4/mADC_Structure.c **** * \details
+ 119:Generated_Source\PSoC4/mADC_Structure.c **** *   Configures the initial Adc datastructure members.
+ 120:Generated_Source\PSoC4/mADC_Structure.c **** *
+ 121:Generated_Source\PSoC4/mADC_Structure.c **** *******************************************************************************/
+ 122:Generated_Source\PSoC4/mADC_Structure.c **** void mADC_DsInitialize(void)
+ 123:Generated_Source\PSoC4/mADC_Structure.c **** {
+  28              		.loc 1 123 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+ 124:Generated_Source\PSoC4/mADC_Structure.c ****     /* Reset RAM data structure content */
+ 125:Generated_Source\PSoC4/mADC_Structure.c ****     (void)memset(&mADC_dsRam, 0, sizeof(mADC_dsRam));
+  36              		.loc 1 125 0
+  37 0002 064C     		ldr	r4, .L2
+  38 0004 0E22     		movs	r2, #14
+  39 0006 0021     		movs	r1, #0
+  40 0008 2000     		movs	r0, r4
+  41 000a FFF7FEFF 		bl	memset
+  42              	.LVL0:
+ 126:Generated_Source\PSoC4/mADC_Structure.c **** 
+ 127:Generated_Source\PSoC4/mADC_Structure.c ****     mADC_dsRam.adcResolution = mADC_ADC_RESOLUTION;
+  43              		.loc 1 127 0
+  44 000e 0A23     		movs	r3, #10
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFAHG2o.s 			page 4
+
+
+  45 0010 E372     		strb	r3, [r4, #11]
+ 128:Generated_Source\PSoC4/mADC_Structure.c ****     mADC_dsRam.adcIdac = (uint8)(mADC_ADC_IDAC_DEFAULT);
+  46              		.loc 1 128 0
+  47 0012 1133     		adds	r3, r3, #17
+  48 0014 6372     		strb	r3, [r4, #9]
+ 129:Generated_Source\PSoC4/mADC_Structure.c ****     mADC_dsRam.adcActiveCh = mADC_NO_CHANNEL;
+  49              		.loc 1 129 0
+  50 0016 E433     		adds	r3, r3, #228
+  51 0018 A372     		strb	r3, [r4, #10]
+ 130:Generated_Source\PSoC4/mADC_Structure.c **** }
+  52              		.loc 1 130 0
+  53              		@ sp needed
+  54 001a 10BD     		pop	{r4, pc}
+  55              	.L3:
+  56              		.align	2
+  57              	.L2:
+  58 001c 00000000 		.word	mADC_dsRam
+  59              		.cfi_endproc
+  60              	.LFE1:
+  61              		.size	mADC_DsInitialize, .-mADC_DsInitialize
+  62              		.global	mADC_adcIoList
+  63              		.comm	mADC_dsRam,14,4
+  64              		.section	.rodata
+  65              		.align	2
+  66              		.type	mADC_adcIoList, %object
+  67              		.size	mADC_adcIoList, 56
+  68              	mADC_adcIoList:
+  69 0000 00020240 		.word	1073873408
+  70 0004 08020440 		.word	1074004488
+  71 0008 00020440 		.word	1074004480
+  72 000c 04020440 		.word	1074004484
+  73 0010 0F000000 		.word	15
+  74 0014 01000000 		.word	1
+  75 0018 00       		.byte	0
+  76 0019 00       		.byte	0
+  77 001a 00       		.byte	0
+  78 001b 00       		.space	1
+  79 001c 00020240 		.word	1073873408
+  80 0020 08020440 		.word	1074004488
+  81 0024 00020440 		.word	1074004480
+  82 0028 04020440 		.word	1074004484
+  83 002c F0000000 		.word	240
+  84 0030 02000000 		.word	2
+  85 0034 04       		.byte	4
+  86 0035 01       		.byte	1
+  87 0036 03       		.byte	3
+  88 0037 00       		.space	1
+  89              		.text
+  90              	.Letext0:
+  91              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+  92              		.file 3 "Generated_Source\\PSoC4\\mADC_Structure.h"
+  93              		.section	.debug_info,"",%progbits
+  94              	.Ldebug_info0:
+  95 0000 38020000 		.4byte	0x238
+  96 0004 0400     		.2byte	0x4
+  97 0006 00000000 		.4byte	.Ldebug_abbrev0
+  98 000a 04       		.byte	0x4
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFAHG2o.s 			page 5
+
+
+  99 000b 01       		.uleb128 0x1
+ 100 000c F1010000 		.4byte	.LASF38
+ 101 0010 0C       		.byte	0xc
+ 102 0011 24000000 		.4byte	.LASF39
+ 103 0015 5E010000 		.4byte	.LASF40
+ 104 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 105 001d 00000000 		.4byte	0
+ 106 0021 00000000 		.4byte	.Ldebug_line0
+ 107 0025 02       		.uleb128 0x2
+ 108 0026 04       		.byte	0x4
+ 109 0027 05       		.byte	0x5
+ 110 0028 696E7400 		.ascii	"int\000"
+ 111 002c 03       		.uleb128 0x3
+ 112 002d 04       		.byte	0x4
+ 113 002e 07       		.byte	0x7
+ 114 002f 0A010000 		.4byte	.LASF0
+ 115 0033 03       		.uleb128 0x3
+ 116 0034 08       		.byte	0x8
+ 117 0035 05       		.byte	0x5
+ 118 0036 96010000 		.4byte	.LASF1
+ 119 003a 03       		.uleb128 0x3
+ 120 003b 08       		.byte	0x8
+ 121 003c 04       		.byte	0x4
+ 122 003d E5010000 		.4byte	.LASF2
+ 123 0041 03       		.uleb128 0x3
+ 124 0042 01       		.byte	0x1
+ 125 0043 06       		.byte	0x6
+ 126 0044 83020000 		.4byte	.LASF3
+ 127 0048 03       		.uleb128 0x3
+ 128 0049 01       		.byte	0x1
+ 129 004a 08       		.byte	0x8
+ 130 004b 8A000000 		.4byte	.LASF4
+ 131 004f 03       		.uleb128 0x3
+ 132 0050 02       		.byte	0x2
+ 133 0051 05       		.byte	0x5
+ 134 0052 C7010000 		.4byte	.LASF5
+ 135 0056 03       		.uleb128 0x3
+ 136 0057 02       		.byte	0x2
+ 137 0058 07       		.byte	0x7
+ 138 0059 56000000 		.4byte	.LASF6
+ 139 005d 03       		.uleb128 0x3
+ 140 005e 04       		.byte	0x4
+ 141 005f 05       		.byte	0x5
+ 142 0060 D7010000 		.4byte	.LASF7
+ 143 0064 03       		.uleb128 0x3
+ 144 0065 04       		.byte	0x4
+ 145 0066 07       		.byte	0x7
+ 146 0067 F8000000 		.4byte	.LASF8
+ 147 006b 03       		.uleb128 0x3
+ 148 006c 08       		.byte	0x8
+ 149 006d 07       		.byte	0x7
+ 150 006e 17010000 		.4byte	.LASF9
+ 151 0072 03       		.uleb128 0x3
+ 152 0073 04       		.byte	0x4
+ 153 0074 07       		.byte	0x7
+ 154 0075 55010000 		.4byte	.LASF10
+ 155 0079 03       		.uleb128 0x3
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFAHG2o.s 			page 6
+
+
+ 156 007a 01       		.byte	0x1
+ 157 007b 08       		.byte	0x8
+ 158 007c E0010000 		.4byte	.LASF11
+ 159 0080 04       		.uleb128 0x4
+ 160 0081 B8000000 		.4byte	.LASF12
+ 161 0085 02       		.byte	0x2
+ 162 0086 FB01     		.2byte	0x1fb
+ 163 0088 48000000 		.4byte	0x48
+ 164 008c 04       		.uleb128 0x4
+ 165 008d DA000000 		.4byte	.LASF13
+ 166 0091 02       		.byte	0x2
+ 167 0092 FC01     		.2byte	0x1fc
+ 168 0094 56000000 		.4byte	0x56
+ 169 0098 04       		.uleb128 0x4
+ 170 0099 F1000000 		.4byte	.LASF14
+ 171 009d 02       		.byte	0x2
+ 172 009e FD01     		.2byte	0x1fd
+ 173 00a0 64000000 		.4byte	0x64
+ 174 00a4 03       		.uleb128 0x3
+ 175 00a5 04       		.byte	0x4
+ 176 00a6 04       		.byte	0x4
+ 177 00a7 84000000 		.4byte	.LASF15
+ 178 00ab 03       		.uleb128 0x3
+ 179 00ac 08       		.byte	0x8
+ 180 00ad 04       		.byte	0x4
+ 181 00ae CD000000 		.4byte	.LASF16
+ 182 00b2 05       		.uleb128 0x5
+ 183 00b3 80000000 		.4byte	0x80
+ 184 00b7 04       		.uleb128 0x4
+ 185 00b8 00000000 		.4byte	.LASF17
+ 186 00bc 02       		.byte	0x2
+ 187 00bd A702     		.2byte	0x2a7
+ 188 00bf C3000000 		.4byte	0xc3
+ 189 00c3 05       		.uleb128 0x5
+ 190 00c4 98000000 		.4byte	0x98
+ 191 00c8 06       		.uleb128 0x6
+ 192 00c9 0E       		.byte	0xe
+ 193 00ca 03       		.byte	0x3
+ 194 00cb 37       		.byte	0x37
+ 195 00cc 25010000 		.4byte	0x125
+ 196 00d0 07       		.uleb128 0x7
+ 197 00d1 4B010000 		.4byte	.LASF18
+ 198 00d5 03       		.byte	0x3
+ 199 00d6 3D       		.byte	0x3d
+ 200 00d7 25010000 		.4byte	0x125
+ 201 00db 00       		.byte	0
+ 202 00dc 07       		.uleb128 0x7
+ 203 00dd BF010000 		.4byte	.LASF19
+ 204 00e1 03       		.byte	0x3
+ 205 00e2 43       		.byte	0x43
+ 206 00e3 25010000 		.4byte	0x125
+ 207 00e7 04       		.byte	0x4
+ 208 00e8 07       		.uleb128 0x7
+ 209 00e9 4C000000 		.4byte	.LASF20
+ 210 00ed 03       		.byte	0x3
+ 211 00ee 48       		.byte	0x48
+ 212 00ef B2000000 		.4byte	0xb2
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFAHG2o.s 			page 7
+
+
+ 213 00f3 08       		.byte	0x8
+ 214 00f4 07       		.uleb128 0x7
+ 215 00f5 43010000 		.4byte	.LASF21
+ 216 00f9 03       		.byte	0x3
+ 217 00fa 4D       		.byte	0x4d
+ 218 00fb 80000000 		.4byte	0x80
+ 219 00ff 09       		.byte	0x9
+ 220 0100 07       		.uleb128 0x7
+ 221 0101 B3010000 		.4byte	.LASF22
+ 222 0105 03       		.byte	0x3
+ 223 0106 52       		.byte	0x52
+ 224 0107 80000000 		.4byte	0x80
+ 225 010b 0A       		.byte	0xa
+ 226 010c 07       		.uleb128 0x7
+ 227 010d 16000000 		.4byte	.LASF23
+ 228 0111 03       		.byte	0x3
+ 229 0112 57       		.byte	0x57
+ 230 0113 80000000 		.4byte	0x80
+ 231 0117 0B       		.byte	0xb
+ 232 0118 07       		.uleb128 0x7
+ 233 0119 0C000000 		.4byte	.LASF24
+ 234 011d 03       		.byte	0x3
+ 235 011e 5C       		.byte	0x5c
+ 236 011f 80000000 		.4byte	0x80
+ 237 0123 0C       		.byte	0xc
+ 238 0124 00       		.byte	0
+ 239 0125 08       		.uleb128 0x8
+ 240 0126 8C000000 		.4byte	0x8c
+ 241 012a 35010000 		.4byte	0x135
+ 242 012e 09       		.uleb128 0x9
+ 243 012f 72000000 		.4byte	0x72
+ 244 0133 01       		.byte	0x1
+ 245 0134 00       		.byte	0
+ 246 0135 0A       		.uleb128 0xa
+ 247 0136 E1000000 		.4byte	.LASF25
+ 248 013a 03       		.byte	0x3
+ 249 013b 5D       		.byte	0x5d
+ 250 013c C8000000 		.4byte	0xc8
+ 251 0140 06       		.uleb128 0x6
+ 252 0141 1C       		.byte	0x1c
+ 253 0142 03       		.byte	0x3
+ 254 0143 63       		.byte	0x63
+ 255 0144 B5010000 		.4byte	0x1b5
+ 256 0148 07       		.uleb128 0x7
+ 257 0149 7B000000 		.4byte	.LASF26
+ 258 014d 03       		.byte	0x3
+ 259 014e 68       		.byte	0x68
+ 260 014f B5010000 		.4byte	0x1b5
+ 261 0153 00       		.byte	0
+ 262 0154 07       		.uleb128 0x7
+ 263 0155 06000000 		.4byte	.LASF27
+ 264 0159 03       		.byte	0x3
+ 265 015a 6D       		.byte	0x6d
+ 266 015b B5010000 		.4byte	0x1b5
+ 267 015f 04       		.byte	0x4
+ 268 0160 07       		.uleb128 0x7
+ 269 0161 98000000 		.4byte	.LASF28
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFAHG2o.s 			page 8
+
+
+ 270 0165 03       		.byte	0x3
+ 271 0166 72       		.byte	0x72
+ 272 0167 B5010000 		.4byte	0x1b5
+ 273 016b 08       		.byte	0x8
+ 274 016c 07       		.uleb128 0x7
+ 275 016d D4000000 		.4byte	.LASF29
+ 276 0171 03       		.byte	0x3
+ 277 0172 77       		.byte	0x77
+ 278 0173 B5010000 		.4byte	0x1b5
+ 279 0177 0C       		.byte	0xc
+ 280 0178 07       		.uleb128 0x7
+ 281 0179 A4010000 		.4byte	.LASF30
+ 282 017d 03       		.byte	0x3
+ 283 017e 7C       		.byte	0x7c
+ 284 017f 98000000 		.4byte	0x98
+ 285 0183 10       		.byte	0x10
+ 286 0184 07       		.uleb128 0x7
+ 287 0185 AE010000 		.4byte	.LASF31
+ 288 0189 03       		.byte	0x3
+ 289 018a 81       		.byte	0x81
+ 290 018b 98000000 		.4byte	0x98
+ 291 018f 14       		.byte	0x14
+ 292 0190 07       		.uleb128 0x7
+ 293 0191 AD000000 		.4byte	.LASF32
+ 294 0195 03       		.byte	0x3
+ 295 0196 86       		.byte	0x86
+ 296 0197 80000000 		.4byte	0x80
+ 297 019b 18       		.byte	0x18
+ 298 019c 07       		.uleb128 0x7
+ 299 019d BE000000 		.4byte	.LASF33
+ 300 01a1 03       		.byte	0x3
+ 301 01a2 8B       		.byte	0x8b
+ 302 01a3 80000000 		.4byte	0x80
+ 303 01a7 19       		.byte	0x19
+ 304 01a8 07       		.uleb128 0x7
+ 305 01a9 D1010000 		.4byte	.LASF34
+ 306 01ad 03       		.byte	0x3
+ 307 01ae 90       		.byte	0x90
+ 308 01af 80000000 		.4byte	0x80
+ 309 01b3 1A       		.byte	0x1a
+ 310 01b4 00       		.byte	0
+ 311 01b5 0B       		.uleb128 0xb
+ 312 01b6 04       		.byte	0x4
+ 313 01b7 B7000000 		.4byte	0xb7
+ 314 01bb 0A       		.uleb128 0xa
+ 315 01bc 2E010000 		.4byte	.LASF35
+ 316 01c0 03       		.byte	0x3
+ 317 01c1 92       		.byte	0x92
+ 318 01c2 40010000 		.4byte	0x140
+ 319 01c6 0C       		.uleb128 0xc
+ 320 01c7 69000000 		.4byte	.LASF41
+ 321 01cb 01       		.byte	0x1
+ 322 01cc 7A       		.byte	0x7a
+ 323 01cd 00000000 		.4byte	.LFB1
+ 324 01d1 20000000 		.4byte	.LFE1-.LFB1
+ 325 01d5 01       		.uleb128 0x1
+ 326 01d6 9C       		.byte	0x9c
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFAHG2o.s 			page 9
+
+
+ 327 01d7 F6010000 		.4byte	0x1f6
+ 328 01db 0D       		.uleb128 0xd
+ 329 01dc 0E000000 		.4byte	.LVL0
+ 330 01e0 32020000 		.4byte	0x232
+ 331 01e4 0E       		.uleb128 0xe
+ 332 01e5 01       		.uleb128 0x1
+ 333 01e6 50       		.byte	0x50
+ 334 01e7 02       		.uleb128 0x2
+ 335 01e8 74       		.byte	0x74
+ 336 01e9 00       		.sleb128 0
+ 337 01ea 0E       		.uleb128 0xe
+ 338 01eb 01       		.uleb128 0x1
+ 339 01ec 51       		.byte	0x51
+ 340 01ed 01       		.uleb128 0x1
+ 341 01ee 30       		.byte	0x30
+ 342 01ef 0E       		.uleb128 0xe
+ 343 01f0 01       		.uleb128 0x1
+ 344 01f1 52       		.byte	0x52
+ 345 01f2 01       		.uleb128 0x1
+ 346 01f3 3E       		.byte	0x3e
+ 347 01f4 00       		.byte	0
+ 348 01f5 00       		.byte	0
+ 349 01f6 0F       		.uleb128 0xf
+ 350 01f7 8F020000 		.4byte	.LASF36
+ 351 01fb 01       		.byte	0x1
+ 352 01fc 40       		.byte	0x40
+ 353 01fd 35010000 		.4byte	0x135
+ 354 0201 05       		.uleb128 0x5
+ 355 0202 03       		.byte	0x3
+ 356 0203 00000000 		.4byte	mADC_dsRam
+ 357 0207 08       		.uleb128 0x8
+ 358 0208 17020000 		.4byte	0x217
+ 359 020c 17020000 		.4byte	0x217
+ 360 0210 09       		.uleb128 0x9
+ 361 0211 72000000 		.4byte	0x72
+ 362 0215 01       		.byte	0x1
+ 363 0216 00       		.byte	0
+ 364 0217 10       		.uleb128 0x10
+ 365 0218 BB010000 		.4byte	0x1bb
+ 366 021c 0F       		.uleb128 0xf
+ 367 021d 9E000000 		.4byte	.LASF37
+ 368 0221 01       		.byte	0x1
+ 369 0222 4F       		.byte	0x4f
+ 370 0223 2D020000 		.4byte	0x22d
+ 371 0227 05       		.uleb128 0x5
+ 372 0228 03       		.byte	0x3
+ 373 0229 00000000 		.4byte	mADC_adcIoList
+ 374 022d 10       		.uleb128 0x10
+ 375 022e 07020000 		.4byte	0x207
+ 376 0232 11       		.uleb128 0x11
+ 377 0233 C6000000 		.4byte	.LASF42
+ 378 0237 C6000000 		.4byte	.LASF42
+ 379 023b 00       		.byte	0
+ 380              		.section	.debug_abbrev,"",%progbits
+ 381              	.Ldebug_abbrev0:
+ 382 0000 01       		.uleb128 0x1
+ 383 0001 11       		.uleb128 0x11
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFAHG2o.s 			page 10
+
+
+ 384 0002 01       		.byte	0x1
+ 385 0003 25       		.uleb128 0x25
+ 386 0004 0E       		.uleb128 0xe
+ 387 0005 13       		.uleb128 0x13
+ 388 0006 0B       		.uleb128 0xb
+ 389 0007 03       		.uleb128 0x3
+ 390 0008 0E       		.uleb128 0xe
+ 391 0009 1B       		.uleb128 0x1b
+ 392 000a 0E       		.uleb128 0xe
+ 393 000b 55       		.uleb128 0x55
+ 394 000c 17       		.uleb128 0x17
+ 395 000d 11       		.uleb128 0x11
+ 396 000e 01       		.uleb128 0x1
+ 397 000f 10       		.uleb128 0x10
+ 398 0010 17       		.uleb128 0x17
+ 399 0011 00       		.byte	0
+ 400 0012 00       		.byte	0
+ 401 0013 02       		.uleb128 0x2
+ 402 0014 24       		.uleb128 0x24
+ 403 0015 00       		.byte	0
+ 404 0016 0B       		.uleb128 0xb
+ 405 0017 0B       		.uleb128 0xb
+ 406 0018 3E       		.uleb128 0x3e
+ 407 0019 0B       		.uleb128 0xb
+ 408 001a 03       		.uleb128 0x3
+ 409 001b 08       		.uleb128 0x8
+ 410 001c 00       		.byte	0
+ 411 001d 00       		.byte	0
+ 412 001e 03       		.uleb128 0x3
+ 413 001f 24       		.uleb128 0x24
+ 414 0020 00       		.byte	0
+ 415 0021 0B       		.uleb128 0xb
+ 416 0022 0B       		.uleb128 0xb
+ 417 0023 3E       		.uleb128 0x3e
+ 418 0024 0B       		.uleb128 0xb
+ 419 0025 03       		.uleb128 0x3
+ 420 0026 0E       		.uleb128 0xe
+ 421 0027 00       		.byte	0
+ 422 0028 00       		.byte	0
+ 423 0029 04       		.uleb128 0x4
+ 424 002a 16       		.uleb128 0x16
+ 425 002b 00       		.byte	0
+ 426 002c 03       		.uleb128 0x3
+ 427 002d 0E       		.uleb128 0xe
+ 428 002e 3A       		.uleb128 0x3a
+ 429 002f 0B       		.uleb128 0xb
+ 430 0030 3B       		.uleb128 0x3b
+ 431 0031 05       		.uleb128 0x5
+ 432 0032 49       		.uleb128 0x49
+ 433 0033 13       		.uleb128 0x13
+ 434 0034 00       		.byte	0
+ 435 0035 00       		.byte	0
+ 436 0036 05       		.uleb128 0x5
+ 437 0037 35       		.uleb128 0x35
+ 438 0038 00       		.byte	0
+ 439 0039 49       		.uleb128 0x49
+ 440 003a 13       		.uleb128 0x13
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFAHG2o.s 			page 11
+
+
+ 441 003b 00       		.byte	0
+ 442 003c 00       		.byte	0
+ 443 003d 06       		.uleb128 0x6
+ 444 003e 13       		.uleb128 0x13
+ 445 003f 01       		.byte	0x1
+ 446 0040 0B       		.uleb128 0xb
+ 447 0041 0B       		.uleb128 0xb
+ 448 0042 3A       		.uleb128 0x3a
+ 449 0043 0B       		.uleb128 0xb
+ 450 0044 3B       		.uleb128 0x3b
+ 451 0045 0B       		.uleb128 0xb
+ 452 0046 01       		.uleb128 0x1
+ 453 0047 13       		.uleb128 0x13
+ 454 0048 00       		.byte	0
+ 455 0049 00       		.byte	0
+ 456 004a 07       		.uleb128 0x7
+ 457 004b 0D       		.uleb128 0xd
+ 458 004c 00       		.byte	0
+ 459 004d 03       		.uleb128 0x3
+ 460 004e 0E       		.uleb128 0xe
+ 461 004f 3A       		.uleb128 0x3a
+ 462 0050 0B       		.uleb128 0xb
+ 463 0051 3B       		.uleb128 0x3b
+ 464 0052 0B       		.uleb128 0xb
+ 465 0053 49       		.uleb128 0x49
+ 466 0054 13       		.uleb128 0x13
+ 467 0055 38       		.uleb128 0x38
+ 468 0056 0B       		.uleb128 0xb
+ 469 0057 00       		.byte	0
+ 470 0058 00       		.byte	0
+ 471 0059 08       		.uleb128 0x8
+ 472 005a 01       		.uleb128 0x1
+ 473 005b 01       		.byte	0x1
+ 474 005c 49       		.uleb128 0x49
+ 475 005d 13       		.uleb128 0x13
+ 476 005e 01       		.uleb128 0x1
+ 477 005f 13       		.uleb128 0x13
+ 478 0060 00       		.byte	0
+ 479 0061 00       		.byte	0
+ 480 0062 09       		.uleb128 0x9
+ 481 0063 21       		.uleb128 0x21
+ 482 0064 00       		.byte	0
+ 483 0065 49       		.uleb128 0x49
+ 484 0066 13       		.uleb128 0x13
+ 485 0067 2F       		.uleb128 0x2f
+ 486 0068 0B       		.uleb128 0xb
+ 487 0069 00       		.byte	0
+ 488 006a 00       		.byte	0
+ 489 006b 0A       		.uleb128 0xa
+ 490 006c 16       		.uleb128 0x16
+ 491 006d 00       		.byte	0
+ 492 006e 03       		.uleb128 0x3
+ 493 006f 0E       		.uleb128 0xe
+ 494 0070 3A       		.uleb128 0x3a
+ 495 0071 0B       		.uleb128 0xb
+ 496 0072 3B       		.uleb128 0x3b
+ 497 0073 0B       		.uleb128 0xb
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFAHG2o.s 			page 12
+
+
+ 498 0074 49       		.uleb128 0x49
+ 499 0075 13       		.uleb128 0x13
+ 500 0076 00       		.byte	0
+ 501 0077 00       		.byte	0
+ 502 0078 0B       		.uleb128 0xb
+ 503 0079 0F       		.uleb128 0xf
+ 504 007a 00       		.byte	0
+ 505 007b 0B       		.uleb128 0xb
+ 506 007c 0B       		.uleb128 0xb
+ 507 007d 49       		.uleb128 0x49
+ 508 007e 13       		.uleb128 0x13
+ 509 007f 00       		.byte	0
+ 510 0080 00       		.byte	0
+ 511 0081 0C       		.uleb128 0xc
+ 512 0082 2E       		.uleb128 0x2e
+ 513 0083 01       		.byte	0x1
+ 514 0084 3F       		.uleb128 0x3f
+ 515 0085 19       		.uleb128 0x19
+ 516 0086 03       		.uleb128 0x3
+ 517 0087 0E       		.uleb128 0xe
+ 518 0088 3A       		.uleb128 0x3a
+ 519 0089 0B       		.uleb128 0xb
+ 520 008a 3B       		.uleb128 0x3b
+ 521 008b 0B       		.uleb128 0xb
+ 522 008c 27       		.uleb128 0x27
+ 523 008d 19       		.uleb128 0x19
+ 524 008e 11       		.uleb128 0x11
+ 525 008f 01       		.uleb128 0x1
+ 526 0090 12       		.uleb128 0x12
+ 527 0091 06       		.uleb128 0x6
+ 528 0092 40       		.uleb128 0x40
+ 529 0093 18       		.uleb128 0x18
+ 530 0094 9742     		.uleb128 0x2117
+ 531 0096 19       		.uleb128 0x19
+ 532 0097 01       		.uleb128 0x1
+ 533 0098 13       		.uleb128 0x13
+ 534 0099 00       		.byte	0
+ 535 009a 00       		.byte	0
+ 536 009b 0D       		.uleb128 0xd
+ 537 009c 898201   		.uleb128 0x4109
+ 538 009f 01       		.byte	0x1
+ 539 00a0 11       		.uleb128 0x11
+ 540 00a1 01       		.uleb128 0x1
+ 541 00a2 31       		.uleb128 0x31
+ 542 00a3 13       		.uleb128 0x13
+ 543 00a4 00       		.byte	0
+ 544 00a5 00       		.byte	0
+ 545 00a6 0E       		.uleb128 0xe
+ 546 00a7 8A8201   		.uleb128 0x410a
+ 547 00aa 00       		.byte	0
+ 548 00ab 02       		.uleb128 0x2
+ 549 00ac 18       		.uleb128 0x18
+ 550 00ad 9142     		.uleb128 0x2111
+ 551 00af 18       		.uleb128 0x18
+ 552 00b0 00       		.byte	0
+ 553 00b1 00       		.byte	0
+ 554 00b2 0F       		.uleb128 0xf
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFAHG2o.s 			page 13
+
+
+ 555 00b3 34       		.uleb128 0x34
+ 556 00b4 00       		.byte	0
+ 557 00b5 03       		.uleb128 0x3
+ 558 00b6 0E       		.uleb128 0xe
+ 559 00b7 3A       		.uleb128 0x3a
+ 560 00b8 0B       		.uleb128 0xb
+ 561 00b9 3B       		.uleb128 0x3b
+ 562 00ba 0B       		.uleb128 0xb
+ 563 00bb 49       		.uleb128 0x49
+ 564 00bc 13       		.uleb128 0x13
+ 565 00bd 3F       		.uleb128 0x3f
+ 566 00be 19       		.uleb128 0x19
+ 567 00bf 02       		.uleb128 0x2
+ 568 00c0 18       		.uleb128 0x18
+ 569 00c1 00       		.byte	0
+ 570 00c2 00       		.byte	0
+ 571 00c3 10       		.uleb128 0x10
+ 572 00c4 26       		.uleb128 0x26
+ 573 00c5 00       		.byte	0
+ 574 00c6 49       		.uleb128 0x49
+ 575 00c7 13       		.uleb128 0x13
+ 576 00c8 00       		.byte	0
+ 577 00c9 00       		.byte	0
+ 578 00ca 11       		.uleb128 0x11
+ 579 00cb 2E       		.uleb128 0x2e
+ 580 00cc 00       		.byte	0
+ 581 00cd 3F       		.uleb128 0x3f
+ 582 00ce 19       		.uleb128 0x19
+ 583 00cf 3C       		.uleb128 0x3c
+ 584 00d0 19       		.uleb128 0x19
+ 585 00d1 6E       		.uleb128 0x6e
+ 586 00d2 0E       		.uleb128 0xe
+ 587 00d3 03       		.uleb128 0x3
+ 588 00d4 0E       		.uleb128 0xe
+ 589 00d5 00       		.byte	0
+ 590 00d6 00       		.byte	0
+ 591 00d7 00       		.byte	0
+ 592              		.section	.debug_aranges,"",%progbits
+ 593 0000 1C000000 		.4byte	0x1c
+ 594 0004 0200     		.2byte	0x2
+ 595 0006 00000000 		.4byte	.Ldebug_info0
+ 596 000a 04       		.byte	0x4
+ 597 000b 00       		.byte	0
+ 598 000c 0000     		.2byte	0
+ 599 000e 0000     		.2byte	0
+ 600 0010 00000000 		.4byte	.LFB1
+ 601 0014 20000000 		.4byte	.LFE1-.LFB1
+ 602 0018 00000000 		.4byte	0
+ 603 001c 00000000 		.4byte	0
+ 604              		.section	.debug_ranges,"",%progbits
+ 605              	.Ldebug_ranges0:
+ 606 0000 00000000 		.4byte	.LFB1
+ 607 0004 20000000 		.4byte	.LFE1
+ 608 0008 00000000 		.4byte	0
+ 609 000c 00000000 		.4byte	0
+ 610              		.section	.debug_line,"",%progbits
+ 611              	.Ldebug_line0:
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFAHG2o.s 			page 14
+
+
+ 612 0000 7A000000 		.section	.debug_str,"MS",%progbits,1
+ 612      02005F00 
+ 612      00000201 
+ 612      FB0E0D00 
+ 612      01010101 
+ 613              	.LASF17:
+ 614 0000 72656733 		.ascii	"reg32\000"
+ 614      3200
+ 615              	.LASF27:
+ 616 0006 70635074 		.ascii	"pcPtr\000"
+ 616      7200
+ 617              	.LASF24:
+ 618 000c 61646341 		.ascii	"adcAzTime\000"
+ 618      7A54696D 
+ 618      6500
+ 619              	.LASF23:
+ 620 0016 61646352 		.ascii	"adcResolution\000"
+ 620      65736F6C 
+ 620      7574696F 
+ 620      6E00
+ 621              	.LASF39:
+ 622 0024 47656E65 		.ascii	"Generated_Source\\PSoC4\\mADC_Structure.c\000"
+ 622      72617465 
+ 622      645F536F 
+ 622      75726365 
+ 622      5C50536F 
+ 623              	.LASF20:
+ 624 004c 61646353 		.ascii	"adcStatus\000"
+ 624      74617475 
+ 624      7300
+ 625              	.LASF6:
+ 626 0056 73686F72 		.ascii	"short unsigned int\000"
+ 626      7420756E 
+ 626      7369676E 
+ 626      65642069 
+ 626      6E7400
+ 627              	.LASF41:
+ 628 0069 6D414443 		.ascii	"mADC_DsInitialize\000"
+ 628      5F447349 
+ 628      6E697469 
+ 628      616C697A 
+ 628      6500
+ 629              	.LASF26:
+ 630 007b 6873696F 		.ascii	"hsiomPtr\000"
+ 630      6D507472 
+ 630      00
+ 631              	.LASF15:
+ 632 0084 666C6F61 		.ascii	"float\000"
+ 632      7400
+ 633              	.LASF4:
+ 634 008a 756E7369 		.ascii	"unsigned char\000"
+ 634      676E6564 
+ 634      20636861 
+ 634      7200
+ 635              	.LASF28:
+ 636 0098 64725074 		.ascii	"drPtr\000"
+ 636      7200
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFAHG2o.s 			page 15
+
+
+ 637              	.LASF37:
+ 638 009e 6D414443 		.ascii	"mADC_adcIoList\000"
+ 638      5F616463 
+ 638      496F4C69 
+ 638      737400
+ 639              	.LASF32:
+ 640 00ad 6873696F 		.ascii	"hsiomShift\000"
+ 640      6D536869 
+ 640      667400
+ 641              	.LASF12:
+ 642 00b8 75696E74 		.ascii	"uint8\000"
+ 642      3800
+ 643              	.LASF33:
+ 644 00be 64725368 		.ascii	"drShift\000"
+ 644      69667400 
+ 645              	.LASF42:
+ 646 00c6 6D656D73 		.ascii	"memset\000"
+ 646      657400
+ 647              	.LASF16:
+ 648 00cd 646F7562 		.ascii	"double\000"
+ 648      6C6500
+ 649              	.LASF29:
+ 650 00d4 70735074 		.ascii	"psPtr\000"
+ 650      7200
+ 651              	.LASF13:
+ 652 00da 75696E74 		.ascii	"uint16\000"
+ 652      313600
+ 653              	.LASF25:
+ 654 00e1 6D414443 		.ascii	"mADC_RAM_STRUCT\000"
+ 654      5F52414D 
+ 654      5F535452 
+ 654      55435400 
+ 655              	.LASF14:
+ 656 00f1 75696E74 		.ascii	"uint32\000"
+ 656      333200
+ 657              	.LASF8:
+ 658 00f8 6C6F6E67 		.ascii	"long unsigned int\000"
+ 658      20756E73 
+ 658      69676E65 
+ 658      6420696E 
+ 658      7400
+ 659              	.LASF0:
+ 660 010a 756E7369 		.ascii	"unsigned int\000"
+ 660      676E6564 
+ 660      20696E74 
+ 660      00
+ 661              	.LASF9:
+ 662 0117 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 662      206C6F6E 
+ 662      6720756E 
+ 662      7369676E 
+ 662      65642069 
+ 663              	.LASF35:
+ 664 012e 6D414443 		.ascii	"mADC_FLASH_IO_STRUCT\000"
+ 664      5F464C41 
+ 664      53485F49 
+ 664      4F5F5354 
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFAHG2o.s 			page 16
+
+
+ 664      52554354 
+ 665              	.LASF21:
+ 666 0143 61646349 		.ascii	"adcIdac\000"
+ 666      64616300 
+ 667              	.LASF18:
+ 668 014b 61646352 		.ascii	"adcResult\000"
+ 668      6573756C 
+ 668      7400
+ 669              	.LASF10:
+ 670 0155 73697A65 		.ascii	"sizetype\000"
+ 670      74797065 
+ 670      00
+ 671              	.LASF40:
+ 672 015e 433A5C55 		.ascii	"C:\\Users\\PC\\Documents\\PSoC Creator\\yellowChip\\"
+ 672      73657273 
+ 672      5C50435C 
+ 672      446F6375 
+ 672      6D656E74 
+ 673 018c 4144432E 		.ascii	"ADC.cydsn\000"
+ 673      63796473 
+ 673      6E00
+ 674              	.LASF1:
+ 675 0196 6C6F6E67 		.ascii	"long long int\000"
+ 675      206C6F6E 
+ 675      6720696E 
+ 675      7400
+ 676              	.LASF30:
+ 677 01a4 6873696F 		.ascii	"hsiomMask\000"
+ 677      6D4D6173 
+ 677      6B00
+ 678              	.LASF31:
+ 679 01ae 6D61736B 		.ascii	"mask\000"
+ 679      00
+ 680              	.LASF22:
+ 681 01b3 61646341 		.ascii	"adcActiveCh\000"
+ 681      63746976 
+ 681      65436800 
+ 682              	.LASF19:
+ 683 01bf 61646343 		.ascii	"adcCode\000"
+ 683      6F646500 
+ 684              	.LASF5:
+ 685 01c7 73686F72 		.ascii	"short int\000"
+ 685      7420696E 
+ 685      7400
+ 686              	.LASF34:
+ 687 01d1 73686966 		.ascii	"shift\000"
+ 687      7400
+ 688              	.LASF7:
+ 689 01d7 6C6F6E67 		.ascii	"long int\000"
+ 689      20696E74 
+ 689      00
+ 690              	.LASF11:
+ 691 01e0 63686172 		.ascii	"char\000"
+ 691      00
+ 692              	.LASF2:
+ 693 01e5 6C6F6E67 		.ascii	"long double\000"
+ 693      20646F75 
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFAHG2o.s 			page 17
+
+
+ 693      626C6500 
+ 694              	.LASF38:
+ 695 01f1 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 695      43313120 
+ 695      352E342E 
+ 695      31203230 
+ 695      31363036 
+ 696 0224 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 696      20726576 
+ 696      6973696F 
+ 696      6E203233 
+ 696      37373135 
+ 697 0257 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 697      67202D66 
+ 697      66756E63 
+ 697      74696F6E 
+ 697      2D736563 
+ 698              	.LASF3:
+ 699 0283 7369676E 		.ascii	"signed char\000"
+ 699      65642063 
+ 699      68617200 
+ 700              	.LASF36:
+ 701 028f 6D414443 		.ascii	"mADC_dsRam\000"
+ 701      5F647352 
+ 701      616D00
+ 702              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

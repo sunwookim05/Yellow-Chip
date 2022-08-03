@@ -1,0 +1,56 @@
+ARM GAS  C:\Users\coffe\AppData\Local\Temp\ccxlgXT6.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0plus
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"oled.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              	.Letext0:
+  20              		.section	.debug_line,"",%progbits
+  21              	.Ldebug_line0:
+  22              		.section	.debug_str,"MS",%progbits,1
+  23              	.LASF0:
+  24 0000 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+  24      43313120 
+  24      352E342E 
+  24      31203230 
+  24      31363036 
+  25 0033 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+  25      20726576 
+  25      6973696F 
+  25      6E203233 
+  25      37373135 
+  26 0066 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+  26      67202D66 
+  26      66756E63 
+  26      74696F6E 
+  26      2D736563 
+  27              	.LASF1:
+  28 0092 433A5C55 		.ascii	"C:\\Users\\coffe\\Documents\\TechAbyssWorking\\Prod"
+  28      73657273 
+  28      5C636F66 
+  28      66655C44 
+  28      6F63756D 
+  29 00c0 7563745C 		.ascii	"uct\\yellowChip\\PSoC\\yellowChip\\TestLed.cydsn\000"
+  29      79656C6C 
+  29      6F774368 
+  29      69705C50 
+  29      536F435C 
+  30              	.LASF2:
+  31 00ed 6F6C6564 		.ascii	"oled.c\000"
+  31      2E6300
+  32              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

@@ -1,0 +1,2464 @@
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0plus
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"mUART_SPI_UART.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.mUART_SpiUartReadRxData,"ax",%progbits
+  20              		.align	1
+  21              		.global	mUART_SpiUartReadRxData
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	mUART_SpiUartReadRxData, %function
+  25              	mUART_SpiUartReadRxData:
+  26              	.LFB1:
+  27              		.file 1 "Generated_Source\\PSoC4\\mUART_SPI_UART.c"
+   1:Generated_Source\PSoC4/mUART_SPI_UART.c **** /***************************************************************************//**
+   2:Generated_Source\PSoC4/mUART_SPI_UART.c **** * \file mUART_SPI_UART.c
+   3:Generated_Source\PSoC4/mUART_SPI_UART.c **** * \version 4.0
+   4:Generated_Source\PSoC4/mUART_SPI_UART.c **** *
+   5:Generated_Source\PSoC4/mUART_SPI_UART.c **** * \brief
+   6:Generated_Source\PSoC4/mUART_SPI_UART.c **** *  This file provides the source code to the API for the SCB Component in
+   7:Generated_Source\PSoC4/mUART_SPI_UART.c **** *  SPI and UART modes.
+   8:Generated_Source\PSoC4/mUART_SPI_UART.c **** *
+   9:Generated_Source\PSoC4/mUART_SPI_UART.c **** * Note:
+  10:Generated_Source\PSoC4/mUART_SPI_UART.c **** *
+  11:Generated_Source\PSoC4/mUART_SPI_UART.c **** *******************************************************************************
+  12:Generated_Source\PSoC4/mUART_SPI_UART.c **** * \copyright
+  13:Generated_Source\PSoC4/mUART_SPI_UART.c **** * Copyright 2013-2017, Cypress Semiconductor Corporation.  All rights reserved.
+  14:Generated_Source\PSoC4/mUART_SPI_UART.c **** * You may use this file only in accordance with the license, terms, conditions,
+  15:Generated_Source\PSoC4/mUART_SPI_UART.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  16:Generated_Source\PSoC4/mUART_SPI_UART.c **** * the software package with which this file was provided.
+  17:Generated_Source\PSoC4/mUART_SPI_UART.c **** *******************************************************************************/
+  18:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+  19:Generated_Source\PSoC4/mUART_SPI_UART.c **** #include "mUART_PVT.h"
+  20:Generated_Source\PSoC4/mUART_SPI_UART.c **** #include "mUART_SPI_UART_PVT.h"
+  21:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+  22:Generated_Source\PSoC4/mUART_SPI_UART.c **** /***************************************
+  23:Generated_Source\PSoC4/mUART_SPI_UART.c **** *        SPI/UART Private Vars
+  24:Generated_Source\PSoC4/mUART_SPI_UART.c **** ***************************************/
+  25:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+  26:Generated_Source\PSoC4/mUART_SPI_UART.c **** #if(mUART_INTERNAL_RX_SW_BUFFER_CONST)
+  27:Generated_Source\PSoC4/mUART_SPI_UART.c ****     /* Start index to put data into the software receive buffer.*/
+  28:Generated_Source\PSoC4/mUART_SPI_UART.c ****     volatile uint32 mUART_rxBufferHead;
+  29:Generated_Source\PSoC4/mUART_SPI_UART.c ****     /* Start index to get data from the software receive buffer.*/
+  30:Generated_Source\PSoC4/mUART_SPI_UART.c ****     volatile uint32 mUART_rxBufferTail;
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 2
+
+
+  31:Generated_Source\PSoC4/mUART_SPI_UART.c ****     /**
+  32:Generated_Source\PSoC4/mUART_SPI_UART.c ****     * \addtogroup group_globals
+  33:Generated_Source\PSoC4/mUART_SPI_UART.c ****     * \{
+  34:Generated_Source\PSoC4/mUART_SPI_UART.c ****     */
+  35:Generated_Source\PSoC4/mUART_SPI_UART.c ****     /** Sets when internal software receive buffer overflow
+  36:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  was occurred.
+  37:Generated_Source\PSoC4/mUART_SPI_UART.c ****     */
+  38:Generated_Source\PSoC4/mUART_SPI_UART.c ****     volatile uint8  mUART_rxBufferOverflow;
+  39:Generated_Source\PSoC4/mUART_SPI_UART.c ****     /** \} globals */
+  40:Generated_Source\PSoC4/mUART_SPI_UART.c **** #endif /* (mUART_INTERNAL_RX_SW_BUFFER_CONST) */
+  41:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+  42:Generated_Source\PSoC4/mUART_SPI_UART.c **** #if(mUART_INTERNAL_TX_SW_BUFFER_CONST)
+  43:Generated_Source\PSoC4/mUART_SPI_UART.c ****     /* Start index to put data into the software transmit buffer.*/
+  44:Generated_Source\PSoC4/mUART_SPI_UART.c ****     volatile uint32 mUART_txBufferHead;
+  45:Generated_Source\PSoC4/mUART_SPI_UART.c ****     /* Start index to get data from the software transmit buffer.*/
+  46:Generated_Source\PSoC4/mUART_SPI_UART.c ****     volatile uint32 mUART_txBufferTail;
+  47:Generated_Source\PSoC4/mUART_SPI_UART.c **** #endif /* (mUART_INTERNAL_TX_SW_BUFFER_CONST) */
+  48:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+  49:Generated_Source\PSoC4/mUART_SPI_UART.c **** #if(mUART_INTERNAL_RX_SW_BUFFER)
+  50:Generated_Source\PSoC4/mUART_SPI_UART.c ****     /* Add one element to the buffer to receive full packet. One byte in receive buffer is always e
+  51:Generated_Source\PSoC4/mUART_SPI_UART.c ****     volatile uint8 mUART_rxBufferInternal[mUART_INTERNAL_RX_BUFFER_SIZE];
+  52:Generated_Source\PSoC4/mUART_SPI_UART.c **** #endif /* (mUART_INTERNAL_RX_SW_BUFFER) */
+  53:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+  54:Generated_Source\PSoC4/mUART_SPI_UART.c **** #if(mUART_INTERNAL_TX_SW_BUFFER)
+  55:Generated_Source\PSoC4/mUART_SPI_UART.c ****     volatile uint8 mUART_txBufferInternal[mUART_TX_BUFFER_SIZE];
+  56:Generated_Source\PSoC4/mUART_SPI_UART.c **** #endif /* (mUART_INTERNAL_TX_SW_BUFFER) */
+  57:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+  58:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+  59:Generated_Source\PSoC4/mUART_SPI_UART.c **** #if(mUART_RX_DIRECTION)
+  60:Generated_Source\PSoC4/mUART_SPI_UART.c ****     /*******************************************************************************
+  61:Generated_Source\PSoC4/mUART_SPI_UART.c ****     * Function Name: mUART_SpiUartReadRxData
+  62:Generated_Source\PSoC4/mUART_SPI_UART.c ****     ****************************************************************************//**
+  63:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *
+  64:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  Retrieves the next data element from the receive buffer.
+  65:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *   - RX software buffer is disabled: Returns data element retrieved from
+  66:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *     RX FIFO. Undefined data will be returned if the RX FIFO is empty.
+  67:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *   - RX software buffer is enabled: Returns data element from the software
+  68:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *     receive buffer. Zero value is returned if the software receive buffer
+  69:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *     is empty.
+  70:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *
+  71:Generated_Source\PSoC4/mUART_SPI_UART.c ****     * \return
+  72:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  Next data element from the receive buffer. 
+  73:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  The amount of data bits to be received depends on RX data bits selection 
+  74:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  (the data bit counting starts from LSB of return value).
+  75:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *
+  76:Generated_Source\PSoC4/mUART_SPI_UART.c ****     * \globalvars
+  77:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  mUART_rxBufferHead - the start index to put data into the 
+  78:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  software receive buffer.
+  79:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  mUART_rxBufferTail - the start index to get data from the 
+  80:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  software receive buffer.
+  81:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *
+  82:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *******************************************************************************/
+  83:Generated_Source\PSoC4/mUART_SPI_UART.c ****     uint32 mUART_SpiUartReadRxData(void)
+  84:Generated_Source\PSoC4/mUART_SPI_UART.c ****     {
+  28              		.loc 1 84 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 3
+
+
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33              	.LVL0:
+  85:Generated_Source\PSoC4/mUART_SPI_UART.c ****         uint32 rxData = 0u;
+  86:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+  87:Generated_Source\PSoC4/mUART_SPI_UART.c ****     #if (mUART_INTERNAL_RX_SW_BUFFER_CONST)
+  88:Generated_Source\PSoC4/mUART_SPI_UART.c ****         uint32 locTail;
+  89:Generated_Source\PSoC4/mUART_SPI_UART.c ****     #endif /* (mUART_INTERNAL_RX_SW_BUFFER_CONST) */
+  90:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+  91:Generated_Source\PSoC4/mUART_SPI_UART.c ****         #if (mUART_CHECK_RX_SW_BUFFER)
+  92:Generated_Source\PSoC4/mUART_SPI_UART.c ****         {
+  93:Generated_Source\PSoC4/mUART_SPI_UART.c ****             if (mUART_rxBufferHead != mUART_rxBufferTail)
+  34              		.loc 1 93 0
+  35 0000 084B     		ldr	r3, .L6
+  36 0002 094A     		ldr	r2, .L6+4
+  37 0004 1968     		ldr	r1, [r3]
+  38 0006 1368     		ldr	r3, [r2]
+  85:Generated_Source\PSoC4/mUART_SPI_UART.c ****         uint32 rxData = 0u;
+  39              		.loc 1 85 0
+  40 0008 0020     		movs	r0, #0
+  41              		.loc 1 93 0
+  42 000a 9942     		cmp	r1, r3
+  43 000c 08D0     		beq	.L2
+  94:Generated_Source\PSoC4/mUART_SPI_UART.c ****             {
+  95:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 /* There is data in RX software buffer */
+  96:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+  97:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 /* Calculate index to read from */
+  98:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 locTail = (mUART_rxBufferTail + 1u);
+  44              		.loc 1 98 0
+  45 000e 1368     		ldr	r3, [r2]
+  46 0010 0133     		adds	r3, r3, #1
+  47              	.LVL1:
+  99:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 100:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 if (mUART_INTERNAL_RX_BUFFER_SIZE == locTail)
+  48              		.loc 1 100 0
+  49 0012 412B     		cmp	r3, #65
+  50 0014 00D1     		bne	.L3
+ 101:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 {
+ 102:Generated_Source\PSoC4/mUART_SPI_UART.c ****                     locTail = 0u;
+  51              		.loc 1 102 0
+  52 0016 0300     		movs	r3, r0
+  53              	.LVL2:
+  54              	.L3:
+ 103:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 }
+ 104:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 105:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 /* Get data from RX software buffer */
+ 106:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 rxData = mUART_GetWordFromRxBuffer(locTail);
+  55              		.loc 1 106 0
+  56 0018 0449     		ldr	r1, .L6+8
+  57 001a C85C     		ldrb	r0, [r1, r3]
+ 107:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 108:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 /* Change index in the buffer */
+ 109:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 mUART_rxBufferTail = locTail;
+  58              		.loc 1 109 0
+  59 001c 1360     		str	r3, [r2]
+ 106:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+  60              		.loc 1 106 0
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 4
+
+
+  61 001e C0B2     		uxtb	r0, r0
+  62              	.LVL3:
+  63              	.L2:
+ 110:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 111:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 #if (mUART_CHECK_UART_RTS_CONTROL_FLOW)
+ 112:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 {
+ 113:Generated_Source\PSoC4/mUART_SPI_UART.c ****                     /* Check if RX Not Empty is disabled in the interrupt */
+ 114:Generated_Source\PSoC4/mUART_SPI_UART.c ****                     if (0u == (mUART_INTR_RX_MASK_REG & mUART_INTR_RX_NOT_EMPTY))
+ 115:Generated_Source\PSoC4/mUART_SPI_UART.c ****                     {
+ 116:Generated_Source\PSoC4/mUART_SPI_UART.c ****                         /* Enable RX Not Empty interrupt source to continue
+ 117:Generated_Source\PSoC4/mUART_SPI_UART.c ****                         * receiving data into software buffer.
+ 118:Generated_Source\PSoC4/mUART_SPI_UART.c ****                         */
+ 119:Generated_Source\PSoC4/mUART_SPI_UART.c ****                         mUART_INTR_RX_MASK_REG |= mUART_INTR_RX_NOT_EMPTY;
+ 120:Generated_Source\PSoC4/mUART_SPI_UART.c ****                     }
+ 121:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 }
+ 122:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 #endif
+ 123:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 124:Generated_Source\PSoC4/mUART_SPI_UART.c ****             }
+ 125:Generated_Source\PSoC4/mUART_SPI_UART.c ****         }
+ 126:Generated_Source\PSoC4/mUART_SPI_UART.c ****         #else
+ 127:Generated_Source\PSoC4/mUART_SPI_UART.c ****         {
+ 128:Generated_Source\PSoC4/mUART_SPI_UART.c ****             /* Read data from RX FIFO */
+ 129:Generated_Source\PSoC4/mUART_SPI_UART.c ****             rxData = mUART_RX_FIFO_RD_REG;
+ 130:Generated_Source\PSoC4/mUART_SPI_UART.c ****         }
+ 131:Generated_Source\PSoC4/mUART_SPI_UART.c ****         #endif
+ 132:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 133:Generated_Source\PSoC4/mUART_SPI_UART.c ****         return (rxData);
+ 134:Generated_Source\PSoC4/mUART_SPI_UART.c ****     }
+  64              		.loc 1 134 0
+  65              		@ sp needed
+  66 0020 7047     		bx	lr
+  67              	.L7:
+  68 0022 C046     		.align	2
+  69              	.L6:
+  70 0024 00000000 		.word	mUART_rxBufferHead
+  71 0028 00000000 		.word	mUART_rxBufferTail
+  72 002c 00000000 		.word	mUART_rxBufferInternal
+  73              		.cfi_endproc
+  74              	.LFE1:
+  75              		.size	mUART_SpiUartReadRxData, .-mUART_SpiUartReadRxData
+  76              		.section	.text.mUART_SpiUartGetRxBufferSize,"ax",%progbits
+  77              		.align	1
+  78              		.global	mUART_SpiUartGetRxBufferSize
+  79              		.code	16
+  80              		.thumb_func
+  81              		.type	mUART_SpiUartGetRxBufferSize, %function
+  82              	mUART_SpiUartGetRxBufferSize:
+  83              	.LFB2:
+ 135:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 136:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 137:Generated_Source\PSoC4/mUART_SPI_UART.c ****     /*******************************************************************************
+ 138:Generated_Source\PSoC4/mUART_SPI_UART.c ****     * Function Name: mUART_SpiUartGetRxBufferSize
+ 139:Generated_Source\PSoC4/mUART_SPI_UART.c ****     ****************************************************************************//**
+ 140:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *
+ 141:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  Returns the number of received data elements in the receive buffer.
+ 142:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *   - RX software buffer disabled: returns the number of used entries in
+ 143:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *     RX FIFO.
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 5
+
+
+ 144:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *   - RX software buffer enabled: returns the number of elements which were
+ 145:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *     placed in the receive buffer. This does not include the hardware RX FIFO.
+ 146:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *
+ 147:Generated_Source\PSoC4/mUART_SPI_UART.c ****     * \return
+ 148:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  Number of received data elements.
+ 149:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *
+ 150:Generated_Source\PSoC4/mUART_SPI_UART.c ****     * \globalvars
+ 151:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  mUART_rxBufferHead - the start index to put data into the 
+ 152:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  software receive buffer.
+ 153:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  mUART_rxBufferTail - the start index to get data from the 
+ 154:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  software receive buffer.
+ 155:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *
+ 156:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *******************************************************************************/
+ 157:Generated_Source\PSoC4/mUART_SPI_UART.c ****     uint32 mUART_SpiUartGetRxBufferSize(void)
+ 158:Generated_Source\PSoC4/mUART_SPI_UART.c ****     {
+  84              		.loc 1 158 0
+  85              		.cfi_startproc
+  86              		@ args = 0, pretend = 0, frame = 0
+  87              		@ frame_needed = 0, uses_anonymous_args = 0
+  88              		@ link register save eliminated.
+ 159:Generated_Source\PSoC4/mUART_SPI_UART.c ****         uint32 size;
+ 160:Generated_Source\PSoC4/mUART_SPI_UART.c ****     #if (mUART_INTERNAL_RX_SW_BUFFER_CONST)
+ 161:Generated_Source\PSoC4/mUART_SPI_UART.c ****         uint32 locHead;
+ 162:Generated_Source\PSoC4/mUART_SPI_UART.c ****     #endif /* (mUART_INTERNAL_RX_SW_BUFFER_CONST) */
+ 163:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 164:Generated_Source\PSoC4/mUART_SPI_UART.c ****         #if (mUART_CHECK_RX_SW_BUFFER)
+ 165:Generated_Source\PSoC4/mUART_SPI_UART.c ****         {
+ 166:Generated_Source\PSoC4/mUART_SPI_UART.c ****             locHead = mUART_rxBufferHead;
+  89              		.loc 1 166 0
+  90 0000 044B     		ldr	r3, .L12
+  91 0002 1868     		ldr	r0, [r3]
+  92              	.LVL4:
+ 167:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 168:Generated_Source\PSoC4/mUART_SPI_UART.c ****             if(locHead >= mUART_rxBufferTail)
+  93              		.loc 1 168 0
+  94 0004 044B     		ldr	r3, .L12+4
+  95 0006 1A68     		ldr	r2, [r3]
+ 169:Generated_Source\PSoC4/mUART_SPI_UART.c ****             {
+ 170:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 size = (locHead - mUART_rxBufferTail);
+  96              		.loc 1 170 0
+  97 0008 1B68     		ldr	r3, [r3]
+ 168:Generated_Source\PSoC4/mUART_SPI_UART.c ****             {
+  98              		.loc 1 168 0
+  99 000a 9042     		cmp	r0, r2
+ 100 000c 00D2     		bcs	.L11
+ 171:Generated_Source\PSoC4/mUART_SPI_UART.c ****             }
+ 172:Generated_Source\PSoC4/mUART_SPI_UART.c ****             else
+ 173:Generated_Source\PSoC4/mUART_SPI_UART.c ****             {
+ 174:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 size = (locHead + (mUART_INTERNAL_RX_BUFFER_SIZE - mUART_rxBufferTail));
+ 101              		.loc 1 174 0
+ 102 000e 4130     		adds	r0, r0, #65
+ 103              	.LVL5:
+ 104              	.L11:
+ 105 0010 C01A     		subs	r0, r0, r3
+ 106              	.LVL6:
+ 175:Generated_Source\PSoC4/mUART_SPI_UART.c ****             }
+ 176:Generated_Source\PSoC4/mUART_SPI_UART.c ****         }
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 6
+
+
+ 177:Generated_Source\PSoC4/mUART_SPI_UART.c ****         #else
+ 178:Generated_Source\PSoC4/mUART_SPI_UART.c ****         {
+ 179:Generated_Source\PSoC4/mUART_SPI_UART.c ****             size = mUART_GET_RX_FIFO_ENTRIES;
+ 180:Generated_Source\PSoC4/mUART_SPI_UART.c ****         }
+ 181:Generated_Source\PSoC4/mUART_SPI_UART.c ****         #endif
+ 182:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 183:Generated_Source\PSoC4/mUART_SPI_UART.c ****         return (size);
+ 184:Generated_Source\PSoC4/mUART_SPI_UART.c ****     }
+ 107              		.loc 1 184 0
+ 108              		@ sp needed
+ 109 0012 7047     		bx	lr
+ 110              	.L13:
+ 111              		.align	2
+ 112              	.L12:
+ 113 0014 00000000 		.word	mUART_rxBufferHead
+ 114 0018 00000000 		.word	mUART_rxBufferTail
+ 115              		.cfi_endproc
+ 116              	.LFE2:
+ 117              		.size	mUART_SpiUartGetRxBufferSize, .-mUART_SpiUartGetRxBufferSize
+ 118              		.section	.text.mUART_SpiUartClearRxBuffer,"ax",%progbits
+ 119              		.align	1
+ 120              		.global	mUART_SpiUartClearRxBuffer
+ 121              		.code	16
+ 122              		.thumb_func
+ 123              		.type	mUART_SpiUartClearRxBuffer, %function
+ 124              	mUART_SpiUartClearRxBuffer:
+ 125              	.LFB3:
+ 185:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 186:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 187:Generated_Source\PSoC4/mUART_SPI_UART.c ****     /*******************************************************************************
+ 188:Generated_Source\PSoC4/mUART_SPI_UART.c ****     * Function Name: mUART_SpiUartClearRxBuffer
+ 189:Generated_Source\PSoC4/mUART_SPI_UART.c ****     ****************************************************************************//**
+ 190:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *
+ 191:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  Clears the receive buffer and RX FIFO.
+ 192:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *
+ 193:Generated_Source\PSoC4/mUART_SPI_UART.c ****     * \globalvars
+ 194:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  mUART_rxBufferHead - the start index to put data into the 
+ 195:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  software receive buffer.
+ 196:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  mUART_rxBufferTail - the start index to get data from the 
+ 197:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  software receive buffer.
+ 198:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *
+ 199:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *******************************************************************************/
+ 200:Generated_Source\PSoC4/mUART_SPI_UART.c ****     void mUART_SpiUartClearRxBuffer(void)
+ 201:Generated_Source\PSoC4/mUART_SPI_UART.c ****     {
+ 126              		.loc 1 201 0
+ 127              		.cfi_startproc
+ 128              		@ args = 0, pretend = 0, frame = 0
+ 129              		@ frame_needed = 0, uses_anonymous_args = 0
+ 130 0000 10B5     		push	{r4, lr}
+ 131              		.cfi_def_cfa_offset 8
+ 132              		.cfi_offset 4, -8
+ 133              		.cfi_offset 14, -4
+ 202:Generated_Source\PSoC4/mUART_SPI_UART.c ****         #if (mUART_CHECK_RX_SW_BUFFER)
+ 203:Generated_Source\PSoC4/mUART_SPI_UART.c ****         {
+ 204:Generated_Source\PSoC4/mUART_SPI_UART.c ****             /* Lock from component interruption */
+ 205:Generated_Source\PSoC4/mUART_SPI_UART.c ****             mUART_DisableInt();
+ 134              		.loc 1 205 0
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 7
+
+
+ 135 0002 0720     		movs	r0, #7
+ 136 0004 FFF7FEFF 		bl	CyIntDisable
+ 137              	.LVL7:
+ 206:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 207:Generated_Source\PSoC4/mUART_SPI_UART.c ****             /* Flush RX software buffer */
+ 208:Generated_Source\PSoC4/mUART_SPI_UART.c ****             mUART_rxBufferHead = mUART_rxBufferTail;
+ 138              		.loc 1 208 0
+ 139 0008 0B4B     		ldr	r3, .L15
+ 209:Generated_Source\PSoC4/mUART_SPI_UART.c ****             mUART_rxBufferOverflow = 0u;
+ 210:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 211:Generated_Source\PSoC4/mUART_SPI_UART.c ****             mUART_CLEAR_RX_FIFO;
+ 140              		.loc 1 211 0
+ 141 000a 8021     		movs	r1, #128
+ 208:Generated_Source\PSoC4/mUART_SPI_UART.c ****             mUART_rxBufferOverflow = 0u;
+ 142              		.loc 1 208 0
+ 143 000c 1A68     		ldr	r2, [r3]
+ 144 000e 0B4B     		ldr	r3, .L15+4
+ 145              		.loc 1 211 0
+ 146 0010 4902     		lsls	r1, r1, #9
+ 208:Generated_Source\PSoC4/mUART_SPI_UART.c ****             mUART_rxBufferOverflow = 0u;
+ 147              		.loc 1 208 0
+ 148 0012 1A60     		str	r2, [r3]
+ 209:Generated_Source\PSoC4/mUART_SPI_UART.c ****             mUART_rxBufferOverflow = 0u;
+ 149              		.loc 1 209 0
+ 150 0014 0022     		movs	r2, #0
+ 151 0016 0A4B     		ldr	r3, .L15+8
+ 212:Generated_Source\PSoC4/mUART_SPI_UART.c ****             mUART_ClearRxInterruptSource(mUART_INTR_RX_ALL);
+ 213:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 214:Generated_Source\PSoC4/mUART_SPI_UART.c ****             #if (mUART_CHECK_UART_RTS_CONTROL_FLOW)
+ 215:Generated_Source\PSoC4/mUART_SPI_UART.c ****             {
+ 216:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 /* Enable RX Not Empty interrupt source to continue receiving
+ 217:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 * data into software buffer.
+ 218:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 */
+ 219:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 mUART_INTR_RX_MASK_REG |= mUART_INTR_RX_NOT_EMPTY;
+ 220:Generated_Source\PSoC4/mUART_SPI_UART.c ****             }
+ 221:Generated_Source\PSoC4/mUART_SPI_UART.c ****             #endif
+ 222:Generated_Source\PSoC4/mUART_SPI_UART.c ****             
+ 223:Generated_Source\PSoC4/mUART_SPI_UART.c ****             /* Release lock */
+ 224:Generated_Source\PSoC4/mUART_SPI_UART.c ****             mUART_EnableInt();
+ 152              		.loc 1 224 0
+ 153 0018 0720     		movs	r0, #7
+ 209:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 154              		.loc 1 209 0
+ 155 001a 1A70     		strb	r2, [r3]
+ 211:Generated_Source\PSoC4/mUART_SPI_UART.c ****             mUART_ClearRxInterruptSource(mUART_INTR_RX_ALL);
+ 156              		.loc 1 211 0
+ 157 001c 094B     		ldr	r3, .L15+12
+ 225:Generated_Source\PSoC4/mUART_SPI_UART.c ****         }
+ 226:Generated_Source\PSoC4/mUART_SPI_UART.c ****         #else
+ 227:Generated_Source\PSoC4/mUART_SPI_UART.c ****         {
+ 228:Generated_Source\PSoC4/mUART_SPI_UART.c ****             mUART_CLEAR_RX_FIFO;
+ 229:Generated_Source\PSoC4/mUART_SPI_UART.c ****         }
+ 230:Generated_Source\PSoC4/mUART_SPI_UART.c ****         #endif
+ 231:Generated_Source\PSoC4/mUART_SPI_UART.c ****     }
+ 158              		.loc 1 231 0
+ 159              		@ sp needed
+ 211:Generated_Source\PSoC4/mUART_SPI_UART.c ****             mUART_ClearRxInterruptSource(mUART_INTR_RX_ALL);
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 8
+
+
+ 160              		.loc 1 211 0
+ 161 001e 1A68     		ldr	r2, [r3]
+ 162 0020 0A43     		orrs	r2, r1
+ 163 0022 1A60     		str	r2, [r3]
+ 164 0024 1968     		ldr	r1, [r3]
+ 165 0026 084A     		ldr	r2, .L15+16
+ 166 0028 0A40     		ands	r2, r1
+ 167 002a 1A60     		str	r2, [r3]
+ 212:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 168              		.loc 1 212 0
+ 169 002c 074A     		ldr	r2, .L15+20
+ 170 002e 084B     		ldr	r3, .L15+24
+ 171 0030 1A60     		str	r2, [r3]
+ 224:Generated_Source\PSoC4/mUART_SPI_UART.c ****         }
+ 172              		.loc 1 224 0
+ 173 0032 FFF7FEFF 		bl	CyIntEnable
+ 174              	.LVL8:
+ 175              		.loc 1 231 0
+ 176 0036 10BD     		pop	{r4, pc}
+ 177              	.L16:
+ 178              		.align	2
+ 179              	.L15:
+ 180 0038 00000000 		.word	mUART_rxBufferTail
+ 181 003c 00000000 		.word	mUART_rxBufferHead
+ 182 0040 00000000 		.word	mUART_rxBufferOverflow
+ 183 0044 04030840 		.word	1074266884
+ 184 0048 FFFFFEFF 		.word	-65537
+ 185 004c ED0F0000 		.word	4077
+ 186 0050 C00F0840 		.word	1074270144
+ 187              		.cfi_endproc
+ 188              	.LFE3:
+ 189              		.size	mUART_SpiUartClearRxBuffer, .-mUART_SpiUartClearRxBuffer
+ 190              		.section	.text.mUART_SpiUartWriteTxData,"ax",%progbits
+ 191              		.align	1
+ 192              		.global	mUART_SpiUartWriteTxData
+ 193              		.code	16
+ 194              		.thumb_func
+ 195              		.type	mUART_SpiUartWriteTxData, %function
+ 196              	mUART_SpiUartWriteTxData:
+ 197              	.LFB4:
+ 232:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 233:Generated_Source\PSoC4/mUART_SPI_UART.c **** #endif /* (mUART_RX_DIRECTION) */
+ 234:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 235:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 236:Generated_Source\PSoC4/mUART_SPI_UART.c **** #if(mUART_TX_DIRECTION)
+ 237:Generated_Source\PSoC4/mUART_SPI_UART.c ****     /*******************************************************************************
+ 238:Generated_Source\PSoC4/mUART_SPI_UART.c ****     * Function Name: mUART_SpiUartWriteTxData
+ 239:Generated_Source\PSoC4/mUART_SPI_UART.c ****     ****************************************************************************//**
+ 240:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *
+ 241:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  Places a data entry into the transmit buffer to be sent at the next available
+ 242:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  bus time.
+ 243:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  This function is blocking and waits until there is space available to put the
+ 244:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  requested data in the transmit buffer.
+ 245:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *
+ 246:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  \param txDataByte: the data to be transmitted.
+ 247:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *   The amount of data bits to be transmitted depends on TX data bits selection 
+ 248:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *   (the data bit counting starts from LSB of txDataByte).
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 9
+
+
+ 249:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *
+ 250:Generated_Source\PSoC4/mUART_SPI_UART.c ****     * \globalvars
+ 251:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  mUART_txBufferHead - the start index to put data into the 
+ 252:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  software transmit buffer.
+ 253:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  mUART_txBufferTail - start index to get data from the software
+ 254:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  transmit buffer.
+ 255:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *
+ 256:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *******************************************************************************/
+ 257:Generated_Source\PSoC4/mUART_SPI_UART.c ****     void mUART_SpiUartWriteTxData(uint32 txData)
+ 258:Generated_Source\PSoC4/mUART_SPI_UART.c ****     {
+ 198              		.loc 1 258 0
+ 199              		.cfi_startproc
+ 200              		@ args = 0, pretend = 0, frame = 0
+ 201              		@ frame_needed = 0, uses_anonymous_args = 0
+ 202              	.LVL9:
+ 259:Generated_Source\PSoC4/mUART_SPI_UART.c ****     #if (mUART_INTERNAL_TX_SW_BUFFER_CONST)
+ 260:Generated_Source\PSoC4/mUART_SPI_UART.c ****         uint32 locHead;
+ 261:Generated_Source\PSoC4/mUART_SPI_UART.c ****     #endif /* (mUART_INTERNAL_TX_SW_BUFFER_CONST) */
+ 262:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 263:Generated_Source\PSoC4/mUART_SPI_UART.c ****         #if (mUART_CHECK_TX_SW_BUFFER)
+ 264:Generated_Source\PSoC4/mUART_SPI_UART.c ****         {
+ 265:Generated_Source\PSoC4/mUART_SPI_UART.c ****             /* Put data directly into the TX FIFO */
+ 266:Generated_Source\PSoC4/mUART_SPI_UART.c ****             if ((mUART_txBufferHead == mUART_txBufferTail) &&
+ 203              		.loc 1 266 0
+ 204 0000 134B     		ldr	r3, .L26
+ 205 0002 144A     		ldr	r2, .L26+4
+ 258:Generated_Source\PSoC4/mUART_SPI_UART.c ****     #if (mUART_INTERNAL_TX_SW_BUFFER_CONST)
+ 206              		.loc 1 258 0
+ 207 0004 30B5     		push	{r4, r5, lr}
+ 208              		.cfi_def_cfa_offset 12
+ 209              		.cfi_offset 4, -12
+ 210              		.cfi_offset 5, -8
+ 211              		.cfi_offset 14, -4
+ 212              		.loc 1 266 0
+ 213 0006 1568     		ldr	r5, [r2]
+ 214 0008 1C68     		ldr	r4, [r3]
+ 215 000a 1900     		movs	r1, r3
+ 216 000c A542     		cmp	r5, r4
+ 217 000e 08D1     		bne	.L18
+ 267:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 (mUART_SPI_UART_FIFO_SIZE != mUART_GET_TX_FIFO_ENTRIES))
+ 218              		.loc 1 267 0 discriminator 1
+ 219 0010 114B     		ldr	r3, .L26+8
+ 220 0012 1C68     		ldr	r4, [r3]
+ 266:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 (mUART_SPI_UART_FIFO_SIZE != mUART_GET_TX_FIFO_ENTRIES))
+ 221              		.loc 1 266 0 discriminator 1
+ 222 0014 1F23     		movs	r3, #31
+ 223 0016 2340     		ands	r3, r4
+ 224 0018 082B     		cmp	r3, #8
+ 225 001a 02D0     		beq	.L18
+ 268:Generated_Source\PSoC4/mUART_SPI_UART.c ****             {
+ 269:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 /* TX software buffer is empty: put data directly in TX FIFO */
+ 270:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 mUART_TX_FIFO_WR_REG = txData;
+ 226              		.loc 1 270 0
+ 227 001c 0F4B     		ldr	r3, .L26+12
+ 228 001e 1860     		str	r0, [r3]
+ 229 0020 15E0     		b	.L17
+ 230              	.L18:
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 10
+
+
+ 271:Generated_Source\PSoC4/mUART_SPI_UART.c ****             }
+ 272:Generated_Source\PSoC4/mUART_SPI_UART.c ****             /* Put data into TX software buffer */
+ 273:Generated_Source\PSoC4/mUART_SPI_UART.c ****             else
+ 274:Generated_Source\PSoC4/mUART_SPI_UART.c ****             {
+ 275:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 /* Head index to put data */
+ 276:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 locHead = (mUART_txBufferHead + 1u);
+ 231              		.loc 1 276 0
+ 232 0022 1368     		ldr	r3, [r2]
+ 233 0024 0133     		adds	r3, r3, #1
+ 234              	.LVL10:
+ 277:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 278:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 /* Adjust TX software buffer index */
+ 279:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 if (mUART_TX_BUFFER_SIZE == locHead)
+ 235              		.loc 1 279 0
+ 236 0026 402B     		cmp	r3, #64
+ 237 0028 00D1     		bne	.L21
+ 280:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 {
+ 281:Generated_Source\PSoC4/mUART_SPI_UART.c ****                     locHead = 0u;
+ 238              		.loc 1 281 0
+ 239 002a 0023     		movs	r3, #0
+ 240              	.LVL11:
+ 241              	.L21:
+ 282:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 }
+ 283:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 284:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 /* Wait for space in TX software buffer */
+ 285:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 while (locHead == mUART_txBufferTail)
+ 242              		.loc 1 285 0 discriminator 1
+ 243 002c 0C68     		ldr	r4, [r1]
+ 244 002e A342     		cmp	r3, r4
+ 245 0030 FCD0     		beq	.L21
+ 286:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 {
+ 287:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 }
+ 288:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 289:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 /* TX software buffer has at least one room */
+ 290:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 291:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 /* Clear old status of INTR_TX_NOT_FULL. It sets at the end of transfer when TX FIF
+ 292:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 mUART_ClearTxInterruptSource(mUART_INTR_TX_NOT_FULL);
+ 246              		.loc 1 292 0
+ 247 0032 0221     		movs	r1, #2
+ 248 0034 0A4C     		ldr	r4, .L26+16
+ 293:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 294:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 mUART_PutWordInTxBuffer(locHead, txData);
+ 249              		.loc 1 294 0
+ 250 0036 C0B2     		uxtb	r0, r0
+ 251              	.LVL12:
+ 292:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 252              		.loc 1 292 0
+ 253 0038 2160     		str	r1, [r4]
+ 254              		.loc 1 294 0
+ 255 003a 0A4C     		ldr	r4, .L26+20
+ 256 003c E054     		strb	r0, [r4, r3]
+ 295:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 296:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 mUART_txBufferHead = locHead;
+ 257              		.loc 1 296 0
+ 258 003e 1360     		str	r3, [r2]
+ 297:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 298:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 /* Check if TX Not Full is disabled in interrupt */
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 11
+
+
+ 299:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 if (0u == (mUART_INTR_TX_MASK_REG & mUART_INTR_TX_NOT_FULL))
+ 259              		.loc 1 299 0
+ 260 0040 094B     		ldr	r3, .L26+24
+ 261              	.LVL13:
+ 262 0042 1A68     		ldr	r2, [r3]
+ 263 0044 0A42     		tst	r2, r1
+ 264 0046 02D1     		bne	.L17
+ 265              	.LVL14:
+ 266              	.LBB4:
+ 267              	.LBB5:
+ 300:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 {
+ 301:Generated_Source\PSoC4/mUART_SPI_UART.c ****                     /* Enable TX Not Full interrupt source to transmit from software buffer */
+ 302:Generated_Source\PSoC4/mUART_SPI_UART.c ****                     mUART_INTR_TX_MASK_REG |= (uint32) mUART_INTR_TX_NOT_FULL;
+ 268              		.loc 1 302 0
+ 269 0048 1A68     		ldr	r2, [r3]
+ 270 004a 0A43     		orrs	r2, r1
+ 271 004c 1A60     		str	r2, [r3]
+ 272              	.LVL15:
+ 273              	.L17:
+ 274              	.LBE5:
+ 275              	.LBE4:
+ 303:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 }
+ 304:Generated_Source\PSoC4/mUART_SPI_UART.c ****             }
+ 305:Generated_Source\PSoC4/mUART_SPI_UART.c ****         }
+ 306:Generated_Source\PSoC4/mUART_SPI_UART.c ****         #else
+ 307:Generated_Source\PSoC4/mUART_SPI_UART.c ****         {
+ 308:Generated_Source\PSoC4/mUART_SPI_UART.c ****             /* Wait until TX FIFO has space to put data element */
+ 309:Generated_Source\PSoC4/mUART_SPI_UART.c ****             while (mUART_SPI_UART_FIFO_SIZE == mUART_GET_TX_FIFO_ENTRIES)
+ 310:Generated_Source\PSoC4/mUART_SPI_UART.c ****             {
+ 311:Generated_Source\PSoC4/mUART_SPI_UART.c ****             }
+ 312:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 313:Generated_Source\PSoC4/mUART_SPI_UART.c ****             mUART_TX_FIFO_WR_REG = txData;
+ 314:Generated_Source\PSoC4/mUART_SPI_UART.c ****         }
+ 315:Generated_Source\PSoC4/mUART_SPI_UART.c ****         #endif
+ 316:Generated_Source\PSoC4/mUART_SPI_UART.c ****     }
+ 276              		.loc 1 316 0
+ 277              		@ sp needed
+ 278 004e 30BD     		pop	{r4, r5, pc}
+ 279              	.L27:
+ 280              		.align	2
+ 281              	.L26:
+ 282 0050 00000000 		.word	mUART_txBufferTail
+ 283 0054 00000000 		.word	mUART_txBufferHead
+ 284 0058 08020840 		.word	1074266632
+ 285 005c 40020840 		.word	1074266688
+ 286 0060 800F0840 		.word	1074270080
+ 287 0064 00000000 		.word	mUART_txBufferInternal
+ 288 0068 880F0840 		.word	1074270088
+ 289              		.cfi_endproc
+ 290              	.LFE4:
+ 291              		.size	mUART_SpiUartWriteTxData, .-mUART_SpiUartWriteTxData
+ 292              		.section	.text.mUART_SpiUartPutArray,"ax",%progbits
+ 293              		.align	1
+ 294              		.global	mUART_SpiUartPutArray
+ 295              		.code	16
+ 296              		.thumb_func
+ 297              		.type	mUART_SpiUartPutArray, %function
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 12
+
+
+ 298              	mUART_SpiUartPutArray:
+ 299              	.LFB5:
+ 317:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 318:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 319:Generated_Source\PSoC4/mUART_SPI_UART.c ****     /*******************************************************************************
+ 320:Generated_Source\PSoC4/mUART_SPI_UART.c ****     * Function Name: mUART_SpiUartPutArray
+ 321:Generated_Source\PSoC4/mUART_SPI_UART.c ****     ****************************************************************************//**
+ 322:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *
+ 323:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  Places an array of data into the transmit buffer to be sent.
+ 324:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  This function is blocking and waits until there is a space available to put
+ 325:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  all the requested data in the transmit buffer. The array size can be greater
+ 326:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  than transmit buffer size.
+ 327:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *
+ 328:Generated_Source\PSoC4/mUART_SPI_UART.c ****     * \param wrBuf: pointer to an array of data to be placed in transmit buffer. 
+ 329:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  The width of the data to be transmitted depends on TX data width selection 
+ 330:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  (the data bit counting starts from LSB for each array element).
+ 331:Generated_Source\PSoC4/mUART_SPI_UART.c ****     * \param count: number of data elements to be placed in the transmit buffer.
+ 332:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *
+ 333:Generated_Source\PSoC4/mUART_SPI_UART.c ****     * \globalvars
+ 334:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  mUART_txBufferHead - the start index to put data into the 
+ 335:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  software transmit buffer.
+ 336:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  mUART_txBufferTail - start index to get data from the software
+ 337:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  transmit buffer.
+ 338:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *
+ 339:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *******************************************************************************/
+ 340:Generated_Source\PSoC4/mUART_SPI_UART.c ****     void mUART_SpiUartPutArray(const uint8 wrBuf[], uint32 count)
+ 341:Generated_Source\PSoC4/mUART_SPI_UART.c ****     {
+ 300              		.loc 1 341 0
+ 301              		.cfi_startproc
+ 302              		@ args = 0, pretend = 0, frame = 0
+ 303              		@ frame_needed = 0, uses_anonymous_args = 0
+ 304              	.LVL16:
+ 305 0000 70B5     		push	{r4, r5, r6, lr}
+ 306              		.cfi_def_cfa_offset 16
+ 307              		.cfi_offset 4, -16
+ 308              		.cfi_offset 5, -12
+ 309              		.cfi_offset 6, -8
+ 310              		.cfi_offset 14, -4
+ 311 0002 0400     		movs	r4, r0
+ 312 0004 4518     		adds	r5, r0, r1
+ 313              	.LVL17:
+ 314              	.L29:
+ 342:Generated_Source\PSoC4/mUART_SPI_UART.c ****         uint32 i;
+ 343:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 344:Generated_Source\PSoC4/mUART_SPI_UART.c ****         for (i=0u; i < count; i++)
+ 315              		.loc 1 344 0 discriminator 1
+ 316 0006 AC42     		cmp	r4, r5
+ 317 0008 04D0     		beq	.L31
+ 345:Generated_Source\PSoC4/mUART_SPI_UART.c ****         {
+ 346:Generated_Source\PSoC4/mUART_SPI_UART.c ****             mUART_SpiUartWriteTxData((uint32) wrBuf[i]);
+ 318              		.loc 1 346 0 discriminator 3
+ 319 000a 2078     		ldrb	r0, [r4]
+ 320 000c FFF7FEFF 		bl	mUART_SpiUartWriteTxData
+ 321              	.LVL18:
+ 322 0010 0134     		adds	r4, r4, #1
+ 323              	.LVL19:
+ 324 0012 F8E7     		b	.L29
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 13
+
+
+ 325              	.L31:
+ 347:Generated_Source\PSoC4/mUART_SPI_UART.c ****         }
+ 348:Generated_Source\PSoC4/mUART_SPI_UART.c ****     }
+ 326              		.loc 1 348 0
+ 327              		@ sp needed
+ 328              	.LVL20:
+ 329 0014 70BD     		pop	{r4, r5, r6, pc}
+ 330              		.cfi_endproc
+ 331              	.LFE5:
+ 332              		.size	mUART_SpiUartPutArray, .-mUART_SpiUartPutArray
+ 333              		.section	.text.mUART_SpiUartGetTxBufferSize,"ax",%progbits
+ 334              		.align	1
+ 335              		.global	mUART_SpiUartGetTxBufferSize
+ 336              		.code	16
+ 337              		.thumb_func
+ 338              		.type	mUART_SpiUartGetTxBufferSize, %function
+ 339              	mUART_SpiUartGetTxBufferSize:
+ 340              	.LFB6:
+ 349:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 350:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 351:Generated_Source\PSoC4/mUART_SPI_UART.c ****     /*******************************************************************************
+ 352:Generated_Source\PSoC4/mUART_SPI_UART.c ****     * Function Name: mUART_SpiUartGetTxBufferSize
+ 353:Generated_Source\PSoC4/mUART_SPI_UART.c ****     ****************************************************************************//**
+ 354:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *
+ 355:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  Returns the number of elements currently in the transmit buffer.
+ 356:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *   - TX software buffer is disabled: returns the number of used entries in
+ 357:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *     TX FIFO.
+ 358:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *   - TX software buffer is enabled: returns the number of elements currently
+ 359:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *     used in the transmit buffer. This number does not include used entries in
+ 360:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *     the TX FIFO. The transmit buffer size is zero until the TX FIFO is
+ 361:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *     not full.
+ 362:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *
+ 363:Generated_Source\PSoC4/mUART_SPI_UART.c ****     * \return
+ 364:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  Number of data elements ready to transmit.
+ 365:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *
+ 366:Generated_Source\PSoC4/mUART_SPI_UART.c ****     * \globalvars
+ 367:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  mUART_txBufferHead - the start index to put data into the 
+ 368:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  software transmit buffer.
+ 369:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  mUART_txBufferTail - start index to get data from the software
+ 370:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  transmit buffer.
+ 371:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *
+ 372:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *******************************************************************************/
+ 373:Generated_Source\PSoC4/mUART_SPI_UART.c ****     uint32 mUART_SpiUartGetTxBufferSize(void)
+ 374:Generated_Source\PSoC4/mUART_SPI_UART.c ****     {
+ 341              		.loc 1 374 0
+ 342              		.cfi_startproc
+ 343              		@ args = 0, pretend = 0, frame = 0
+ 344              		@ frame_needed = 0, uses_anonymous_args = 0
+ 345              		@ link register save eliminated.
+ 375:Generated_Source\PSoC4/mUART_SPI_UART.c ****         uint32 size;
+ 376:Generated_Source\PSoC4/mUART_SPI_UART.c ****     #if (mUART_INTERNAL_TX_SW_BUFFER_CONST)
+ 377:Generated_Source\PSoC4/mUART_SPI_UART.c ****         uint32 locTail;
+ 378:Generated_Source\PSoC4/mUART_SPI_UART.c ****     #endif /* (mUART_INTERNAL_TX_SW_BUFFER_CONST) */
+ 379:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 380:Generated_Source\PSoC4/mUART_SPI_UART.c ****         #if (mUART_CHECK_TX_SW_BUFFER)
+ 381:Generated_Source\PSoC4/mUART_SPI_UART.c ****         {
+ 382:Generated_Source\PSoC4/mUART_SPI_UART.c ****             /* Get current Tail index */
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 14
+
+
+ 383:Generated_Source\PSoC4/mUART_SPI_UART.c ****             locTail = mUART_txBufferTail;
+ 384:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 385:Generated_Source\PSoC4/mUART_SPI_UART.c ****             if (mUART_txBufferHead >= locTail)
+ 346              		.loc 1 385 0
+ 347 0000 044A     		ldr	r2, .L36
+ 383:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 348              		.loc 1 383 0
+ 349 0002 054B     		ldr	r3, .L36+4
+ 350 0004 1B68     		ldr	r3, [r3]
+ 351              	.LVL21:
+ 352              		.loc 1 385 0
+ 353 0006 1168     		ldr	r1, [r2]
+ 386:Generated_Source\PSoC4/mUART_SPI_UART.c ****             {
+ 387:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 size = (mUART_txBufferHead - locTail);
+ 354              		.loc 1 387 0
+ 355 0008 1068     		ldr	r0, [r2]
+ 385:Generated_Source\PSoC4/mUART_SPI_UART.c ****             {
+ 356              		.loc 1 385 0
+ 357 000a 8B42     		cmp	r3, r1
+ 358 000c 00D9     		bls	.L35
+ 388:Generated_Source\PSoC4/mUART_SPI_UART.c ****             }
+ 389:Generated_Source\PSoC4/mUART_SPI_UART.c ****             else
+ 390:Generated_Source\PSoC4/mUART_SPI_UART.c ****             {
+ 391:Generated_Source\PSoC4/mUART_SPI_UART.c ****                 size = (mUART_txBufferHead + (mUART_TX_BUFFER_SIZE - locTail));
+ 359              		.loc 1 391 0
+ 360 000e 4030     		adds	r0, r0, #64
+ 361              	.L35:
+ 362 0010 C01A     		subs	r0, r0, r3
+ 363              	.LVL22:
+ 392:Generated_Source\PSoC4/mUART_SPI_UART.c ****             }
+ 393:Generated_Source\PSoC4/mUART_SPI_UART.c ****         }
+ 394:Generated_Source\PSoC4/mUART_SPI_UART.c ****         #else
+ 395:Generated_Source\PSoC4/mUART_SPI_UART.c ****         {
+ 396:Generated_Source\PSoC4/mUART_SPI_UART.c ****             size = mUART_GET_TX_FIFO_ENTRIES;
+ 397:Generated_Source\PSoC4/mUART_SPI_UART.c ****         }
+ 398:Generated_Source\PSoC4/mUART_SPI_UART.c ****         #endif
+ 399:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 400:Generated_Source\PSoC4/mUART_SPI_UART.c ****         return (size);
+ 401:Generated_Source\PSoC4/mUART_SPI_UART.c ****     }
+ 364              		.loc 1 401 0
+ 365              		@ sp needed
+ 366 0012 7047     		bx	lr
+ 367              	.L37:
+ 368              		.align	2
+ 369              	.L36:
+ 370 0014 00000000 		.word	mUART_txBufferHead
+ 371 0018 00000000 		.word	mUART_txBufferTail
+ 372              		.cfi_endproc
+ 373              	.LFE6:
+ 374              		.size	mUART_SpiUartGetTxBufferSize, .-mUART_SpiUartGetTxBufferSize
+ 375              		.section	.text.mUART_SpiUartClearTxBuffer,"ax",%progbits
+ 376              		.align	1
+ 377              		.global	mUART_SpiUartClearTxBuffer
+ 378              		.code	16
+ 379              		.thumb_func
+ 380              		.type	mUART_SpiUartClearTxBuffer, %function
+ 381              	mUART_SpiUartClearTxBuffer:
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 15
+
+
+ 382              	.LFB7:
+ 402:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 403:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 404:Generated_Source\PSoC4/mUART_SPI_UART.c ****     /*******************************************************************************
+ 405:Generated_Source\PSoC4/mUART_SPI_UART.c ****     * Function Name: mUART_SpiUartClearTxBuffer
+ 406:Generated_Source\PSoC4/mUART_SPI_UART.c ****     ****************************************************************************//**
+ 407:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *
+ 408:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  Clears the transmit buffer and TX FIFO.
+ 409:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *
+ 410:Generated_Source\PSoC4/mUART_SPI_UART.c ****     * \globalvars
+ 411:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  mUART_txBufferHead - the start index to put data into the 
+ 412:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  software transmit buffer.
+ 413:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  mUART_txBufferTail - start index to get data from the software
+ 414:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *  transmit buffer.
+ 415:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *
+ 416:Generated_Source\PSoC4/mUART_SPI_UART.c ****     *******************************************************************************/
+ 417:Generated_Source\PSoC4/mUART_SPI_UART.c ****     void mUART_SpiUartClearTxBuffer(void)
+ 418:Generated_Source\PSoC4/mUART_SPI_UART.c ****     {
+ 383              		.loc 1 418 0
+ 384              		.cfi_startproc
+ 385              		@ args = 0, pretend = 0, frame = 0
+ 386              		@ frame_needed = 0, uses_anonymous_args = 0
+ 387 0000 10B5     		push	{r4, lr}
+ 388              		.cfi_def_cfa_offset 8
+ 389              		.cfi_offset 4, -8
+ 390              		.cfi_offset 14, -4
+ 419:Generated_Source\PSoC4/mUART_SPI_UART.c ****         #if (mUART_CHECK_TX_SW_BUFFER)
+ 420:Generated_Source\PSoC4/mUART_SPI_UART.c ****         {
+ 421:Generated_Source\PSoC4/mUART_SPI_UART.c ****             /* Lock from component interruption */
+ 422:Generated_Source\PSoC4/mUART_SPI_UART.c ****             mUART_DisableInt();
+ 391              		.loc 1 422 0
+ 392 0002 0720     		movs	r0, #7
+ 393 0004 FFF7FEFF 		bl	CyIntDisable
+ 394              	.LVL23:
+ 423:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 424:Generated_Source\PSoC4/mUART_SPI_UART.c ****             /* Flush TX software buffer */
+ 425:Generated_Source\PSoC4/mUART_SPI_UART.c ****             mUART_txBufferHead = mUART_txBufferTail;
+ 426:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 427:Generated_Source\PSoC4/mUART_SPI_UART.c ****             mUART_INTR_TX_MASK_REG &= (uint32) ~mUART_INTR_TX_NOT_FULL;
+ 395              		.loc 1 427 0
+ 396 0008 0221     		movs	r1, #2
+ 425:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 397              		.loc 1 425 0
+ 398 000a 0C4B     		ldr	r3, .L39
+ 428:Generated_Source\PSoC4/mUART_SPI_UART.c ****             mUART_CLEAR_TX_FIFO;
+ 429:Generated_Source\PSoC4/mUART_SPI_UART.c ****             mUART_ClearTxInterruptSource(mUART_INTR_TX_ALL);
+ 430:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 431:Generated_Source\PSoC4/mUART_SPI_UART.c ****             /* Release lock */
+ 432:Generated_Source\PSoC4/mUART_SPI_UART.c ****             mUART_EnableInt();
+ 399              		.loc 1 432 0
+ 400 000c 0720     		movs	r0, #7
+ 425:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 401              		.loc 1 425 0
+ 402 000e 1A68     		ldr	r2, [r3]
+ 403 0010 0B4B     		ldr	r3, .L39+4
+ 433:Generated_Source\PSoC4/mUART_SPI_UART.c ****         }
+ 434:Generated_Source\PSoC4/mUART_SPI_UART.c ****         #else
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 16
+
+
+ 435:Generated_Source\PSoC4/mUART_SPI_UART.c ****         {
+ 436:Generated_Source\PSoC4/mUART_SPI_UART.c ****             mUART_CLEAR_TX_FIFO;
+ 437:Generated_Source\PSoC4/mUART_SPI_UART.c ****         }
+ 438:Generated_Source\PSoC4/mUART_SPI_UART.c ****         #endif
+ 439:Generated_Source\PSoC4/mUART_SPI_UART.c ****     }
+ 404              		.loc 1 439 0
+ 405              		@ sp needed
+ 425:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 406              		.loc 1 425 0
+ 407 0012 1A60     		str	r2, [r3]
+ 427:Generated_Source\PSoC4/mUART_SPI_UART.c ****             mUART_CLEAR_TX_FIFO;
+ 408              		.loc 1 427 0
+ 409 0014 0B4A     		ldr	r2, .L39+8
+ 410 0016 1368     		ldr	r3, [r2]
+ 411 0018 8B43     		bics	r3, r1
+ 428:Generated_Source\PSoC4/mUART_SPI_UART.c ****             mUART_ClearTxInterruptSource(mUART_INTR_TX_ALL);
+ 412              		.loc 1 428 0
+ 413 001a 8021     		movs	r1, #128
+ 427:Generated_Source\PSoC4/mUART_SPI_UART.c ****             mUART_CLEAR_TX_FIFO;
+ 414              		.loc 1 427 0
+ 415 001c 1360     		str	r3, [r2]
+ 428:Generated_Source\PSoC4/mUART_SPI_UART.c ****             mUART_ClearTxInterruptSource(mUART_INTR_TX_ALL);
+ 416              		.loc 1 428 0
+ 417 001e 0A4B     		ldr	r3, .L39+12
+ 418 0020 4902     		lsls	r1, r1, #9
+ 419 0022 1A68     		ldr	r2, [r3]
+ 420 0024 0A43     		orrs	r2, r1
+ 421 0026 1A60     		str	r2, [r3]
+ 422 0028 1968     		ldr	r1, [r3]
+ 423 002a 084A     		ldr	r2, .L39+16
+ 424 002c 0A40     		ands	r2, r1
+ 425 002e 1A60     		str	r2, [r3]
+ 429:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 426              		.loc 1 429 0
+ 427 0030 074A     		ldr	r2, .L39+20
+ 428 0032 084B     		ldr	r3, .L39+24
+ 429 0034 1A60     		str	r2, [r3]
+ 432:Generated_Source\PSoC4/mUART_SPI_UART.c ****         }
+ 430              		.loc 1 432 0
+ 431 0036 FFF7FEFF 		bl	CyIntEnable
+ 432              	.LVL24:
+ 433              		.loc 1 439 0
+ 434 003a 10BD     		pop	{r4, pc}
+ 435              	.L40:
+ 436              		.align	2
+ 437              	.L39:
+ 438 003c 00000000 		.word	mUART_txBufferTail
+ 439 0040 00000000 		.word	mUART_txBufferHead
+ 440 0044 880F0840 		.word	1074270088
+ 441 0048 04020840 		.word	1074266628
+ 442 004c FFFFFEFF 		.word	-65537
+ 443 0050 F3070000 		.word	2035
+ 444 0054 800F0840 		.word	1074270080
+ 445              		.cfi_endproc
+ 446              	.LFE7:
+ 447              		.size	mUART_SpiUartClearTxBuffer, .-mUART_SpiUartClearTxBuffer
+ 448              		.section	.text.mUART_SpiUartDisableIntRx,"ax",%progbits
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 17
+
+
+ 449              		.align	1
+ 450              		.global	mUART_SpiUartDisableIntRx
+ 451              		.code	16
+ 452              		.thumb_func
+ 453              		.type	mUART_SpiUartDisableIntRx, %function
+ 454              	mUART_SpiUartDisableIntRx:
+ 455              	.LFB8:
+ 440:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 441:Generated_Source\PSoC4/mUART_SPI_UART.c **** #endif /* (mUART_TX_DIRECTION) */
+ 442:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 443:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 444:Generated_Source\PSoC4/mUART_SPI_UART.c **** /*******************************************************************************
+ 445:Generated_Source\PSoC4/mUART_SPI_UART.c **** * Function Name: mUART_SpiUartDisableIntRx
+ 446:Generated_Source\PSoC4/mUART_SPI_UART.c **** ****************************************************************************//**
+ 447:Generated_Source\PSoC4/mUART_SPI_UART.c **** *
+ 448:Generated_Source\PSoC4/mUART_SPI_UART.c **** *  Disables the RX interrupt sources.
+ 449:Generated_Source\PSoC4/mUART_SPI_UART.c **** *
+ 450:Generated_Source\PSoC4/mUART_SPI_UART.c **** *  \return
+ 451:Generated_Source\PSoC4/mUART_SPI_UART.c **** *   Returns the RX interrupt sources enabled before the function call.
+ 452:Generated_Source\PSoC4/mUART_SPI_UART.c **** *
+ 453:Generated_Source\PSoC4/mUART_SPI_UART.c **** *******************************************************************************/
+ 454:Generated_Source\PSoC4/mUART_SPI_UART.c **** uint32 mUART_SpiUartDisableIntRx(void)
+ 455:Generated_Source\PSoC4/mUART_SPI_UART.c **** {
+ 456              		.loc 1 455 0
+ 457              		.cfi_startproc
+ 458              		@ args = 0, pretend = 0, frame = 0
+ 459              		@ frame_needed = 0, uses_anonymous_args = 0
+ 460              		@ link register save eliminated.
+ 456:Generated_Source\PSoC4/mUART_SPI_UART.c ****     uint32 intSource;
+ 457:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 458:Generated_Source\PSoC4/mUART_SPI_UART.c ****     intSource = mUART_GetRxInterruptMode();
+ 459:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 460:Generated_Source\PSoC4/mUART_SPI_UART.c ****     mUART_SetRxInterruptMode(mUART_NO_INTR_SOURCES);
+ 461              		.loc 1 460 0
+ 462 0000 0022     		movs	r2, #0
+ 458:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 463              		.loc 1 458 0
+ 464 0002 024B     		ldr	r3, .L42
+ 461:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 462:Generated_Source\PSoC4/mUART_SPI_UART.c ****     return (intSource);
+ 463:Generated_Source\PSoC4/mUART_SPI_UART.c **** }
+ 465              		.loc 1 463 0
+ 466              		@ sp needed
+ 458:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 467              		.loc 1 458 0
+ 468 0004 1868     		ldr	r0, [r3]
+ 469              	.LVL25:
+ 460:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 470              		.loc 1 460 0
+ 471 0006 1A60     		str	r2, [r3]
+ 472              		.loc 1 463 0
+ 473 0008 7047     		bx	lr
+ 474              	.L43:
+ 475 000a C046     		.align	2
+ 476              	.L42:
+ 477 000c C80F0840 		.word	1074270152
+ 478              		.cfi_endproc
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 18
+
+
+ 479              	.LFE8:
+ 480              		.size	mUART_SpiUartDisableIntRx, .-mUART_SpiUartDisableIntRx
+ 481              		.section	.text.mUART_SpiUartDisableIntTx,"ax",%progbits
+ 482              		.align	1
+ 483              		.global	mUART_SpiUartDisableIntTx
+ 484              		.code	16
+ 485              		.thumb_func
+ 486              		.type	mUART_SpiUartDisableIntTx, %function
+ 487              	mUART_SpiUartDisableIntTx:
+ 488              	.LFB9:
+ 464:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 465:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 466:Generated_Source\PSoC4/mUART_SPI_UART.c **** /*******************************************************************************
+ 467:Generated_Source\PSoC4/mUART_SPI_UART.c **** * Function Name: mUART_SpiUartDisableIntTx
+ 468:Generated_Source\PSoC4/mUART_SPI_UART.c **** ****************************************************************************//**
+ 469:Generated_Source\PSoC4/mUART_SPI_UART.c **** *
+ 470:Generated_Source\PSoC4/mUART_SPI_UART.c **** *  Disables TX interrupt sources.
+ 471:Generated_Source\PSoC4/mUART_SPI_UART.c **** *
+ 472:Generated_Source\PSoC4/mUART_SPI_UART.c **** *  \return
+ 473:Generated_Source\PSoC4/mUART_SPI_UART.c **** *   Returns TX interrupt sources enabled before function call.
+ 474:Generated_Source\PSoC4/mUART_SPI_UART.c **** *
+ 475:Generated_Source\PSoC4/mUART_SPI_UART.c **** *******************************************************************************/
+ 476:Generated_Source\PSoC4/mUART_SPI_UART.c **** uint32 mUART_SpiUartDisableIntTx(void)
+ 477:Generated_Source\PSoC4/mUART_SPI_UART.c **** {
+ 489              		.loc 1 477 0
+ 490              		.cfi_startproc
+ 491              		@ args = 0, pretend = 0, frame = 0
+ 492              		@ frame_needed = 0, uses_anonymous_args = 0
+ 493              		@ link register save eliminated.
+ 478:Generated_Source\PSoC4/mUART_SPI_UART.c ****     uint32 intSourceMask;
+ 479:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 480:Generated_Source\PSoC4/mUART_SPI_UART.c ****     intSourceMask = mUART_GetTxInterruptMode();
+ 481:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 482:Generated_Source\PSoC4/mUART_SPI_UART.c ****     mUART_SetTxInterruptMode(mUART_NO_INTR_SOURCES);
+ 494              		.loc 1 482 0
+ 495 0000 0022     		movs	r2, #0
+ 480:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 496              		.loc 1 480 0
+ 497 0002 024B     		ldr	r3, .L45
+ 483:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 484:Generated_Source\PSoC4/mUART_SPI_UART.c ****     return (intSourceMask);
+ 485:Generated_Source\PSoC4/mUART_SPI_UART.c **** }
+ 498              		.loc 1 485 0
+ 499              		@ sp needed
+ 480:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 500              		.loc 1 480 0
+ 501 0004 1868     		ldr	r0, [r3]
+ 502              	.LVL26:
+ 482:Generated_Source\PSoC4/mUART_SPI_UART.c **** 
+ 503              		.loc 1 482 0
+ 504 0006 1A60     		str	r2, [r3]
+ 505              		.loc 1 485 0
+ 506 0008 7047     		bx	lr
+ 507              	.L46:
+ 508 000a C046     		.align	2
+ 509              	.L45:
+ 510 000c 880F0840 		.word	1074270088
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 19
+
+
+ 511              		.cfi_endproc
+ 512              	.LFE9:
+ 513              		.size	mUART_SpiUartDisableIntTx, .-mUART_SpiUartDisableIntTx
+ 514              		.comm	mUART_txBufferInternal,64,1
+ 515              		.comm	mUART_rxBufferInternal,65,1
+ 516              		.comm	mUART_txBufferTail,4,4
+ 517              		.comm	mUART_txBufferHead,4,4
+ 518              		.comm	mUART_rxBufferOverflow,1,1
+ 519              		.comm	mUART_rxBufferTail,4,4
+ 520              		.comm	mUART_rxBufferHead,4,4
+ 521              		.text
+ 522              	.Letext0:
+ 523              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 524              		.file 3 "Generated_Source\\PSoC4/CyLib.h"
+ 525              		.section	.debug_info,"",%progbits
+ 526              	.Ldebug_info0:
+ 527 0000 9F030000 		.4byte	0x39f
+ 528 0004 0400     		.2byte	0x4
+ 529 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 530 000a 04       		.byte	0x4
+ 531 000b 01       		.uleb128 0x1
+ 532 000c 8C000000 		.4byte	.LASF42
+ 533 0010 0C       		.byte	0xc
+ 534 0011 00000000 		.4byte	.LASF43
+ 535 0015 F3010000 		.4byte	.LASF44
+ 536 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 537 001d 00000000 		.4byte	0
+ 538 0021 00000000 		.4byte	.Ldebug_line0
+ 539 0025 02       		.uleb128 0x2
+ 540 0026 01       		.byte	0x1
+ 541 0027 06       		.byte	0x6
+ 542 0028 59030000 		.4byte	.LASF0
+ 543 002c 02       		.uleb128 0x2
+ 544 002d 01       		.byte	0x1
+ 545 002e 08       		.byte	0x8
+ 546 002f CB010000 		.4byte	.LASF1
+ 547 0033 02       		.uleb128 0x2
+ 548 0034 02       		.byte	0x2
+ 549 0035 05       		.byte	0x5
+ 550 0036 2E030000 		.4byte	.LASF2
+ 551 003a 02       		.uleb128 0x2
+ 552 003b 02       		.byte	0x2
+ 553 003c 07       		.byte	0x7
+ 554 003d 52000000 		.4byte	.LASF3
+ 555 0041 02       		.uleb128 0x2
+ 556 0042 04       		.byte	0x4
+ 557 0043 05       		.byte	0x5
+ 558 0044 38030000 		.4byte	.LASF4
+ 559 0048 02       		.uleb128 0x2
+ 560 0049 04       		.byte	0x4
+ 561 004a 07       		.byte	0x7
+ 562 004b 7B010000 		.4byte	.LASF5
+ 563 004f 02       		.uleb128 0x2
+ 564 0050 08       		.byte	0x8
+ 565 0051 05       		.byte	0x5
+ 566 0052 DE020000 		.4byte	.LASF6
+ 567 0056 02       		.uleb128 0x2
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 20
+
+
+ 568 0057 08       		.byte	0x8
+ 569 0058 07       		.byte	0x7
+ 570 0059 6E020000 		.4byte	.LASF7
+ 571 005d 03       		.uleb128 0x3
+ 572 005e 04       		.byte	0x4
+ 573 005f 05       		.byte	0x5
+ 574 0060 696E7400 		.ascii	"int\000"
+ 575 0064 02       		.uleb128 0x2
+ 576 0065 04       		.byte	0x4
+ 577 0066 07       		.byte	0x7
+ 578 0067 7F000000 		.4byte	.LASF8
+ 579 006b 04       		.uleb128 0x4
+ 580 006c 8D010000 		.4byte	.LASF9
+ 581 0070 02       		.byte	0x2
+ 582 0071 FB01     		.2byte	0x1fb
+ 583 0073 2C000000 		.4byte	0x2c
+ 584 0077 04       		.uleb128 0x4
+ 585 0078 4F020000 		.4byte	.LASF10
+ 586 007c 02       		.byte	0x2
+ 587 007d FD01     		.2byte	0x1fd
+ 588 007f 48000000 		.4byte	0x48
+ 589 0083 02       		.uleb128 0x2
+ 590 0084 04       		.byte	0x4
+ 591 0085 04       		.byte	0x4
+ 592 0086 5D010000 		.4byte	.LASF11
+ 593 008a 02       		.uleb128 0x2
+ 594 008b 08       		.byte	0x8
+ 595 008c 04       		.byte	0x4
+ 596 008d D9010000 		.4byte	.LASF12
+ 597 0091 02       		.uleb128 0x2
+ 598 0092 01       		.byte	0x1
+ 599 0093 08       		.byte	0x8
+ 600 0094 EC020000 		.4byte	.LASF13
+ 601 0098 05       		.uleb128 0x5
+ 602 0099 6B000000 		.4byte	0x6b
+ 603 009d 04       		.uleb128 0x4
+ 604 009e 3F000000 		.4byte	.LASF14
+ 605 00a2 02       		.byte	0x2
+ 606 00a3 A702     		.2byte	0x2a7
+ 607 00a5 A9000000 		.4byte	0xa9
+ 608 00a9 05       		.uleb128 0x5
+ 609 00aa 77000000 		.4byte	0x77
+ 610 00ae 02       		.uleb128 0x2
+ 611 00af 08       		.byte	0x8
+ 612 00b0 04       		.byte	0x4
+ 613 00b1 41030000 		.4byte	.LASF15
+ 614 00b5 02       		.uleb128 0x2
+ 615 00b6 04       		.byte	0x4
+ 616 00b7 07       		.byte	0x7
+ 617 00b8 BE020000 		.4byte	.LASF16
+ 618 00bc 06       		.uleb128 0x6
+ 619 00bd 85020000 		.4byte	.LASF45
+ 620 00c1 01       		.byte	0x1
+ 621 00c2 0101     		.2byte	0x101
+ 622 00c4 01       		.byte	0x1
+ 623 00c5 E2000000 		.4byte	0xe2
+ 624 00c9 07       		.uleb128 0x7
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 21
+
+
+ 625 00ca 4B000000 		.4byte	.LASF46
+ 626 00ce 01       		.byte	0x1
+ 627 00cf 0101     		.2byte	0x101
+ 628 00d1 77000000 		.4byte	0x77
+ 629 00d5 08       		.uleb128 0x8
+ 630 00d6 38010000 		.4byte	.LASF22
+ 631 00da 01       		.byte	0x1
+ 632 00db 0401     		.2byte	0x104
+ 633 00dd 77000000 		.4byte	0x77
+ 634 00e1 00       		.byte	0
+ 635 00e2 09       		.uleb128 0x9
+ 636 00e3 9E020000 		.4byte	.LASF19
+ 637 00e7 01       		.byte	0x1
+ 638 00e8 53       		.byte	0x53
+ 639 00e9 77000000 		.4byte	0x77
+ 640 00ed 00000000 		.4byte	.LFB1
+ 641 00f1 30000000 		.4byte	.LFE1-.LFB1
+ 642 00f5 01       		.uleb128 0x1
+ 643 00f6 9C       		.byte	0x9c
+ 644 00f7 1A010000 		.4byte	0x11a
+ 645 00fb 0A       		.uleb128 0xa
+ 646 00fc 40010000 		.4byte	.LASF17
+ 647 0100 01       		.byte	0x1
+ 648 0101 55       		.byte	0x55
+ 649 0102 77000000 		.4byte	0x77
+ 650 0106 00000000 		.4byte	.LLST0
+ 651 010a 0A       		.uleb128 0xa
+ 652 010b B6020000 		.4byte	.LASF18
+ 653 010f 01       		.byte	0x1
+ 654 0110 58       		.byte	0x58
+ 655 0111 77000000 		.4byte	0x77
+ 656 0115 1F000000 		.4byte	.LLST1
+ 657 0119 00       		.byte	0
+ 658 011a 09       		.uleb128 0x9
+ 659 011b F1020000 		.4byte	.LASF20
+ 660 011f 01       		.byte	0x1
+ 661 0120 9D       		.byte	0x9d
+ 662 0121 77000000 		.4byte	0x77
+ 663 0125 00000000 		.4byte	.LFB2
+ 664 0129 1C000000 		.4byte	.LFE2-.LFB2
+ 665 012d 01       		.uleb128 0x1
+ 666 012e 9C       		.byte	0x9c
+ 667 012f 50010000 		.4byte	0x150
+ 668 0133 0B       		.uleb128 0xb
+ 669 0134 63010000 		.4byte	.LASF21
+ 670 0138 01       		.byte	0x1
+ 671 0139 9F       		.byte	0x9f
+ 672 013a 77000000 		.4byte	0x77
+ 673 013e 01       		.uleb128 0x1
+ 674 013f 50       		.byte	0x50
+ 675 0140 0A       		.uleb128 0xa
+ 676 0141 38010000 		.4byte	.LASF22
+ 677 0145 01       		.byte	0x1
+ 678 0146 A1       		.byte	0xa1
+ 679 0147 77000000 		.4byte	0x77
+ 680 014b 32000000 		.4byte	.LLST2
+ 681 014f 00       		.byte	0
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 22
+
+
+ 682 0150 0C       		.uleb128 0xc
+ 683 0151 78030000 		.4byte	.LASF23
+ 684 0155 01       		.byte	0x1
+ 685 0156 C8       		.byte	0xc8
+ 686 0157 00000000 		.4byte	.LFB3
+ 687 015b 54000000 		.4byte	.LFE3-.LFB3
+ 688 015f 01       		.uleb128 0x1
+ 689 0160 9C       		.byte	0x9c
+ 690 0161 88010000 		.4byte	0x188
+ 691 0165 0D       		.uleb128 0xd
+ 692 0166 08000000 		.4byte	.LVL7
+ 693 016a 8C030000 		.4byte	0x38c
+ 694 016e 78010000 		.4byte	0x178
+ 695 0172 0E       		.uleb128 0xe
+ 696 0173 01       		.uleb128 0x1
+ 697 0174 50       		.byte	0x50
+ 698 0175 01       		.uleb128 0x1
+ 699 0176 37       		.byte	0x37
+ 700 0177 00       		.byte	0
+ 701 0178 0F       		.uleb128 0xf
+ 702 0179 36000000 		.4byte	.LVL8
+ 703 017d 97030000 		.4byte	0x397
+ 704 0181 0E       		.uleb128 0xe
+ 705 0182 01       		.uleb128 0x1
+ 706 0183 50       		.byte	0x50
+ 707 0184 01       		.uleb128 0x1
+ 708 0185 37       		.byte	0x37
+ 709 0186 00       		.byte	0
+ 710 0187 00       		.byte	0
+ 711 0188 10       		.uleb128 0x10
+ 712 0189 BC000000 		.4byte	0xbc
+ 713 018d 00000000 		.4byte	.LFB4
+ 714 0191 6C000000 		.4byte	.LFE4-.LFB4
+ 715 0195 01       		.uleb128 0x1
+ 716 0196 9C       		.byte	0x9c
+ 717 0197 D0010000 		.4byte	0x1d0
+ 718 019b 11       		.uleb128 0x11
+ 719 019c C9000000 		.4byte	0xc9
+ 720 01a0 45000000 		.4byte	.LLST3
+ 721 01a4 12       		.uleb128 0x12
+ 722 01a5 D5000000 		.4byte	0xd5
+ 723 01a9 66000000 		.4byte	.LLST4
+ 724 01ad 13       		.uleb128 0x13
+ 725 01ae 48000000 		.4byte	.LBB4
+ 726 01b2 06000000 		.4byte	.LBE4-.LBB4
+ 727 01b6 11       		.uleb128 0x11
+ 728 01b7 C9000000 		.4byte	0xc9
+ 729 01bb 88000000 		.4byte	.LLST5
+ 730 01bf 13       		.uleb128 0x13
+ 731 01c0 48000000 		.4byte	.LBB5
+ 732 01c4 06000000 		.4byte	.LBE5-.LBB5
+ 733 01c8 14       		.uleb128 0x14
+ 734 01c9 D5000000 		.4byte	0xd5
+ 735 01cd 00       		.byte	0
+ 736 01ce 00       		.byte	0
+ 737 01cf 00       		.byte	0
+ 738 01d0 15       		.uleb128 0x15
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 23
+
+
+ 739 01d1 47010000 		.4byte	.LASF24
+ 740 01d5 01       		.byte	0x1
+ 741 01d6 5401     		.2byte	0x154
+ 742 01d8 00000000 		.4byte	.LFB5
+ 743 01dc 16000000 		.4byte	.LFE5-.LFB5
+ 744 01e0 01       		.uleb128 0x1
+ 745 01e1 9C       		.byte	0x9c
+ 746 01e2 1E020000 		.4byte	0x21e
+ 747 01e6 16       		.uleb128 0x16
+ 748 01e7 C5010000 		.4byte	.LASF25
+ 749 01eb 01       		.byte	0x1
+ 750 01ec 5401     		.2byte	0x154
+ 751 01ee 1E020000 		.4byte	0x21e
+ 752 01f2 9E000000 		.4byte	.LLST6
+ 753 01f6 16       		.uleb128 0x16
+ 754 01f7 45000000 		.4byte	.LASF26
+ 755 01fb 01       		.byte	0x1
+ 756 01fc 5401     		.2byte	0x154
+ 757 01fe 77000000 		.4byte	0x77
+ 758 0202 BF000000 		.4byte	.LLST7
+ 759 0206 17       		.uleb128 0x17
+ 760 0207 6900     		.ascii	"i\000"
+ 761 0209 01       		.byte	0x1
+ 762 020a 5601     		.2byte	0x156
+ 763 020c 77000000 		.4byte	0x77
+ 764 0210 E0000000 		.4byte	.LLST8
+ 765 0214 18       		.uleb128 0x18
+ 766 0215 10000000 		.4byte	.LVL18
+ 767 0219 BC000000 		.4byte	0xbc
+ 768 021d 00       		.byte	0
+ 769 021e 19       		.uleb128 0x19
+ 770 021f 04       		.byte	0x4
+ 771 0220 24020000 		.4byte	0x224
+ 772 0224 1A       		.uleb128 0x1a
+ 773 0225 6B000000 		.4byte	0x6b
+ 774 0229 1B       		.uleb128 0x1b
+ 775 022a 32020000 		.4byte	.LASF27
+ 776 022e 01       		.byte	0x1
+ 777 022f 7501     		.2byte	0x175
+ 778 0231 77000000 		.4byte	0x77
+ 779 0235 00000000 		.4byte	.LFB6
+ 780 0239 1C000000 		.4byte	.LFE6-.LFB6
+ 781 023d 01       		.uleb128 0x1
+ 782 023e 9C       		.byte	0x9c
+ 783 023f 60020000 		.4byte	0x260
+ 784 0243 1C       		.uleb128 0x1c
+ 785 0244 63010000 		.4byte	.LASF21
+ 786 0248 01       		.byte	0x1
+ 787 0249 7701     		.2byte	0x177
+ 788 024b 77000000 		.4byte	0x77
+ 789 024f 01       		.uleb128 0x1
+ 790 0250 50       		.byte	0x50
+ 791 0251 1C       		.uleb128 0x1c
+ 792 0252 B6020000 		.4byte	.LASF18
+ 793 0256 01       		.byte	0x1
+ 794 0257 7901     		.2byte	0x179
+ 795 0259 77000000 		.4byte	0x77
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 24
+
+
+ 796 025d 01       		.uleb128 0x1
+ 797 025e 53       		.byte	0x53
+ 798 025f 00       		.byte	0
+ 799 0260 15       		.uleb128 0x15
+ 800 0261 93010000 		.4byte	.LASF28
+ 801 0265 01       		.byte	0x1
+ 802 0266 A101     		.2byte	0x1a1
+ 803 0268 00000000 		.4byte	.LFB7
+ 804 026c 58000000 		.4byte	.LFE7-.LFB7
+ 805 0270 01       		.uleb128 0x1
+ 806 0271 9C       		.byte	0x9c
+ 807 0272 99020000 		.4byte	0x299
+ 808 0276 0D       		.uleb128 0xd
+ 809 0277 08000000 		.4byte	.LVL23
+ 810 027b 8C030000 		.4byte	0x38c
+ 811 027f 89020000 		.4byte	0x289
+ 812 0283 0E       		.uleb128 0xe
+ 813 0284 01       		.uleb128 0x1
+ 814 0285 50       		.byte	0x50
+ 815 0286 01       		.uleb128 0x1
+ 816 0287 37       		.byte	0x37
+ 817 0288 00       		.byte	0
+ 818 0289 0F       		.uleb128 0xf
+ 819 028a 3A000000 		.4byte	.LVL24
+ 820 028e 97030000 		.4byte	0x397
+ 821 0292 0E       		.uleb128 0xe
+ 822 0293 01       		.uleb128 0x1
+ 823 0294 50       		.byte	0x50
+ 824 0295 01       		.uleb128 0x1
+ 825 0296 37       		.byte	0x37
+ 826 0297 00       		.byte	0
+ 827 0298 00       		.byte	0
+ 828 0299 1B       		.uleb128 0x1b
+ 829 029a 65000000 		.4byte	.LASF29
+ 830 029e 01       		.byte	0x1
+ 831 029f C601     		.2byte	0x1c6
+ 832 02a1 77000000 		.4byte	0x77
+ 833 02a5 00000000 		.4byte	.LFB8
+ 834 02a9 10000000 		.4byte	.LFE8-.LFB8
+ 835 02ad 01       		.uleb128 0x1
+ 836 02ae 9C       		.byte	0x9c
+ 837 02af C2020000 		.4byte	0x2c2
+ 838 02b3 1C       		.uleb128 0x1c
+ 839 02b4 64020000 		.4byte	.LASF30
+ 840 02b8 01       		.byte	0x1
+ 841 02b9 C801     		.2byte	0x1c8
+ 842 02bb 77000000 		.4byte	0x77
+ 843 02bf 01       		.uleb128 0x1
+ 844 02c0 50       		.byte	0x50
+ 845 02c1 00       		.byte	0
+ 846 02c2 1B       		.uleb128 0x1b
+ 847 02c3 1E010000 		.4byte	.LASF31
+ 848 02c7 01       		.byte	0x1
+ 849 02c8 DC01     		.2byte	0x1dc
+ 850 02ca 77000000 		.4byte	0x77
+ 851 02ce 00000000 		.4byte	.LFB9
+ 852 02d2 10000000 		.4byte	.LFE9-.LFB9
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 25
+
+
+ 853 02d6 01       		.uleb128 0x1
+ 854 02d7 9C       		.byte	0x9c
+ 855 02d8 EB020000 		.4byte	0x2eb
+ 856 02dc 1C       		.uleb128 0x1c
+ 857 02dd 56020000 		.4byte	.LASF32
+ 858 02e1 01       		.byte	0x1
+ 859 02e2 DE01     		.2byte	0x1de
+ 860 02e4 77000000 		.4byte	0x77
+ 861 02e8 01       		.uleb128 0x1
+ 862 02e9 50       		.byte	0x50
+ 863 02ea 00       		.byte	0
+ 864 02eb 1D       		.uleb128 0x1d
+ 865 02ec E0010000 		.4byte	.LASF33
+ 866 02f0 01       		.byte	0x1
+ 867 02f1 1C       		.byte	0x1c
+ 868 02f2 A9000000 		.4byte	0xa9
+ 869 02f6 05       		.uleb128 0x5
+ 870 02f7 03       		.byte	0x3
+ 871 02f8 00000000 		.4byte	mUART_rxBufferHead
+ 872 02fc 1D       		.uleb128 0x1d
+ 873 02fd 65030000 		.4byte	.LASF34
+ 874 0301 01       		.byte	0x1
+ 875 0302 1E       		.byte	0x1e
+ 876 0303 A9000000 		.4byte	0xa9
+ 877 0307 05       		.uleb128 0x5
+ 878 0308 03       		.byte	0x3
+ 879 0309 00000000 		.4byte	mUART_rxBufferTail
+ 880 030d 1D       		.uleb128 0x1d
+ 881 030e 28000000 		.4byte	.LASF35
+ 882 0312 01       		.byte	0x1
+ 883 0313 26       		.byte	0x26
+ 884 0314 98000000 		.4byte	0x98
+ 885 0318 05       		.uleb128 0x5
+ 886 0319 03       		.byte	0x3
+ 887 031a 00000000 		.4byte	mUART_rxBufferOverflow
+ 888 031e 1D       		.uleb128 0x1d
+ 889 031f 68010000 		.4byte	.LASF36
+ 890 0323 01       		.byte	0x1
+ 891 0324 2C       		.byte	0x2c
+ 892 0325 A9000000 		.4byte	0xa9
+ 893 0329 05       		.uleb128 0x5
+ 894 032a 03       		.byte	0x3
+ 895 032b 00000000 		.4byte	mUART_txBufferHead
+ 896 032f 1D       		.uleb128 0x1d
+ 897 0330 0E030000 		.4byte	.LASF37
+ 898 0334 01       		.byte	0x1
+ 899 0335 2E       		.byte	0x2e
+ 900 0336 A9000000 		.4byte	0xa9
+ 901 033a 05       		.uleb128 0x5
+ 902 033b 03       		.byte	0x3
+ 903 033c 00000000 		.4byte	mUART_txBufferTail
+ 904 0340 1E       		.uleb128 0x1e
+ 905 0341 98000000 		.4byte	0x98
+ 906 0345 50030000 		.4byte	0x350
+ 907 0349 1F       		.uleb128 0x1f
+ 908 034a B5000000 		.4byte	0xb5
+ 909 034e 40       		.byte	0x40
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 26
+
+
+ 910 034f 00       		.byte	0
+ 911 0350 1D       		.uleb128 0x1d
+ 912 0351 C7020000 		.4byte	.LASF38
+ 913 0355 01       		.byte	0x1
+ 914 0356 33       		.byte	0x33
+ 915 0357 61030000 		.4byte	0x361
+ 916 035b 05       		.uleb128 0x5
+ 917 035c 03       		.byte	0x3
+ 918 035d 00000000 		.4byte	mUART_rxBufferInternal
+ 919 0361 05       		.uleb128 0x5
+ 920 0362 40030000 		.4byte	0x340
+ 921 0366 1E       		.uleb128 0x1e
+ 922 0367 98000000 		.4byte	0x98
+ 923 036b 76030000 		.4byte	0x376
+ 924 036f 1F       		.uleb128 0x1f
+ 925 0370 B5000000 		.4byte	0xb5
+ 926 0374 3F       		.byte	0x3f
+ 927 0375 00       		.byte	0
+ 928 0376 1D       		.uleb128 0x1d
+ 929 0377 AE010000 		.4byte	.LASF39
+ 930 037b 01       		.byte	0x1
+ 931 037c 37       		.byte	0x37
+ 932 037d 87030000 		.4byte	0x387
+ 933 0381 05       		.uleb128 0x5
+ 934 0382 03       		.byte	0x3
+ 935 0383 00000000 		.4byte	mUART_txBufferInternal
+ 936 0387 05       		.uleb128 0x5
+ 937 0388 66030000 		.4byte	0x366
+ 938 038c 20       		.uleb128 0x20
+ 939 038d 21030000 		.4byte	.LASF40
+ 940 0391 21030000 		.4byte	.LASF40
+ 941 0395 03       		.byte	0x3
+ 942 0396 D8       		.byte	0xd8
+ 943 0397 20       		.uleb128 0x20
+ 944 0398 4D030000 		.4byte	.LASF41
+ 945 039c 4D030000 		.4byte	.LASF41
+ 946 03a0 03       		.byte	0x3
+ 947 03a1 D6       		.byte	0xd6
+ 948 03a2 00       		.byte	0
+ 949              		.section	.debug_abbrev,"",%progbits
+ 950              	.Ldebug_abbrev0:
+ 951 0000 01       		.uleb128 0x1
+ 952 0001 11       		.uleb128 0x11
+ 953 0002 01       		.byte	0x1
+ 954 0003 25       		.uleb128 0x25
+ 955 0004 0E       		.uleb128 0xe
+ 956 0005 13       		.uleb128 0x13
+ 957 0006 0B       		.uleb128 0xb
+ 958 0007 03       		.uleb128 0x3
+ 959 0008 0E       		.uleb128 0xe
+ 960 0009 1B       		.uleb128 0x1b
+ 961 000a 0E       		.uleb128 0xe
+ 962 000b 55       		.uleb128 0x55
+ 963 000c 17       		.uleb128 0x17
+ 964 000d 11       		.uleb128 0x11
+ 965 000e 01       		.uleb128 0x1
+ 966 000f 10       		.uleb128 0x10
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 27
+
+
+ 967 0010 17       		.uleb128 0x17
+ 968 0011 00       		.byte	0
+ 969 0012 00       		.byte	0
+ 970 0013 02       		.uleb128 0x2
+ 971 0014 24       		.uleb128 0x24
+ 972 0015 00       		.byte	0
+ 973 0016 0B       		.uleb128 0xb
+ 974 0017 0B       		.uleb128 0xb
+ 975 0018 3E       		.uleb128 0x3e
+ 976 0019 0B       		.uleb128 0xb
+ 977 001a 03       		.uleb128 0x3
+ 978 001b 0E       		.uleb128 0xe
+ 979 001c 00       		.byte	0
+ 980 001d 00       		.byte	0
+ 981 001e 03       		.uleb128 0x3
+ 982 001f 24       		.uleb128 0x24
+ 983 0020 00       		.byte	0
+ 984 0021 0B       		.uleb128 0xb
+ 985 0022 0B       		.uleb128 0xb
+ 986 0023 3E       		.uleb128 0x3e
+ 987 0024 0B       		.uleb128 0xb
+ 988 0025 03       		.uleb128 0x3
+ 989 0026 08       		.uleb128 0x8
+ 990 0027 00       		.byte	0
+ 991 0028 00       		.byte	0
+ 992 0029 04       		.uleb128 0x4
+ 993 002a 16       		.uleb128 0x16
+ 994 002b 00       		.byte	0
+ 995 002c 03       		.uleb128 0x3
+ 996 002d 0E       		.uleb128 0xe
+ 997 002e 3A       		.uleb128 0x3a
+ 998 002f 0B       		.uleb128 0xb
+ 999 0030 3B       		.uleb128 0x3b
+ 1000 0031 05       		.uleb128 0x5
+ 1001 0032 49       		.uleb128 0x49
+ 1002 0033 13       		.uleb128 0x13
+ 1003 0034 00       		.byte	0
+ 1004 0035 00       		.byte	0
+ 1005 0036 05       		.uleb128 0x5
+ 1006 0037 35       		.uleb128 0x35
+ 1007 0038 00       		.byte	0
+ 1008 0039 49       		.uleb128 0x49
+ 1009 003a 13       		.uleb128 0x13
+ 1010 003b 00       		.byte	0
+ 1011 003c 00       		.byte	0
+ 1012 003d 06       		.uleb128 0x6
+ 1013 003e 2E       		.uleb128 0x2e
+ 1014 003f 01       		.byte	0x1
+ 1015 0040 3F       		.uleb128 0x3f
+ 1016 0041 19       		.uleb128 0x19
+ 1017 0042 03       		.uleb128 0x3
+ 1018 0043 0E       		.uleb128 0xe
+ 1019 0044 3A       		.uleb128 0x3a
+ 1020 0045 0B       		.uleb128 0xb
+ 1021 0046 3B       		.uleb128 0x3b
+ 1022 0047 05       		.uleb128 0x5
+ 1023 0048 27       		.uleb128 0x27
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 28
+
+
+ 1024 0049 19       		.uleb128 0x19
+ 1025 004a 20       		.uleb128 0x20
+ 1026 004b 0B       		.uleb128 0xb
+ 1027 004c 01       		.uleb128 0x1
+ 1028 004d 13       		.uleb128 0x13
+ 1029 004e 00       		.byte	0
+ 1030 004f 00       		.byte	0
+ 1031 0050 07       		.uleb128 0x7
+ 1032 0051 05       		.uleb128 0x5
+ 1033 0052 00       		.byte	0
+ 1034 0053 03       		.uleb128 0x3
+ 1035 0054 0E       		.uleb128 0xe
+ 1036 0055 3A       		.uleb128 0x3a
+ 1037 0056 0B       		.uleb128 0xb
+ 1038 0057 3B       		.uleb128 0x3b
+ 1039 0058 05       		.uleb128 0x5
+ 1040 0059 49       		.uleb128 0x49
+ 1041 005a 13       		.uleb128 0x13
+ 1042 005b 00       		.byte	0
+ 1043 005c 00       		.byte	0
+ 1044 005d 08       		.uleb128 0x8
+ 1045 005e 34       		.uleb128 0x34
+ 1046 005f 00       		.byte	0
+ 1047 0060 03       		.uleb128 0x3
+ 1048 0061 0E       		.uleb128 0xe
+ 1049 0062 3A       		.uleb128 0x3a
+ 1050 0063 0B       		.uleb128 0xb
+ 1051 0064 3B       		.uleb128 0x3b
+ 1052 0065 05       		.uleb128 0x5
+ 1053 0066 49       		.uleb128 0x49
+ 1054 0067 13       		.uleb128 0x13
+ 1055 0068 00       		.byte	0
+ 1056 0069 00       		.byte	0
+ 1057 006a 09       		.uleb128 0x9
+ 1058 006b 2E       		.uleb128 0x2e
+ 1059 006c 01       		.byte	0x1
+ 1060 006d 3F       		.uleb128 0x3f
+ 1061 006e 19       		.uleb128 0x19
+ 1062 006f 03       		.uleb128 0x3
+ 1063 0070 0E       		.uleb128 0xe
+ 1064 0071 3A       		.uleb128 0x3a
+ 1065 0072 0B       		.uleb128 0xb
+ 1066 0073 3B       		.uleb128 0x3b
+ 1067 0074 0B       		.uleb128 0xb
+ 1068 0075 27       		.uleb128 0x27
+ 1069 0076 19       		.uleb128 0x19
+ 1070 0077 49       		.uleb128 0x49
+ 1071 0078 13       		.uleb128 0x13
+ 1072 0079 11       		.uleb128 0x11
+ 1073 007a 01       		.uleb128 0x1
+ 1074 007b 12       		.uleb128 0x12
+ 1075 007c 06       		.uleb128 0x6
+ 1076 007d 40       		.uleb128 0x40
+ 1077 007e 18       		.uleb128 0x18
+ 1078 007f 9742     		.uleb128 0x2117
+ 1079 0081 19       		.uleb128 0x19
+ 1080 0082 01       		.uleb128 0x1
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 29
+
+
+ 1081 0083 13       		.uleb128 0x13
+ 1082 0084 00       		.byte	0
+ 1083 0085 00       		.byte	0
+ 1084 0086 0A       		.uleb128 0xa
+ 1085 0087 34       		.uleb128 0x34
+ 1086 0088 00       		.byte	0
+ 1087 0089 03       		.uleb128 0x3
+ 1088 008a 0E       		.uleb128 0xe
+ 1089 008b 3A       		.uleb128 0x3a
+ 1090 008c 0B       		.uleb128 0xb
+ 1091 008d 3B       		.uleb128 0x3b
+ 1092 008e 0B       		.uleb128 0xb
+ 1093 008f 49       		.uleb128 0x49
+ 1094 0090 13       		.uleb128 0x13
+ 1095 0091 02       		.uleb128 0x2
+ 1096 0092 17       		.uleb128 0x17
+ 1097 0093 00       		.byte	0
+ 1098 0094 00       		.byte	0
+ 1099 0095 0B       		.uleb128 0xb
+ 1100 0096 34       		.uleb128 0x34
+ 1101 0097 00       		.byte	0
+ 1102 0098 03       		.uleb128 0x3
+ 1103 0099 0E       		.uleb128 0xe
+ 1104 009a 3A       		.uleb128 0x3a
+ 1105 009b 0B       		.uleb128 0xb
+ 1106 009c 3B       		.uleb128 0x3b
+ 1107 009d 0B       		.uleb128 0xb
+ 1108 009e 49       		.uleb128 0x49
+ 1109 009f 13       		.uleb128 0x13
+ 1110 00a0 02       		.uleb128 0x2
+ 1111 00a1 18       		.uleb128 0x18
+ 1112 00a2 00       		.byte	0
+ 1113 00a3 00       		.byte	0
+ 1114 00a4 0C       		.uleb128 0xc
+ 1115 00a5 2E       		.uleb128 0x2e
+ 1116 00a6 01       		.byte	0x1
+ 1117 00a7 3F       		.uleb128 0x3f
+ 1118 00a8 19       		.uleb128 0x19
+ 1119 00a9 03       		.uleb128 0x3
+ 1120 00aa 0E       		.uleb128 0xe
+ 1121 00ab 3A       		.uleb128 0x3a
+ 1122 00ac 0B       		.uleb128 0xb
+ 1123 00ad 3B       		.uleb128 0x3b
+ 1124 00ae 0B       		.uleb128 0xb
+ 1125 00af 27       		.uleb128 0x27
+ 1126 00b0 19       		.uleb128 0x19
+ 1127 00b1 11       		.uleb128 0x11
+ 1128 00b2 01       		.uleb128 0x1
+ 1129 00b3 12       		.uleb128 0x12
+ 1130 00b4 06       		.uleb128 0x6
+ 1131 00b5 40       		.uleb128 0x40
+ 1132 00b6 18       		.uleb128 0x18
+ 1133 00b7 9742     		.uleb128 0x2117
+ 1134 00b9 19       		.uleb128 0x19
+ 1135 00ba 01       		.uleb128 0x1
+ 1136 00bb 13       		.uleb128 0x13
+ 1137 00bc 00       		.byte	0
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 30
+
+
+ 1138 00bd 00       		.byte	0
+ 1139 00be 0D       		.uleb128 0xd
+ 1140 00bf 898201   		.uleb128 0x4109
+ 1141 00c2 01       		.byte	0x1
+ 1142 00c3 11       		.uleb128 0x11
+ 1143 00c4 01       		.uleb128 0x1
+ 1144 00c5 31       		.uleb128 0x31
+ 1145 00c6 13       		.uleb128 0x13
+ 1146 00c7 01       		.uleb128 0x1
+ 1147 00c8 13       		.uleb128 0x13
+ 1148 00c9 00       		.byte	0
+ 1149 00ca 00       		.byte	0
+ 1150 00cb 0E       		.uleb128 0xe
+ 1151 00cc 8A8201   		.uleb128 0x410a
+ 1152 00cf 00       		.byte	0
+ 1153 00d0 02       		.uleb128 0x2
+ 1154 00d1 18       		.uleb128 0x18
+ 1155 00d2 9142     		.uleb128 0x2111
+ 1156 00d4 18       		.uleb128 0x18
+ 1157 00d5 00       		.byte	0
+ 1158 00d6 00       		.byte	0
+ 1159 00d7 0F       		.uleb128 0xf
+ 1160 00d8 898201   		.uleb128 0x4109
+ 1161 00db 01       		.byte	0x1
+ 1162 00dc 11       		.uleb128 0x11
+ 1163 00dd 01       		.uleb128 0x1
+ 1164 00de 31       		.uleb128 0x31
+ 1165 00df 13       		.uleb128 0x13
+ 1166 00e0 00       		.byte	0
+ 1167 00e1 00       		.byte	0
+ 1168 00e2 10       		.uleb128 0x10
+ 1169 00e3 2E       		.uleb128 0x2e
+ 1170 00e4 01       		.byte	0x1
+ 1171 00e5 31       		.uleb128 0x31
+ 1172 00e6 13       		.uleb128 0x13
+ 1173 00e7 11       		.uleb128 0x11
+ 1174 00e8 01       		.uleb128 0x1
+ 1175 00e9 12       		.uleb128 0x12
+ 1176 00ea 06       		.uleb128 0x6
+ 1177 00eb 40       		.uleb128 0x40
+ 1178 00ec 18       		.uleb128 0x18
+ 1179 00ed 9742     		.uleb128 0x2117
+ 1180 00ef 19       		.uleb128 0x19
+ 1181 00f0 01       		.uleb128 0x1
+ 1182 00f1 13       		.uleb128 0x13
+ 1183 00f2 00       		.byte	0
+ 1184 00f3 00       		.byte	0
+ 1185 00f4 11       		.uleb128 0x11
+ 1186 00f5 05       		.uleb128 0x5
+ 1187 00f6 00       		.byte	0
+ 1188 00f7 31       		.uleb128 0x31
+ 1189 00f8 13       		.uleb128 0x13
+ 1190 00f9 02       		.uleb128 0x2
+ 1191 00fa 17       		.uleb128 0x17
+ 1192 00fb 00       		.byte	0
+ 1193 00fc 00       		.byte	0
+ 1194 00fd 12       		.uleb128 0x12
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 31
+
+
+ 1195 00fe 34       		.uleb128 0x34
+ 1196 00ff 00       		.byte	0
+ 1197 0100 31       		.uleb128 0x31
+ 1198 0101 13       		.uleb128 0x13
+ 1199 0102 02       		.uleb128 0x2
+ 1200 0103 17       		.uleb128 0x17
+ 1201 0104 00       		.byte	0
+ 1202 0105 00       		.byte	0
+ 1203 0106 13       		.uleb128 0x13
+ 1204 0107 0B       		.uleb128 0xb
+ 1205 0108 01       		.byte	0x1
+ 1206 0109 11       		.uleb128 0x11
+ 1207 010a 01       		.uleb128 0x1
+ 1208 010b 12       		.uleb128 0x12
+ 1209 010c 06       		.uleb128 0x6
+ 1210 010d 00       		.byte	0
+ 1211 010e 00       		.byte	0
+ 1212 010f 14       		.uleb128 0x14
+ 1213 0110 34       		.uleb128 0x34
+ 1214 0111 00       		.byte	0
+ 1215 0112 31       		.uleb128 0x31
+ 1216 0113 13       		.uleb128 0x13
+ 1217 0114 00       		.byte	0
+ 1218 0115 00       		.byte	0
+ 1219 0116 15       		.uleb128 0x15
+ 1220 0117 2E       		.uleb128 0x2e
+ 1221 0118 01       		.byte	0x1
+ 1222 0119 3F       		.uleb128 0x3f
+ 1223 011a 19       		.uleb128 0x19
+ 1224 011b 03       		.uleb128 0x3
+ 1225 011c 0E       		.uleb128 0xe
+ 1226 011d 3A       		.uleb128 0x3a
+ 1227 011e 0B       		.uleb128 0xb
+ 1228 011f 3B       		.uleb128 0x3b
+ 1229 0120 05       		.uleb128 0x5
+ 1230 0121 27       		.uleb128 0x27
+ 1231 0122 19       		.uleb128 0x19
+ 1232 0123 11       		.uleb128 0x11
+ 1233 0124 01       		.uleb128 0x1
+ 1234 0125 12       		.uleb128 0x12
+ 1235 0126 06       		.uleb128 0x6
+ 1236 0127 40       		.uleb128 0x40
+ 1237 0128 18       		.uleb128 0x18
+ 1238 0129 9742     		.uleb128 0x2117
+ 1239 012b 19       		.uleb128 0x19
+ 1240 012c 01       		.uleb128 0x1
+ 1241 012d 13       		.uleb128 0x13
+ 1242 012e 00       		.byte	0
+ 1243 012f 00       		.byte	0
+ 1244 0130 16       		.uleb128 0x16
+ 1245 0131 05       		.uleb128 0x5
+ 1246 0132 00       		.byte	0
+ 1247 0133 03       		.uleb128 0x3
+ 1248 0134 0E       		.uleb128 0xe
+ 1249 0135 3A       		.uleb128 0x3a
+ 1250 0136 0B       		.uleb128 0xb
+ 1251 0137 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 32
+
+
+ 1252 0138 05       		.uleb128 0x5
+ 1253 0139 49       		.uleb128 0x49
+ 1254 013a 13       		.uleb128 0x13
+ 1255 013b 02       		.uleb128 0x2
+ 1256 013c 17       		.uleb128 0x17
+ 1257 013d 00       		.byte	0
+ 1258 013e 00       		.byte	0
+ 1259 013f 17       		.uleb128 0x17
+ 1260 0140 34       		.uleb128 0x34
+ 1261 0141 00       		.byte	0
+ 1262 0142 03       		.uleb128 0x3
+ 1263 0143 08       		.uleb128 0x8
+ 1264 0144 3A       		.uleb128 0x3a
+ 1265 0145 0B       		.uleb128 0xb
+ 1266 0146 3B       		.uleb128 0x3b
+ 1267 0147 05       		.uleb128 0x5
+ 1268 0148 49       		.uleb128 0x49
+ 1269 0149 13       		.uleb128 0x13
+ 1270 014a 02       		.uleb128 0x2
+ 1271 014b 17       		.uleb128 0x17
+ 1272 014c 00       		.byte	0
+ 1273 014d 00       		.byte	0
+ 1274 014e 18       		.uleb128 0x18
+ 1275 014f 898201   		.uleb128 0x4109
+ 1276 0152 00       		.byte	0
+ 1277 0153 11       		.uleb128 0x11
+ 1278 0154 01       		.uleb128 0x1
+ 1279 0155 31       		.uleb128 0x31
+ 1280 0156 13       		.uleb128 0x13
+ 1281 0157 00       		.byte	0
+ 1282 0158 00       		.byte	0
+ 1283 0159 19       		.uleb128 0x19
+ 1284 015a 0F       		.uleb128 0xf
+ 1285 015b 00       		.byte	0
+ 1286 015c 0B       		.uleb128 0xb
+ 1287 015d 0B       		.uleb128 0xb
+ 1288 015e 49       		.uleb128 0x49
+ 1289 015f 13       		.uleb128 0x13
+ 1290 0160 00       		.byte	0
+ 1291 0161 00       		.byte	0
+ 1292 0162 1A       		.uleb128 0x1a
+ 1293 0163 26       		.uleb128 0x26
+ 1294 0164 00       		.byte	0
+ 1295 0165 49       		.uleb128 0x49
+ 1296 0166 13       		.uleb128 0x13
+ 1297 0167 00       		.byte	0
+ 1298 0168 00       		.byte	0
+ 1299 0169 1B       		.uleb128 0x1b
+ 1300 016a 2E       		.uleb128 0x2e
+ 1301 016b 01       		.byte	0x1
+ 1302 016c 3F       		.uleb128 0x3f
+ 1303 016d 19       		.uleb128 0x19
+ 1304 016e 03       		.uleb128 0x3
+ 1305 016f 0E       		.uleb128 0xe
+ 1306 0170 3A       		.uleb128 0x3a
+ 1307 0171 0B       		.uleb128 0xb
+ 1308 0172 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 33
+
+
+ 1309 0173 05       		.uleb128 0x5
+ 1310 0174 27       		.uleb128 0x27
+ 1311 0175 19       		.uleb128 0x19
+ 1312 0176 49       		.uleb128 0x49
+ 1313 0177 13       		.uleb128 0x13
+ 1314 0178 11       		.uleb128 0x11
+ 1315 0179 01       		.uleb128 0x1
+ 1316 017a 12       		.uleb128 0x12
+ 1317 017b 06       		.uleb128 0x6
+ 1318 017c 40       		.uleb128 0x40
+ 1319 017d 18       		.uleb128 0x18
+ 1320 017e 9742     		.uleb128 0x2117
+ 1321 0180 19       		.uleb128 0x19
+ 1322 0181 01       		.uleb128 0x1
+ 1323 0182 13       		.uleb128 0x13
+ 1324 0183 00       		.byte	0
+ 1325 0184 00       		.byte	0
+ 1326 0185 1C       		.uleb128 0x1c
+ 1327 0186 34       		.uleb128 0x34
+ 1328 0187 00       		.byte	0
+ 1329 0188 03       		.uleb128 0x3
+ 1330 0189 0E       		.uleb128 0xe
+ 1331 018a 3A       		.uleb128 0x3a
+ 1332 018b 0B       		.uleb128 0xb
+ 1333 018c 3B       		.uleb128 0x3b
+ 1334 018d 05       		.uleb128 0x5
+ 1335 018e 49       		.uleb128 0x49
+ 1336 018f 13       		.uleb128 0x13
+ 1337 0190 02       		.uleb128 0x2
+ 1338 0191 18       		.uleb128 0x18
+ 1339 0192 00       		.byte	0
+ 1340 0193 00       		.byte	0
+ 1341 0194 1D       		.uleb128 0x1d
+ 1342 0195 34       		.uleb128 0x34
+ 1343 0196 00       		.byte	0
+ 1344 0197 03       		.uleb128 0x3
+ 1345 0198 0E       		.uleb128 0xe
+ 1346 0199 3A       		.uleb128 0x3a
+ 1347 019a 0B       		.uleb128 0xb
+ 1348 019b 3B       		.uleb128 0x3b
+ 1349 019c 0B       		.uleb128 0xb
+ 1350 019d 49       		.uleb128 0x49
+ 1351 019e 13       		.uleb128 0x13
+ 1352 019f 3F       		.uleb128 0x3f
+ 1353 01a0 19       		.uleb128 0x19
+ 1354 01a1 02       		.uleb128 0x2
+ 1355 01a2 18       		.uleb128 0x18
+ 1356 01a3 00       		.byte	0
+ 1357 01a4 00       		.byte	0
+ 1358 01a5 1E       		.uleb128 0x1e
+ 1359 01a6 01       		.uleb128 0x1
+ 1360 01a7 01       		.byte	0x1
+ 1361 01a8 49       		.uleb128 0x49
+ 1362 01a9 13       		.uleb128 0x13
+ 1363 01aa 01       		.uleb128 0x1
+ 1364 01ab 13       		.uleb128 0x13
+ 1365 01ac 00       		.byte	0
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 34
+
+
+ 1366 01ad 00       		.byte	0
+ 1367 01ae 1F       		.uleb128 0x1f
+ 1368 01af 21       		.uleb128 0x21
+ 1369 01b0 00       		.byte	0
+ 1370 01b1 49       		.uleb128 0x49
+ 1371 01b2 13       		.uleb128 0x13
+ 1372 01b3 2F       		.uleb128 0x2f
+ 1373 01b4 0B       		.uleb128 0xb
+ 1374 01b5 00       		.byte	0
+ 1375 01b6 00       		.byte	0
+ 1376 01b7 20       		.uleb128 0x20
+ 1377 01b8 2E       		.uleb128 0x2e
+ 1378 01b9 00       		.byte	0
+ 1379 01ba 3F       		.uleb128 0x3f
+ 1380 01bb 19       		.uleb128 0x19
+ 1381 01bc 3C       		.uleb128 0x3c
+ 1382 01bd 19       		.uleb128 0x19
+ 1383 01be 6E       		.uleb128 0x6e
+ 1384 01bf 0E       		.uleb128 0xe
+ 1385 01c0 03       		.uleb128 0x3
+ 1386 01c1 0E       		.uleb128 0xe
+ 1387 01c2 3A       		.uleb128 0x3a
+ 1388 01c3 0B       		.uleb128 0xb
+ 1389 01c4 3B       		.uleb128 0x3b
+ 1390 01c5 0B       		.uleb128 0xb
+ 1391 01c6 00       		.byte	0
+ 1392 01c7 00       		.byte	0
+ 1393 01c8 00       		.byte	0
+ 1394              		.section	.debug_loc,"",%progbits
+ 1395              	.Ldebug_loc0:
+ 1396              	.LLST0:
+ 1397 0000 00000000 		.4byte	.LVL0
+ 1398 0004 20000000 		.4byte	.LVL3
+ 1399 0008 0200     		.2byte	0x2
+ 1400 000a 30       		.byte	0x30
+ 1401 000b 9F       		.byte	0x9f
+ 1402 000c 20000000 		.4byte	.LVL3
+ 1403 0010 30000000 		.4byte	.LFE1
+ 1404 0014 0100     		.2byte	0x1
+ 1405 0016 50       		.byte	0x50
+ 1406 0017 00000000 		.4byte	0
+ 1407 001b 00000000 		.4byte	0
+ 1408              	.LLST1:
+ 1409 001f 12000000 		.4byte	.LVL1
+ 1410 0023 20000000 		.4byte	.LVL3
+ 1411 0027 0100     		.2byte	0x1
+ 1412 0029 53       		.byte	0x53
+ 1413 002a 00000000 		.4byte	0
+ 1414 002e 00000000 		.4byte	0
+ 1415              	.LLST2:
+ 1416 0032 04000000 		.4byte	.LVL4
+ 1417 0036 10000000 		.4byte	.LVL5
+ 1418 003a 0100     		.2byte	0x1
+ 1419 003c 50       		.byte	0x50
+ 1420 003d 00000000 		.4byte	0
+ 1421 0041 00000000 		.4byte	0
+ 1422              	.LLST3:
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 35
+
+
+ 1423 0045 00000000 		.4byte	.LVL9
+ 1424 0049 38000000 		.4byte	.LVL12
+ 1425 004d 0100     		.2byte	0x1
+ 1426 004f 50       		.byte	0x50
+ 1427 0050 38000000 		.4byte	.LVL12
+ 1428 0054 6C000000 		.4byte	.LFE4
+ 1429 0058 0400     		.2byte	0x4
+ 1430 005a F3       		.byte	0xf3
+ 1431 005b 01       		.uleb128 0x1
+ 1432 005c 50       		.byte	0x50
+ 1433 005d 9F       		.byte	0x9f
+ 1434 005e 00000000 		.4byte	0
+ 1435 0062 00000000 		.4byte	0
+ 1436              	.LLST4:
+ 1437 0066 26000000 		.4byte	.LVL10
+ 1438 006a 42000000 		.4byte	.LVL13
+ 1439 006e 0100     		.2byte	0x1
+ 1440 0070 53       		.byte	0x53
+ 1441 0071 42000000 		.4byte	.LVL13
+ 1442 0075 4E000000 		.4byte	.LVL15
+ 1443 0079 0500     		.2byte	0x5
+ 1444 007b 03       		.byte	0x3
+ 1445 007c 00000000 		.4byte	mUART_txBufferHead
+ 1446 0080 00000000 		.4byte	0
+ 1447 0084 00000000 		.4byte	0
+ 1448              	.LLST5:
+ 1449 0088 48000000 		.4byte	.LVL14
+ 1450 008c 4E000000 		.4byte	.LVL15
+ 1451 0090 0400     		.2byte	0x4
+ 1452 0092 F3       		.byte	0xf3
+ 1453 0093 01       		.uleb128 0x1
+ 1454 0094 50       		.byte	0x50
+ 1455 0095 9F       		.byte	0x9f
+ 1456 0096 00000000 		.4byte	0
+ 1457 009a 00000000 		.4byte	0
+ 1458              	.LLST6:
+ 1459 009e 00000000 		.4byte	.LVL16
+ 1460 00a2 06000000 		.4byte	.LVL17
+ 1461 00a6 0100     		.2byte	0x1
+ 1462 00a8 50       		.byte	0x50
+ 1463 00a9 06000000 		.4byte	.LVL17
+ 1464 00ad 16000000 		.4byte	.LFE5
+ 1465 00b1 0400     		.2byte	0x4
+ 1466 00b3 F3       		.byte	0xf3
+ 1467 00b4 01       		.uleb128 0x1
+ 1468 00b5 50       		.byte	0x50
+ 1469 00b6 9F       		.byte	0x9f
+ 1470 00b7 00000000 		.4byte	0
+ 1471 00bb 00000000 		.4byte	0
+ 1472              	.LLST7:
+ 1473 00bf 00000000 		.4byte	.LVL16
+ 1474 00c3 06000000 		.4byte	.LVL17
+ 1475 00c7 0100     		.2byte	0x1
+ 1476 00c9 51       		.byte	0x51
+ 1477 00ca 06000000 		.4byte	.LVL17
+ 1478 00ce 16000000 		.4byte	.LFE5
+ 1479 00d2 0400     		.2byte	0x4
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 36
+
+
+ 1480 00d4 F3       		.byte	0xf3
+ 1481 00d5 01       		.uleb128 0x1
+ 1482 00d6 51       		.byte	0x51
+ 1483 00d7 9F       		.byte	0x9f
+ 1484 00d8 00000000 		.4byte	0
+ 1485 00dc 00000000 		.4byte	0
+ 1486              	.LLST8:
+ 1487 00e0 00000000 		.4byte	.LVL16
+ 1488 00e4 06000000 		.4byte	.LVL17
+ 1489 00e8 0200     		.2byte	0x2
+ 1490 00ea 30       		.byte	0x30
+ 1491 00eb 9F       		.byte	0x9f
+ 1492 00ec 06000000 		.4byte	.LVL17
+ 1493 00f0 10000000 		.4byte	.LVL18
+ 1494 00f4 0700     		.2byte	0x7
+ 1495 00f6 74       		.byte	0x74
+ 1496 00f7 00       		.sleb128 0
+ 1497 00f8 F3       		.byte	0xf3
+ 1498 00f9 01       		.uleb128 0x1
+ 1499 00fa 50       		.byte	0x50
+ 1500 00fb 1C       		.byte	0x1c
+ 1501 00fc 9F       		.byte	0x9f
+ 1502 00fd 10000000 		.4byte	.LVL18
+ 1503 0101 12000000 		.4byte	.LVL19
+ 1504 0105 0900     		.2byte	0x9
+ 1505 0107 74       		.byte	0x74
+ 1506 0108 00       		.sleb128 0
+ 1507 0109 F3       		.byte	0xf3
+ 1508 010a 01       		.uleb128 0x1
+ 1509 010b 50       		.byte	0x50
+ 1510 010c 1C       		.byte	0x1c
+ 1511 010d 23       		.byte	0x23
+ 1512 010e 01       		.uleb128 0x1
+ 1513 010f 9F       		.byte	0x9f
+ 1514 0110 12000000 		.4byte	.LVL19
+ 1515 0114 14000000 		.4byte	.LVL20
+ 1516 0118 0700     		.2byte	0x7
+ 1517 011a 74       		.byte	0x74
+ 1518 011b 00       		.sleb128 0
+ 1519 011c F3       		.byte	0xf3
+ 1520 011d 01       		.uleb128 0x1
+ 1521 011e 50       		.byte	0x50
+ 1522 011f 1C       		.byte	0x1c
+ 1523 0120 9F       		.byte	0x9f
+ 1524 0121 00000000 		.4byte	0
+ 1525 0125 00000000 		.4byte	0
+ 1526              		.section	.debug_aranges,"",%progbits
+ 1527 0000 5C000000 		.4byte	0x5c
+ 1528 0004 0200     		.2byte	0x2
+ 1529 0006 00000000 		.4byte	.Ldebug_info0
+ 1530 000a 04       		.byte	0x4
+ 1531 000b 00       		.byte	0
+ 1532 000c 0000     		.2byte	0
+ 1533 000e 0000     		.2byte	0
+ 1534 0010 00000000 		.4byte	.LFB1
+ 1535 0014 30000000 		.4byte	.LFE1-.LFB1
+ 1536 0018 00000000 		.4byte	.LFB2
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 37
+
+
+ 1537 001c 1C000000 		.4byte	.LFE2-.LFB2
+ 1538 0020 00000000 		.4byte	.LFB3
+ 1539 0024 54000000 		.4byte	.LFE3-.LFB3
+ 1540 0028 00000000 		.4byte	.LFB4
+ 1541 002c 6C000000 		.4byte	.LFE4-.LFB4
+ 1542 0030 00000000 		.4byte	.LFB5
+ 1543 0034 16000000 		.4byte	.LFE5-.LFB5
+ 1544 0038 00000000 		.4byte	.LFB6
+ 1545 003c 1C000000 		.4byte	.LFE6-.LFB6
+ 1546 0040 00000000 		.4byte	.LFB7
+ 1547 0044 58000000 		.4byte	.LFE7-.LFB7
+ 1548 0048 00000000 		.4byte	.LFB8
+ 1549 004c 10000000 		.4byte	.LFE8-.LFB8
+ 1550 0050 00000000 		.4byte	.LFB9
+ 1551 0054 10000000 		.4byte	.LFE9-.LFB9
+ 1552 0058 00000000 		.4byte	0
+ 1553 005c 00000000 		.4byte	0
+ 1554              		.section	.debug_ranges,"",%progbits
+ 1555              	.Ldebug_ranges0:
+ 1556 0000 00000000 		.4byte	.LFB1
+ 1557 0004 30000000 		.4byte	.LFE1
+ 1558 0008 00000000 		.4byte	.LFB2
+ 1559 000c 1C000000 		.4byte	.LFE2
+ 1560 0010 00000000 		.4byte	.LFB3
+ 1561 0014 54000000 		.4byte	.LFE3
+ 1562 0018 00000000 		.4byte	.LFB4
+ 1563 001c 6C000000 		.4byte	.LFE4
+ 1564 0020 00000000 		.4byte	.LFB5
+ 1565 0024 16000000 		.4byte	.LFE5
+ 1566 0028 00000000 		.4byte	.LFB6
+ 1567 002c 1C000000 		.4byte	.LFE6
+ 1568 0030 00000000 		.4byte	.LFB7
+ 1569 0034 58000000 		.4byte	.LFE7
+ 1570 0038 00000000 		.4byte	.LFB8
+ 1571 003c 10000000 		.4byte	.LFE8
+ 1572 0040 00000000 		.4byte	.LFB9
+ 1573 0044 10000000 		.4byte	.LFE9
+ 1574 0048 00000000 		.4byte	0
+ 1575 004c 00000000 		.4byte	0
+ 1576              		.section	.debug_line,"",%progbits
+ 1577              	.Ldebug_line0:
+ 1578 0000 75010000 		.section	.debug_str,"MS",%progbits,1
+ 1578      02005600 
+ 1578      00000201 
+ 1578      FB0E0D00 
+ 1578      01010101 
+ 1579              	.LASF43:
+ 1580 0000 47656E65 		.ascii	"Generated_Source\\PSoC4\\mUART_SPI_UART.c\000"
+ 1580      72617465 
+ 1580      645F536F 
+ 1580      75726365 
+ 1580      5C50536F 
+ 1581              	.LASF35:
+ 1582 0028 6D554152 		.ascii	"mUART_rxBufferOverflow\000"
+ 1582      545F7278 
+ 1582      42756666 
+ 1582      65724F76 
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 38
+
+
+ 1582      6572666C 
+ 1583              	.LASF14:
+ 1584 003f 72656733 		.ascii	"reg32\000"
+ 1584      3200
+ 1585              	.LASF26:
+ 1586 0045 636F756E 		.ascii	"count\000"
+ 1586      7400
+ 1587              	.LASF46:
+ 1588 004b 74784461 		.ascii	"txData\000"
+ 1588      746100
+ 1589              	.LASF3:
+ 1590 0052 73686F72 		.ascii	"short unsigned int\000"
+ 1590      7420756E 
+ 1590      7369676E 
+ 1590      65642069 
+ 1590      6E7400
+ 1591              	.LASF29:
+ 1592 0065 6D554152 		.ascii	"mUART_SpiUartDisableIntRx\000"
+ 1592      545F5370 
+ 1592      69556172 
+ 1592      74446973 
+ 1592      61626C65 
+ 1593              	.LASF8:
+ 1594 007f 756E7369 		.ascii	"unsigned int\000"
+ 1594      676E6564 
+ 1594      20696E74 
+ 1594      00
+ 1595              	.LASF42:
+ 1596 008c 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1596      43313120 
+ 1596      352E342E 
+ 1596      31203230 
+ 1596      31363036 
+ 1597 00bf 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 1597      20726576 
+ 1597      6973696F 
+ 1597      6E203233 
+ 1597      37373135 
+ 1598 00f2 67202D4F 		.ascii	"g -Os -ffunction-sections -ffat-lto-objects\000"
+ 1598      73202D66 
+ 1598      66756E63 
+ 1598      74696F6E 
+ 1598      2D736563 
+ 1599              	.LASF31:
+ 1600 011e 6D554152 		.ascii	"mUART_SpiUartDisableIntTx\000"
+ 1600      545F5370 
+ 1600      69556172 
+ 1600      74446973 
+ 1600      61626C65 
+ 1601              	.LASF22:
+ 1602 0138 6C6F6348 		.ascii	"locHead\000"
+ 1602      65616400 
+ 1603              	.LASF17:
+ 1604 0140 72784461 		.ascii	"rxData\000"
+ 1604      746100
+ 1605              	.LASF24:
+ 1606 0147 6D554152 		.ascii	"mUART_SpiUartPutArray\000"
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 39
+
+
+ 1606      545F5370 
+ 1606      69556172 
+ 1606      74507574 
+ 1606      41727261 
+ 1607              	.LASF11:
+ 1608 015d 666C6F61 		.ascii	"float\000"
+ 1608      7400
+ 1609              	.LASF21:
+ 1610 0163 73697A65 		.ascii	"size\000"
+ 1610      00
+ 1611              	.LASF36:
+ 1612 0168 6D554152 		.ascii	"mUART_txBufferHead\000"
+ 1612      545F7478 
+ 1612      42756666 
+ 1612      65724865 
+ 1612      616400
+ 1613              	.LASF5:
+ 1614 017b 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1614      20756E73 
+ 1614      69676E65 
+ 1614      6420696E 
+ 1614      7400
+ 1615              	.LASF9:
+ 1616 018d 75696E74 		.ascii	"uint8\000"
+ 1616      3800
+ 1617              	.LASF28:
+ 1618 0193 6D554152 		.ascii	"mUART_SpiUartClearTxBuffer\000"
+ 1618      545F5370 
+ 1618      69556172 
+ 1618      74436C65 
+ 1618      61725478 
+ 1619              	.LASF39:
+ 1620 01ae 6D554152 		.ascii	"mUART_txBufferInternal\000"
+ 1620      545F7478 
+ 1620      42756666 
+ 1620      6572496E 
+ 1620      7465726E 
+ 1621              	.LASF25:
+ 1622 01c5 77724275 		.ascii	"wrBuf\000"
+ 1622      6600
+ 1623              	.LASF1:
+ 1624 01cb 756E7369 		.ascii	"unsigned char\000"
+ 1624      676E6564 
+ 1624      20636861 
+ 1624      7200
+ 1625              	.LASF12:
+ 1626 01d9 646F7562 		.ascii	"double\000"
+ 1626      6C6500
+ 1627              	.LASF33:
+ 1628 01e0 6D554152 		.ascii	"mUART_rxBufferHead\000"
+ 1628      545F7278 
+ 1628      42756666 
+ 1628      65724865 
+ 1628      616400
+ 1629              	.LASF44:
+ 1630 01f3 433A5C55 		.ascii	"C:\\Users\\PC\\Documents\\PSoC Creator\\yellowChip\\"
+ 1630      73657273 
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 40
+
+
+ 1630      5C50435C 
+ 1630      446F6375 
+ 1630      6D656E74 
+ 1631 0221 626F6F74 		.ascii	"bootloader.cydsn\000"
+ 1631      6C6F6164 
+ 1631      65722E63 
+ 1631      7964736E 
+ 1631      00
+ 1632              	.LASF27:
+ 1633 0232 6D554152 		.ascii	"mUART_SpiUartGetTxBufferSize\000"
+ 1633      545F5370 
+ 1633      69556172 
+ 1633      74476574 
+ 1633      54784275 
+ 1634              	.LASF10:
+ 1635 024f 75696E74 		.ascii	"uint32\000"
+ 1635      333200
+ 1636              	.LASF32:
+ 1637 0256 696E7453 		.ascii	"intSourceMask\000"
+ 1637      6F757263 
+ 1637      654D6173 
+ 1637      6B00
+ 1638              	.LASF30:
+ 1639 0264 696E7453 		.ascii	"intSource\000"
+ 1639      6F757263 
+ 1639      6500
+ 1640              	.LASF7:
+ 1641 026e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1641      206C6F6E 
+ 1641      6720756E 
+ 1641      7369676E 
+ 1641      65642069 
+ 1642              	.LASF45:
+ 1643 0285 6D554152 		.ascii	"mUART_SpiUartWriteTxData\000"
+ 1643      545F5370 
+ 1643      69556172 
+ 1643      74577269 
+ 1643      74655478 
+ 1644              	.LASF19:
+ 1645 029e 6D554152 		.ascii	"mUART_SpiUartReadRxData\000"
+ 1645      545F5370 
+ 1645      69556172 
+ 1645      74526561 
+ 1645      64527844 
+ 1646              	.LASF18:
+ 1647 02b6 6C6F6354 		.ascii	"locTail\000"
+ 1647      61696C00 
+ 1648              	.LASF16:
+ 1649 02be 73697A65 		.ascii	"sizetype\000"
+ 1649      74797065 
+ 1649      00
+ 1650              	.LASF38:
+ 1651 02c7 6D554152 		.ascii	"mUART_rxBufferInternal\000"
+ 1651      545F7278 
+ 1651      42756666 
+ 1651      6572496E 
+ 1651      7465726E 
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 41
+
+
+ 1652              	.LASF6:
+ 1653 02de 6C6F6E67 		.ascii	"long long int\000"
+ 1653      206C6F6E 
+ 1653      6720696E 
+ 1653      7400
+ 1654              	.LASF13:
+ 1655 02ec 63686172 		.ascii	"char\000"
+ 1655      00
+ 1656              	.LASF20:
+ 1657 02f1 6D554152 		.ascii	"mUART_SpiUartGetRxBufferSize\000"
+ 1657      545F5370 
+ 1657      69556172 
+ 1657      74476574 
+ 1657      52784275 
+ 1658              	.LASF37:
+ 1659 030e 6D554152 		.ascii	"mUART_txBufferTail\000"
+ 1659      545F7478 
+ 1659      42756666 
+ 1659      65725461 
+ 1659      696C00
+ 1660              	.LASF40:
+ 1661 0321 4379496E 		.ascii	"CyIntDisable\000"
+ 1661      74446973 
+ 1661      61626C65 
+ 1661      00
+ 1662              	.LASF2:
+ 1663 032e 73686F72 		.ascii	"short int\000"
+ 1663      7420696E 
+ 1663      7400
+ 1664              	.LASF4:
+ 1665 0338 6C6F6E67 		.ascii	"long int\000"
+ 1665      20696E74 
+ 1665      00
+ 1666              	.LASF15:
+ 1667 0341 6C6F6E67 		.ascii	"long double\000"
+ 1667      20646F75 
+ 1667      626C6500 
+ 1668              	.LASF41:
+ 1669 034d 4379496E 		.ascii	"CyIntEnable\000"
+ 1669      74456E61 
+ 1669      626C6500 
+ 1670              	.LASF0:
+ 1671 0359 7369676E 		.ascii	"signed char\000"
+ 1671      65642063 
+ 1671      68617200 
+ 1672              	.LASF34:
+ 1673 0365 6D554152 		.ascii	"mUART_rxBufferTail\000"
+ 1673      545F7278 
+ 1673      42756666 
+ 1673      65725461 
+ 1673      696C00
+ 1674              	.LASF23:
+ 1675 0378 6D554152 		.ascii	"mUART_SpiUartClearRxBuffer\000"
+ 1675      545F5370 
+ 1675      69556172 
+ 1675      74436C65 
+ 1675      61725278 
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccTXgV0X.s 			page 42
+
+
+ 1676              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

@@ -1,0 +1,14 @@
+C:\Users\PC\Documents\PSoC Creator\yellowChip\bootloader.cydsn\bootloader.cyprj|c2b899d3-fb79-4800-bd66-2bbc872d64d2
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|9fdfaf19-b59e-4046-b024-ea0cd4e333e0
+C:\Users\PC\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|b93fe3c6-d00e-4ead-bc60-aadf27c54b9a
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|f25bd25b-6421-4793-87a7-63413b7e71e6
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|90d05b1d-8956-4a10-a4fa-dfd4ddb54348
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|7f635b7f-658d-490d-b1b9-1e4232a281e9
+C:\Users\PC\Documents\PSoC Creator\yellowChip\Oled.cydsn\Oled.cyprj|f4fdb7a8-9c9f-4613-aeea-d381d7e6c9c7
+C:\Users\PC\Documents\PSoC Creator\yellowChip\TestLed.cydsn\TestLed.cyprj|519ce6dd-912e-439b-9efb-ca7636889aa2
+C:\Users\PC\Documents\PSoC Creator\yellowChip\RGB_Led.cydsn\RGB_Led.cyprj|a184bf8d-af06-439c-9c4e-fd870cceb9e2
+C:\Users\PC\Documents\PSoC Creator\yellowChip\PWM.cydsn\PWM.cyprj|eb1ab8f5-8101-4fe3-862b-d5e28e74bb3c
+C:\Users\PC\Documents\PSoC Creator\yellowChip\BUZZER.cydsn\BUZZER.cyprj|22cae18a-c310-4857-9437-41daf076a2a7
+C:\Users\PC\Documents\PSoC Creator\yellowChip\ADC.cydsn\ADC.cyprj|fffa6ab6-78fc-4a35-979d-fdae80abb1e7
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\psoc4\PSoC4AnalogDevice\psoc4arch.cydsn\psoc4arch.cyprj|2c044593-cd4d-4d9f-9515-0e51062d2f4b
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|d4f86721-e2a8-4894-aa0a-dbcea0ee9041

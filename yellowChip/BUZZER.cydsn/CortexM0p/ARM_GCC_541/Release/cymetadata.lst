@@ -1,0 +1,344 @@
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFYHkmb.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0plus
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"cymetadata.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.global	cy_meta_loadable
+  20              		.section	.cyloadablemeta,"a",%progbits
+  21              		.type	cy_meta_loadable, %object
+  22              		.size	cy_meta_loadable, 64
+  23              	cy_meta_loadable:
+  24 0000 00000000 		.space	64
+  24      00000000 
+  24      00000000 
+  24      00000000 
+  24      00000000 
+  25              		.text
+  26              	.Letext0:
+  27              		.file 1 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+  28              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+  29              		.file 3 "Generated_Source\\PSoC4\\cymetadata.c"
+  30              		.section	.debug_info,"",%progbits
+  31              	.Ldebug_info0:
+  32 0000 A8000000 		.4byte	0xa8
+  33 0004 0400     		.2byte	0x4
+  34 0006 00000000 		.4byte	.Ldebug_abbrev0
+  35 000a 04       		.byte	0x4
+  36 000b 01       		.uleb128 0x1
+  37 000c 0A000000 		.4byte	.LASF12
+  38 0010 0C       		.byte	0xc
+  39 0011 AA000000 		.4byte	.LASF13
+  40 0015 66010000 		.4byte	.LASF14
+  41 0019 00000000 		.4byte	.Ldebug_line0
+  42 001d 02       		.uleb128 0x2
+  43 001e 01       		.byte	0x1
+  44 001f 06       		.byte	0x6
+  45 0020 5A010000 		.4byte	.LASF0
+  46 0024 03       		.uleb128 0x3
+  47 0025 00000000 		.4byte	.LASF9
+  48 0029 01       		.byte	0x1
+  49 002a 1D       		.byte	0x1d
+  50 002b 2F000000 		.4byte	0x2f
+  51 002f 02       		.uleb128 0x2
+  52 0030 01       		.byte	0x1
+  53 0031 08       		.byte	0x8
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFYHkmb.s 			page 2
+
+
+  54 0032 9C000000 		.4byte	.LASF1
+  55 0036 02       		.uleb128 0x2
+  56 0037 02       		.byte	0x2
+  57 0038 05       		.byte	0x5
+  58 0039 47010000 		.4byte	.LASF2
+  59 003d 02       		.uleb128 0x2
+  60 003e 02       		.byte	0x2
+  61 003f 07       		.byte	0x7
+  62 0040 E0000000 		.4byte	.LASF3
+  63 0044 02       		.uleb128 0x2
+  64 0045 04       		.byte	0x4
+  65 0046 05       		.byte	0x5
+  66 0047 51010000 		.4byte	.LASF4
+  67 004b 02       		.uleb128 0x2
+  68 004c 04       		.byte	0x4
+  69 004d 07       		.byte	0x7
+  70 004e CE000000 		.4byte	.LASF5
+  71 0052 02       		.uleb128 0x2
+  72 0053 08       		.byte	0x8
+  73 0054 05       		.byte	0x5
+  74 0055 39010000 		.4byte	.LASF6
+  75 0059 02       		.uleb128 0x2
+  76 005a 08       		.byte	0x8
+  77 005b 07       		.byte	0x7
+  78 005c 00010000 		.4byte	.LASF7
+  79 0060 04       		.uleb128 0x4
+  80 0061 04       		.byte	0x4
+  81 0062 05       		.byte	0x5
+  82 0063 696E7400 		.ascii	"int\000"
+  83 0067 02       		.uleb128 0x2
+  84 0068 04       		.byte	0x4
+  85 0069 07       		.byte	0x7
+  86 006a F3000000 		.4byte	.LASF8
+  87 006e 03       		.uleb128 0x3
+  88 006f 17010000 		.4byte	.LASF10
+  89 0073 02       		.byte	0x2
+  90 0074 18       		.byte	0x18
+  91 0075 24000000 		.4byte	0x24
+  92 0079 05       		.uleb128 0x5
+  93 007a 90000000 		.4byte	0x90
+  94 007e 89000000 		.4byte	0x89
+  95 0082 06       		.uleb128 0x6
+  96 0083 89000000 		.4byte	0x89
+  97 0087 3F       		.byte	0x3f
+  98 0088 00       		.byte	0
+  99 0089 02       		.uleb128 0x2
+ 100 008a 04       		.byte	0x4
+ 101 008b 07       		.byte	0x7
+ 102 008c 30010000 		.4byte	.LASF11
+ 103 0090 07       		.uleb128 0x7
+ 104 0091 6E000000 		.4byte	0x6e
+ 105 0095 08       		.uleb128 0x8
+ 106 0096 1F010000 		.4byte	.LASF15
+ 107 009a 03       		.byte	0x3
+ 108 009b 1F       		.byte	0x1f
+ 109 009c A6000000 		.4byte	0xa6
+ 110 00a0 05       		.uleb128 0x5
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFYHkmb.s 			page 3
+
+
+ 111 00a1 03       		.byte	0x3
+ 112 00a2 00000000 		.4byte	cy_meta_loadable
+ 113 00a6 07       		.uleb128 0x7
+ 114 00a7 79000000 		.4byte	0x79
+ 115 00ab 00       		.byte	0
+ 116              		.section	.debug_abbrev,"",%progbits
+ 117              	.Ldebug_abbrev0:
+ 118 0000 01       		.uleb128 0x1
+ 119 0001 11       		.uleb128 0x11
+ 120 0002 01       		.byte	0x1
+ 121 0003 25       		.uleb128 0x25
+ 122 0004 0E       		.uleb128 0xe
+ 123 0005 13       		.uleb128 0x13
+ 124 0006 0B       		.uleb128 0xb
+ 125 0007 03       		.uleb128 0x3
+ 126 0008 0E       		.uleb128 0xe
+ 127 0009 1B       		.uleb128 0x1b
+ 128 000a 0E       		.uleb128 0xe
+ 129 000b 10       		.uleb128 0x10
+ 130 000c 17       		.uleb128 0x17
+ 131 000d 00       		.byte	0
+ 132 000e 00       		.byte	0
+ 133 000f 02       		.uleb128 0x2
+ 134 0010 24       		.uleb128 0x24
+ 135 0011 00       		.byte	0
+ 136 0012 0B       		.uleb128 0xb
+ 137 0013 0B       		.uleb128 0xb
+ 138 0014 3E       		.uleb128 0x3e
+ 139 0015 0B       		.uleb128 0xb
+ 140 0016 03       		.uleb128 0x3
+ 141 0017 0E       		.uleb128 0xe
+ 142 0018 00       		.byte	0
+ 143 0019 00       		.byte	0
+ 144 001a 03       		.uleb128 0x3
+ 145 001b 16       		.uleb128 0x16
+ 146 001c 00       		.byte	0
+ 147 001d 03       		.uleb128 0x3
+ 148 001e 0E       		.uleb128 0xe
+ 149 001f 3A       		.uleb128 0x3a
+ 150 0020 0B       		.uleb128 0xb
+ 151 0021 3B       		.uleb128 0x3b
+ 152 0022 0B       		.uleb128 0xb
+ 153 0023 49       		.uleb128 0x49
+ 154 0024 13       		.uleb128 0x13
+ 155 0025 00       		.byte	0
+ 156 0026 00       		.byte	0
+ 157 0027 04       		.uleb128 0x4
+ 158 0028 24       		.uleb128 0x24
+ 159 0029 00       		.byte	0
+ 160 002a 0B       		.uleb128 0xb
+ 161 002b 0B       		.uleb128 0xb
+ 162 002c 3E       		.uleb128 0x3e
+ 163 002d 0B       		.uleb128 0xb
+ 164 002e 03       		.uleb128 0x3
+ 165 002f 08       		.uleb128 0x8
+ 166 0030 00       		.byte	0
+ 167 0031 00       		.byte	0
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFYHkmb.s 			page 4
+
+
+ 168 0032 05       		.uleb128 0x5
+ 169 0033 01       		.uleb128 0x1
+ 170 0034 01       		.byte	0x1
+ 171 0035 49       		.uleb128 0x49
+ 172 0036 13       		.uleb128 0x13
+ 173 0037 01       		.uleb128 0x1
+ 174 0038 13       		.uleb128 0x13
+ 175 0039 00       		.byte	0
+ 176 003a 00       		.byte	0
+ 177 003b 06       		.uleb128 0x6
+ 178 003c 21       		.uleb128 0x21
+ 179 003d 00       		.byte	0
+ 180 003e 49       		.uleb128 0x49
+ 181 003f 13       		.uleb128 0x13
+ 182 0040 2F       		.uleb128 0x2f
+ 183 0041 0B       		.uleb128 0xb
+ 184 0042 00       		.byte	0
+ 185 0043 00       		.byte	0
+ 186 0044 07       		.uleb128 0x7
+ 187 0045 26       		.uleb128 0x26
+ 188 0046 00       		.byte	0
+ 189 0047 49       		.uleb128 0x49
+ 190 0048 13       		.uleb128 0x13
+ 191 0049 00       		.byte	0
+ 192 004a 00       		.byte	0
+ 193 004b 08       		.uleb128 0x8
+ 194 004c 34       		.uleb128 0x34
+ 195 004d 00       		.byte	0
+ 196 004e 03       		.uleb128 0x3
+ 197 004f 0E       		.uleb128 0xe
+ 198 0050 3A       		.uleb128 0x3a
+ 199 0051 0B       		.uleb128 0xb
+ 200 0052 3B       		.uleb128 0x3b
+ 201 0053 0B       		.uleb128 0xb
+ 202 0054 49       		.uleb128 0x49
+ 203 0055 13       		.uleb128 0x13
+ 204 0056 3F       		.uleb128 0x3f
+ 205 0057 19       		.uleb128 0x19
+ 206 0058 02       		.uleb128 0x2
+ 207 0059 18       		.uleb128 0x18
+ 208 005a 00       		.byte	0
+ 209 005b 00       		.byte	0
+ 210 005c 00       		.byte	0
+ 211              		.section	.debug_aranges,"",%progbits
+ 212 0000 14000000 		.4byte	0x14
+ 213 0004 0200     		.2byte	0x2
+ 214 0006 00000000 		.4byte	.Ldebug_info0
+ 215 000a 04       		.byte	0x4
+ 216 000b 00       		.byte	0
+ 217 000c 0000     		.2byte	0
+ 218 000e 0000     		.2byte	0
+ 219 0010 00000000 		.4byte	0
+ 220 0014 00000000 		.4byte	0
+ 221              		.section	.debug_line,"",%progbits
+ 222              	.Ldebug_line0:
+ 223 0000 3D010000 		.section	.debug_str,"MS",%progbits,1
+ 223      02003701 
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFYHkmb.s 			page 5
+
+
+ 223      00000201 
+ 223      FB0E0D00 
+ 223      01010101 
+ 224              	.LASF9:
+ 225 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 225      6E74385F 
+ 225      7400
+ 226              	.LASF12:
+ 227 000a 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 227      43313120 
+ 227      352E342E 
+ 227      31203230 
+ 227      31363036 
+ 228 003d 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 228      20726576 
+ 228      6973696F 
+ 228      6E203233 
+ 228      37373135 
+ 229 0070 67202D4F 		.ascii	"g -Os -ffunction-sections -ffat-lto-objects\000"
+ 229      73202D66 
+ 229      66756E63 
+ 229      74696F6E 
+ 229      2D736563 
+ 230              	.LASF1:
+ 231 009c 756E7369 		.ascii	"unsigned char\000"
+ 231      676E6564 
+ 231      20636861 
+ 231      7200
+ 232              	.LASF13:
+ 233 00aa 47656E65 		.ascii	"Generated_Source\\PSoC4\\cymetadata.c\000"
+ 233      72617465 
+ 233      645F536F 
+ 233      75726365 
+ 233      5C50536F 
+ 234              	.LASF5:
+ 235 00ce 6C6F6E67 		.ascii	"long unsigned int\000"
+ 235      20756E73 
+ 235      69676E65 
+ 235      6420696E 
+ 235      7400
+ 236              	.LASF3:
+ 237 00e0 73686F72 		.ascii	"short unsigned int\000"
+ 237      7420756E 
+ 237      7369676E 
+ 237      65642069 
+ 237      6E7400
+ 238              	.LASF8:
+ 239 00f3 756E7369 		.ascii	"unsigned int\000"
+ 239      676E6564 
+ 239      20696E74 
+ 239      00
+ 240              	.LASF7:
+ 241 0100 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 241      206C6F6E 
+ 241      6720756E 
+ 241      7369676E 
+ 241      65642069 
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFYHkmb.s 			page 6
+
+
+ 242              	.LASF10:
+ 243 0117 75696E74 		.ascii	"uint8_t\000"
+ 243      385F7400 
+ 244              	.LASF15:
+ 245 011f 63795F6D 		.ascii	"cy_meta_loadable\000"
+ 245      6574615F 
+ 245      6C6F6164 
+ 245      61626C65 
+ 245      00
+ 246              	.LASF11:
+ 247 0130 73697A65 		.ascii	"sizetype\000"
+ 247      74797065 
+ 247      00
+ 248              	.LASF6:
+ 249 0139 6C6F6E67 		.ascii	"long long int\000"
+ 249      206C6F6E 
+ 249      6720696E 
+ 249      7400
+ 250              	.LASF2:
+ 251 0147 73686F72 		.ascii	"short int\000"
+ 251      7420696E 
+ 251      7400
+ 252              	.LASF4:
+ 253 0151 6C6F6E67 		.ascii	"long int\000"
+ 253      20696E74 
+ 253      00
+ 254              	.LASF0:
+ 255 015a 7369676E 		.ascii	"signed char\000"
+ 255      65642063 
+ 255      68617200 
+ 256              	.LASF14:
+ 257 0166 433A5C55 		.ascii	"C:\\Users\\PC\\Documents\\PSoC Creator\\yellowChip\\"
+ 257      73657273 
+ 257      5C50435C 
+ 257      446F6375 
+ 257      6D656E74 
+ 258 0194 42555A5A 		.ascii	"BUZZER.cydsn\000"
+ 258      45522E63 
+ 258      7964736E 
+ 258      00
+ 259              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

@@ -1,0 +1,15 @@
+# TestLed
+# 2022-07-27 00:05:51Z
+
+# IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 2
+# IO_3@[IOP=(3)][IoId=(3)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 3
+set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
+set_io "pLed(0)" iocell 1 7
+set_io "\mUART:tx(0)\" iocell 4 1
+set_io "\mUART:rx(0)\" iocell 4 0
+set_io "\mSPI:sclk_m(0)\" iocell 2 2
+set_io "\mSPI:miso_m(0)\" iocell 2 1
+set_io "\mSPI:mosi_m(0)\" iocell 2 0
+set_io "\mSPI:ss0_m(0)\" iocell 2 3

@@ -1,0 +1,1155 @@
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccILbnkU.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0plus
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"mBootloadable.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.mBootloadable_Load,"ax",%progbits
+  20              		.align	1
+  21              		.global	mBootloadable_Load
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	mBootloadable_Load, %function
+  25              	mBootloadable_Load:
+  26              	.LFB1:
+  27              		.file 1 "Generated_Source\\PSoC4\\mBootloadable.c"
+   1:Generated_Source\PSoC4/mBootloadable.c **** /****************************************************************************//**
+   2:Generated_Source\PSoC4/mBootloadable.c **** * \file mBootloadable.c
+   3:Generated_Source\PSoC4/mBootloadable.c **** * \version 1.60
+   4:Generated_Source\PSoC4/mBootloadable.c **** *
+   5:Generated_Source\PSoC4/mBootloadable.c **** * \brief
+   6:Generated_Source\PSoC4/mBootloadable.c **** *   Provides an API for the Bootloadable application.
+   7:Generated_Source\PSoC4/mBootloadable.c **** *
+   8:Generated_Source\PSoC4/mBootloadable.c **** ********************************************************************************
+   9:Generated_Source\PSoC4/mBootloadable.c **** * \copyright
+  10:Generated_Source\PSoC4/mBootloadable.c **** * Copyright 2008-2015, Cypress Semiconductor Corporation.  All rights reserved.
+  11:Generated_Source\PSoC4/mBootloadable.c **** * You may use this file only in accordance with the license, terms, conditions,
+  12:Generated_Source\PSoC4/mBootloadable.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  13:Generated_Source\PSoC4/mBootloadable.c **** * the software package with which this file was provided.
+  14:Generated_Source\PSoC4/mBootloadable.c **** *******************************************************************************/
+  15:Generated_Source\PSoC4/mBootloadable.c **** 
+  16:Generated_Source\PSoC4/mBootloadable.c **** #include "mBootloadable.h"
+  17:Generated_Source\PSoC4/mBootloadable.c **** 
+  18:Generated_Source\PSoC4/mBootloadable.c **** /**
+  19:Generated_Source\PSoC4/mBootloadable.c ****  \defgroup functions_group Functions
+  20:Generated_Source\PSoC4/mBootloadable.c ****  @{
+  21:Generated_Source\PSoC4/mBootloadable.c **** */
+  22:Generated_Source\PSoC4/mBootloadable.c **** 
+  23:Generated_Source\PSoC4/mBootloadable.c **** #if (CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER)
+  24:Generated_Source\PSoC4/mBootloadable.c **** static cystatus mBootloadable_WriteFlashByte(const uint32 address, const uint8 inputValue) CYLARGE 
+  25:Generated_Source\PSoC4/mBootloadable.c ****                                ;
+  26:Generated_Source\PSoC4/mBootloadable.c **** #endif /*(CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER)*/
+  27:Generated_Source\PSoC4/mBootloadable.c **** 
+  28:Generated_Source\PSoC4/mBootloadable.c **** /*******************************************************************************
+  29:Generated_Source\PSoC4/mBootloadable.c **** * Function Name: mBootloadable_Load
+  30:Generated_Source\PSoC4/mBootloadable.c **** ****************************************************************************//**
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccILbnkU.s 			page 2
+
+
+  31:Generated_Source\PSoC4/mBootloadable.c **** *
+  32:Generated_Source\PSoC4/mBootloadable.c **** * \brief
+  33:Generated_Source\PSoC4/mBootloadable.c **** *  Schedules the Bootloader/Launcher to be launched and then performs
+  34:Generated_Source\PSoC4/mBootloadable.c **** *  a software reset to launch it
+  35:Generated_Source\PSoC4/mBootloadable.c **** *
+  36:Generated_Source\PSoC4/mBootloadable.c **** * \return
+  37:Generated_Source\PSoC4/mBootloadable.c **** *  This method will never return. It will load a new application and reset
+  38:Generated_Source\PSoC4/mBootloadable.c **** *  the device.
+  39:Generated_Source\PSoC4/mBootloadable.c **** *
+  40:Generated_Source\PSoC4/mBootloadable.c **** *******************************************************************************/
+  41:Generated_Source\PSoC4/mBootloadable.c **** void mBootloadable_Load(void) 
+  42:Generated_Source\PSoC4/mBootloadable.c **** {
+  28              		.loc 1 42 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  43:Generated_Source\PSoC4/mBootloadable.c ****     /* Schedule Bootloader to start after reset */
+  44:Generated_Source\PSoC4/mBootloadable.c ****     mBootloadable_SET_RUN_TYPE(mBootloadable_SCHEDULE_BTLDR);
+  32              		.loc 1 44 0
+  33 0000 4022     		movs	r2, #64
+  42:Generated_Source\PSoC4/mBootloadable.c ****     /* Schedule Bootloader to start after reset */
+  34              		.loc 1 42 0
+  35 0002 10B5     		push	{r4, lr}
+  36              		.cfi_def_cfa_offset 8
+  37              		.cfi_offset 4, -8
+  38              		.cfi_offset 14, -4
+  39              		.loc 1 44 0
+  40 0004 024B     		ldr	r3, .L2
+  45:Generated_Source\PSoC4/mBootloadable.c **** 
+  46:Generated_Source\PSoC4/mBootloadable.c ****     CySoftwareReset();
+  47:Generated_Source\PSoC4/mBootloadable.c **** }
+  41              		.loc 1 47 0
+  42              		@ sp needed
+  44:Generated_Source\PSoC4/mBootloadable.c **** 
+  43              		.loc 1 44 0
+  44 0006 1A60     		str	r2, [r3]
+  46:Generated_Source\PSoC4/mBootloadable.c **** }
+  45              		.loc 1 46 0
+  46 0008 FFF7FEFF 		bl	CySoftwareReset
+  47              	.LVL0:
+  48              		.loc 1 47 0
+  49 000c 10BD     		pop	{r4, pc}
+  50              	.L3:
+  51 000e C046     		.align	2
+  52              	.L2:
+  53 0010 00000000 		.word	cyBtldrRunType
+  54              		.cfi_endproc
+  55              	.LFE1:
+  56              		.size	mBootloadable_Load, .-mBootloadable_Load
+  57              		.section	.text.mBootloadable_SetFlashByte,"ax",%progbits
+  58              		.align	1
+  59              		.global	mBootloadable_SetFlashByte
+  60              		.code	16
+  61              		.thumb_func
+  62              		.type	mBootloadable_SetFlashByte, %function
+  63              	mBootloadable_SetFlashByte:
+  64              	.LFB2:
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccILbnkU.s 			page 3
+
+
+  48:Generated_Source\PSoC4/mBootloadable.c **** 
+  49:Generated_Source\PSoC4/mBootloadable.c **** #if (CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER)
+  50:Generated_Source\PSoC4/mBootloadable.c **** /*******************************************************************************
+  51:Generated_Source\PSoC4/mBootloadable.c **** * Function Name: mBootloadable_GetActiveApplication
+  52:Generated_Source\PSoC4/mBootloadable.c **** ****************************************************************************//**
+  53:Generated_Source\PSoC4/mBootloadable.c **** *
+  54:Generated_Source\PSoC4/mBootloadable.c **** * \brief
+  55:Generated_Source\PSoC4/mBootloadable.c **** *   Gets the application which will be loaded after a next reset event.
+  56:Generated_Source\PSoC4/mBootloadable.c **** *   NOTE Intended for the combination project type ONLY!
+  57:Generated_Source\PSoC4/mBootloadable.c **** *
+  58:Generated_Source\PSoC4/mBootloadable.c **** * \return 
+  59:Generated_Source\PSoC4/mBootloadable.c **** *  A number of the current active application set in the metadata section.
+  60:Generated_Source\PSoC4/mBootloadable.c **** *  \n  0 - app#0 is set as active.
+  61:Generated_Source\PSoC4/mBootloadable.c **** *  \n  1 - app#1 is set as active.
+  62:Generated_Source\PSoC4/mBootloadable.c **** *
+  63:Generated_Source\PSoC4/mBootloadable.c **** * \note If neither of the applications is set active, then the API returns 0x02.
+  64:Generated_Source\PSoC4/mBootloadable.c **** *
+  65:Generated_Source\PSoC4/mBootloadable.c **** *******************************************************************************/
+  66:Generated_Source\PSoC4/mBootloadable.c **** uint8 mBootloadable_GetActiveApplication(void) CYSMALL \
+  67:Generated_Source\PSoC4/mBootloadable.c ****                           
+  68:Generated_Source\PSoC4/mBootloadable.c **** {   
+  69:Generated_Source\PSoC4/mBootloadable.c ****     uint8 result = mBootloadable_MD_BTLDB_ACTIVE_NONE;
+  70:Generated_Source\PSoC4/mBootloadable.c ****     
+  71:Generated_Source\PSoC4/mBootloadable.c ****     if (0u != mBootloadable_GET_CODE_DATA( \
+  72:Generated_Source\PSoC4/mBootloadable.c ****               mBootloadable_MD_BTLDB_ACTIVE_OFFSET(mBootloadable_MD_BTLDB_ACTIVE_0))) 
+  73:Generated_Source\PSoC4/mBootloadable.c ****     {
+  74:Generated_Source\PSoC4/mBootloadable.c ****         result = mBootloadable_MD_BTLDB_ACTIVE_0;
+  75:Generated_Source\PSoC4/mBootloadable.c ****     }
+  76:Generated_Source\PSoC4/mBootloadable.c ****     else if (0u != mBootloadable_GET_CODE_DATA( \
+  77:Generated_Source\PSoC4/mBootloadable.c ****                    mBootloadable_MD_BTLDB_ACTIVE_OFFSET(mBootloadable_MD_BTLDB_ACTIVE_1)))
+  78:Generated_Source\PSoC4/mBootloadable.c ****     {
+  79:Generated_Source\PSoC4/mBootloadable.c ****         result = mBootloadable_MD_BTLDB_ACTIVE_1;    
+  80:Generated_Source\PSoC4/mBootloadable.c ****     }
+  81:Generated_Source\PSoC4/mBootloadable.c ****     else
+  82:Generated_Source\PSoC4/mBootloadable.c ****     {
+  83:Generated_Source\PSoC4/mBootloadable.c ****         /*Do nothing, result is none*/
+  84:Generated_Source\PSoC4/mBootloadable.c ****     }
+  85:Generated_Source\PSoC4/mBootloadable.c ****     
+  86:Generated_Source\PSoC4/mBootloadable.c ****     return (result);
+  87:Generated_Source\PSoC4/mBootloadable.c **** }
+  88:Generated_Source\PSoC4/mBootloadable.c **** 
+  89:Generated_Source\PSoC4/mBootloadable.c **** /*******************************************************************************
+  90:Generated_Source\PSoC4/mBootloadable.c **** * Function Name: mBootloadable_SetActiveApplication
+  91:Generated_Source\PSoC4/mBootloadable.c **** ****************************************************************************//**
+  92:Generated_Source\PSoC4/mBootloadable.c **** *
+  93:Generated_Source\PSoC4/mBootloadable.c **** * \brief 
+  94:Generated_Source\PSoC4/mBootloadable.c **** *   Sets the application which will be loaded after a next reset event.          
+  95:Generated_Source\PSoC4/mBootloadable.c **** *   
+  96:Generated_Source\PSoC4/mBootloadable.c **** * \details
+  97:Generated_Source\PSoC4/mBootloadable.c **** * Theory: 
+  98:Generated_Source\PSoC4/mBootloadable.c **** *   This API sets in the Flash (metadata section) the given active application 
+  99:Generated_Source\PSoC4/mBootloadable.c **** *   number.
+ 100:Generated_Source\PSoC4/mBootloadable.c **** *          
+ 101:Generated_Source\PSoC4/mBootloadable.c **** *   NOTE The active application number is not set directly, but the boolean 
+ 102:Generated_Source\PSoC4/mBootloadable.c **** *   mark instead means that the application is active or not for the relative 
+ 103:Generated_Source\PSoC4/mBootloadable.c **** *   metadata. Both metadata sections are updated. For example, if the second 
+ 104:Generated_Source\PSoC4/mBootloadable.c **** *   application is to be set active, then in the metadata section for the first 
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccILbnkU.s 			page 4
+
+
+ 105:Generated_Source\PSoC4/mBootloadable.c **** *   application there will be a "0" written, which means that it is not active, and 
+ 106:Generated_Source\PSoC4/mBootloadable.c **** *   for the second metadata section there will be a "1" written, which means that it is 
+ 107:Generated_Source\PSoC4/mBootloadable.c **** *   active. 
+ 108:Generated_Source\PSoC4/mBootloadable.c **** *
+ 109:Generated_Source\PSoC4/mBootloadable.c **** *   NOTE Intended for the combination project type ONLY!
+ 110:Generated_Source\PSoC4/mBootloadable.c **** *
+ 111:Generated_Source\PSoC4/mBootloadable.c **** * \param appId  
+ 112:Generated_Source\PSoC4/mBootloadable.c **** *   The active application number to be written to flash (metadata section) 
+ 113:Generated_Source\PSoC4/mBootloadable.c **** *   NOTE Possible values are:
+ 114:Generated_Source\PSoC4/mBootloadable.c **** *   0 - for the first application
+ 115:Generated_Source\PSoC4/mBootloadable.c **** *   1 - for the second application.
+ 116:Generated_Source\PSoC4/mBootloadable.c **** *   Any other number is considered invalid. 
+ 117:Generated_Source\PSoC4/mBootloadable.c **** *
+ 118:Generated_Source\PSoC4/mBootloadable.c **** * \return 
+ 119:Generated_Source\PSoC4/mBootloadable.c **** *   A status of writing to flash operation.
+ 120:Generated_Source\PSoC4/mBootloadable.c **** *   \n CYRET_SUCCESS - Returned if appId was successfully changed. 
+ 121:Generated_Source\PSoC4/mBootloadable.c **** *   \n CYRET_BAD_PARAM - Returned if the parameter appID passed to the function has the 
+ 122:Generated_Source\PSoC4/mBootloadable.c **** *                       same value as the active application ID. 
+ 123:Generated_Source\PSoC4/mBootloadable.c **** *   \note - The other non-zero value is considered as a failure during writing to flash.  
+ 124:Generated_Source\PSoC4/mBootloadable.c **** *
+ 125:Generated_Source\PSoC4/mBootloadable.c **** *   \note - This API does not update Bootloader_activeApp variable.
+ 126:Generated_Source\PSoC4/mBootloadable.c **** *
+ 127:Generated_Source\PSoC4/mBootloadable.c **** *******************************************************************************/
+ 128:Generated_Source\PSoC4/mBootloadable.c **** cystatus mBootloadable_SetActiveApplication(uint8 appId) CYSMALL \
+ 129:Generated_Source\PSoC4/mBootloadable.c ****                 
+ 130:Generated_Source\PSoC4/mBootloadable.c **** {
+ 131:Generated_Source\PSoC4/mBootloadable.c ****     cystatus result = CYRET_SUCCESS;
+ 132:Generated_Source\PSoC4/mBootloadable.c **** 
+ 133:Generated_Source\PSoC4/mBootloadable.c ****     uint8 CYDATA idx;
+ 134:Generated_Source\PSoC4/mBootloadable.c ****     
+ 135:Generated_Source\PSoC4/mBootloadable.c ****     /* If invalid application number */
+ 136:Generated_Source\PSoC4/mBootloadable.c ****     if (appId > mBootloadable_MD_BTLDB_ACTIVE_1)
+ 137:Generated_Source\PSoC4/mBootloadable.c ****     {
+ 138:Generated_Source\PSoC4/mBootloadable.c ****         result = CYRET_BAD_PARAM;
+ 139:Generated_Source\PSoC4/mBootloadable.c ****     }
+ 140:Generated_Source\PSoC4/mBootloadable.c ****     else
+ 141:Generated_Source\PSoC4/mBootloadable.c ****     {
+ 142:Generated_Source\PSoC4/mBootloadable.c ****         /* If appID has same value as active application ID */
+ 143:Generated_Source\PSoC4/mBootloadable.c ****         if (1u == mBootloadable_GET_CODE_DATA(mBootloadable_MD_BTLDB_ACTIVE_OFFSET(appId)))
+ 144:Generated_Source\PSoC4/mBootloadable.c ****         {
+ 145:Generated_Source\PSoC4/mBootloadable.c ****             result = CYRET_BAD_PARAM;
+ 146:Generated_Source\PSoC4/mBootloadable.c ****         }
+ 147:Generated_Source\PSoC4/mBootloadable.c ****         else
+ 148:Generated_Source\PSoC4/mBootloadable.c ****         {
+ 149:Generated_Source\PSoC4/mBootloadable.c ****             /* Updating metadata section */
+ 150:Generated_Source\PSoC4/mBootloadable.c ****             for(idx = 0u; idx < mBootloadable_MAX_NUM_OF_BTLDB; idx++)
+ 151:Generated_Source\PSoC4/mBootloadable.c ****             {
+ 152:Generated_Source\PSoC4/mBootloadable.c ****                 result |= mBootloadable_WriteFlashByte((uint32) mBootloadable_MD_BTLDB_ACTIVE_OFFSE
+ 153:Generated_Source\PSoC4/mBootloadable.c ****                                                                                             (uint8)
+ 154:Generated_Source\PSoC4/mBootloadable.c ****             }
+ 155:Generated_Source\PSoC4/mBootloadable.c ****         }
+ 156:Generated_Source\PSoC4/mBootloadable.c ****     }
+ 157:Generated_Source\PSoC4/mBootloadable.c ****     
+ 158:Generated_Source\PSoC4/mBootloadable.c ****     return (result);
+ 159:Generated_Source\PSoC4/mBootloadable.c **** }
+ 160:Generated_Source\PSoC4/mBootloadable.c **** 
+ 161:Generated_Source\PSoC4/mBootloadable.c **** /*******************************************************************************
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccILbnkU.s 			page 5
+
+
+ 162:Generated_Source\PSoC4/mBootloadable.c **** * Function Name: mBootloadable_WriteFlashByte
+ 163:Generated_Source\PSoC4/mBootloadable.c **** ****************************************************************************//**
+ 164:Generated_Source\PSoC4/mBootloadable.c **** *
+ 165:Generated_Source\PSoC4/mBootloadable.c **** * \brief 
+ 166:Generated_Source\PSoC4/mBootloadable.c **** *   This API writes to flash the specified data.
+ 167:Generated_Source\PSoC4/mBootloadable.c **** *
+ 168:Generated_Source\PSoC4/mBootloadable.c **** * \param address 
+ 169:Generated_Source\PSoC4/mBootloadable.c **** *   The address in flash.
+ 170:Generated_Source\PSoC4/mBootloadable.c **** *
+ 171:Generated_Source\PSoC4/mBootloadable.c **** * \param inputValue 
+ 172:Generated_Source\PSoC4/mBootloadable.c **** *   One-byte data.
+ 173:Generated_Source\PSoC4/mBootloadable.c **** *
+ 174:Generated_Source\PSoC4/mBootloadable.c **** * \return 
+ 175:Generated_Source\PSoC4/mBootloadable.c **** *   A status of the writing to flash procedure.
+ 176:Generated_Source\PSoC4/mBootloadable.c **** *
+ 177:Generated_Source\PSoC4/mBootloadable.c **** *******************************************************************************/
+ 178:Generated_Source\PSoC4/mBootloadable.c **** static cystatus mBootloadable_WriteFlashByte(const uint32 address, const uint8 inputValue) CYLARGE 
+ 179:Generated_Source\PSoC4/mBootloadable.c ****                                
+ 180:Generated_Source\PSoC4/mBootloadable.c **** {
+ 181:Generated_Source\PSoC4/mBootloadable.c ****     cystatus result = CYRET_SUCCESS;
+ 182:Generated_Source\PSoC4/mBootloadable.c ****     uint32 flsAddr = address - CYDEV_FLASH_BASE;
+ 183:Generated_Source\PSoC4/mBootloadable.c ****     uint8  rowData[CYDEV_FLS_ROW_SIZE];
+ 184:Generated_Source\PSoC4/mBootloadable.c **** 
+ 185:Generated_Source\PSoC4/mBootloadable.c ****     #if !(CY_PSOC4)
+ 186:Generated_Source\PSoC4/mBootloadable.c ****         uint8 arrayId = ( uint8 )(flsAddr / CYDEV_FLS_SECTOR_SIZE);
+ 187:Generated_Source\PSoC4/mBootloadable.c ****     #endif  /* !(CY_PSOC4) */
+ 188:Generated_Source\PSoC4/mBootloadable.c **** 
+ 189:Generated_Source\PSoC4/mBootloadable.c ****     #if (CY_PSOC4)
+ 190:Generated_Source\PSoC4/mBootloadable.c ****         uint16 rowNum = ( uint16 )(flsAddr / CYDEV_FLS_ROW_SIZE);
+ 191:Generated_Source\PSoC4/mBootloadable.c ****     #else
+ 192:Generated_Source\PSoC4/mBootloadable.c ****         uint16 rowNum = ( uint16 )((flsAddr % CYDEV_FLS_SECTOR_SIZE) / CYDEV_FLS_ROW_SIZE);
+ 193:Generated_Source\PSoC4/mBootloadable.c ****     #endif  /* (CY_PSOC4) */
+ 194:Generated_Source\PSoC4/mBootloadable.c **** 
+ 195:Generated_Source\PSoC4/mBootloadable.c ****     uint32 baseAddr = address - (address % CYDEV_FLS_ROW_SIZE);
+ 196:Generated_Source\PSoC4/mBootloadable.c ****     uint16 idx;
+ 197:Generated_Source\PSoC4/mBootloadable.c **** 
+ 198:Generated_Source\PSoC4/mBootloadable.c ****     for(idx = 0u; idx < CYDEV_FLS_ROW_SIZE; idx++)
+ 199:Generated_Source\PSoC4/mBootloadable.c ****     {
+ 200:Generated_Source\PSoC4/mBootloadable.c ****         rowData[idx] = (uint8)mBootloadable_GET_CODE_DATA(baseAddr + idx);
+ 201:Generated_Source\PSoC4/mBootloadable.c ****     }
+ 202:Generated_Source\PSoC4/mBootloadable.c **** 
+ 203:Generated_Source\PSoC4/mBootloadable.c ****     rowData[address % CYDEV_FLS_ROW_SIZE] = inputValue;
+ 204:Generated_Source\PSoC4/mBootloadable.c **** 
+ 205:Generated_Source\PSoC4/mBootloadable.c ****     #if(CY_PSOC4)
+ 206:Generated_Source\PSoC4/mBootloadable.c ****         result = CySysFlashWriteRow((uint32) rowNum, rowData);
+ 207:Generated_Source\PSoC4/mBootloadable.c ****     #else
+ 208:Generated_Source\PSoC4/mBootloadable.c ****         result = CyWriteRowData(arrayId, rowNum, rowData);
+ 209:Generated_Source\PSoC4/mBootloadable.c ****     #endif  /* (CY_PSOC4) */
+ 210:Generated_Source\PSoC4/mBootloadable.c **** 
+ 211:Generated_Source\PSoC4/mBootloadable.c ****     #if(CY_PSOC5)
+ 212:Generated_Source\PSoC4/mBootloadable.c ****         /***************************************************************************
+ 213:Generated_Source\PSoC4/mBootloadable.c ****         * When writing to flash, data in the instruction cache can become stale.
+ 214:Generated_Source\PSoC4/mBootloadable.c ****         * Therefore, the cache data does not correlate to the data just written to
+ 215:Generated_Source\PSoC4/mBootloadable.c ****         * flash. A call to CyFlushCache() is required to invalidate the data in the
+ 216:Generated_Source\PSoC4/mBootloadable.c ****         * cache and force fresh information to be loaded from flash.
+ 217:Generated_Source\PSoC4/mBootloadable.c ****         ***************************************************************************/
+ 218:Generated_Source\PSoC4/mBootloadable.c ****         CyFlushCache();
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccILbnkU.s 			page 6
+
+
+ 219:Generated_Source\PSoC4/mBootloadable.c ****     #endif /* (CY_PSOC5) */
+ 220:Generated_Source\PSoC4/mBootloadable.c ****     return (result);
+ 221:Generated_Source\PSoC4/mBootloadable.c **** }
+ 222:Generated_Source\PSoC4/mBootloadable.c **** #endif /*(CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER)*/
+ 223:Generated_Source\PSoC4/mBootloadable.c **** /** @} functions_group */
+ 224:Generated_Source\PSoC4/mBootloadable.c **** 
+ 225:Generated_Source\PSoC4/mBootloadable.c **** /*******************************************************************************
+ 226:Generated_Source\PSoC4/mBootloadable.c **** * The following code is OBSOLETE and must not be used.
+ 227:Generated_Source\PSoC4/mBootloadable.c **** *******************************************************************************/
+ 228:Generated_Source\PSoC4/mBootloadable.c **** void mBootloadable_SetFlashByte(uint32 address, uint8 runType) 
+ 229:Generated_Source\PSoC4/mBootloadable.c **** {
+  65              		.loc 1 229 0
+  66              		.cfi_startproc
+  67              		@ args = 0, pretend = 0, frame = 128
+  68              		@ frame_needed = 0, uses_anonymous_args = 0
+  69              	.LVL1:
+  70 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+  71              		.cfi_def_cfa_offset 20
+  72              		.cfi_offset 4, -20
+  73              		.cfi_offset 5, -16
+  74              		.cfi_offset 6, -12
+  75              		.cfi_offset 7, -8
+  76              		.cfi_offset 14, -4
+ 230:Generated_Source\PSoC4/mBootloadable.c ****     uint32 flsAddr = address - CYDEV_FLASH_BASE;
+ 231:Generated_Source\PSoC4/mBootloadable.c ****     uint8  rowData[CYDEV_FLS_ROW_SIZE];
+ 232:Generated_Source\PSoC4/mBootloadable.c **** 
+ 233:Generated_Source\PSoC4/mBootloadable.c ****     #if !(CY_PSOC4)
+ 234:Generated_Source\PSoC4/mBootloadable.c ****         uint8 arrayId = ( uint8 )(flsAddr / CYDEV_FLS_SECTOR_SIZE);
+ 235:Generated_Source\PSoC4/mBootloadable.c ****     #endif  /* !(CY_PSOC4) */
+ 236:Generated_Source\PSoC4/mBootloadable.c **** 
+ 237:Generated_Source\PSoC4/mBootloadable.c ****     #if (CY_PSOC4)
+ 238:Generated_Source\PSoC4/mBootloadable.c ****         uint16 rowNum = ( uint16 )(flsAddr / CYDEV_FLS_ROW_SIZE);
+ 239:Generated_Source\PSoC4/mBootloadable.c ****     #else
+ 240:Generated_Source\PSoC4/mBootloadable.c ****         uint16 rowNum = ( uint16 )((flsAddr % CYDEV_FLS_SECTOR_SIZE) / CYDEV_FLS_ROW_SIZE);
+ 241:Generated_Source\PSoC4/mBootloadable.c ****     #endif  /* (CY_PSOC4) */
+ 242:Generated_Source\PSoC4/mBootloadable.c **** 
+ 243:Generated_Source\PSoC4/mBootloadable.c ****     uint32 baseAddr = address - (address % CYDEV_FLS_ROW_SIZE);
+  77              		.loc 1 243 0
+  78 0002 7F23     		movs	r3, #127
+ 229:Generated_Source\PSoC4/mBootloadable.c ****     uint32 flsAddr = address - CYDEV_FLASH_BASE;
+  79              		.loc 1 229 0
+  80 0004 0C00     		movs	r4, r1
+  81              		.loc 1 243 0
+  82 0006 0100     		movs	r1, r0
+  83              	.LVL2:
+ 229:Generated_Source\PSoC4/mBootloadable.c ****     uint32 flsAddr = address - CYDEV_FLASH_BASE;
+  84              		.loc 1 229 0
+  85 0008 A1B0     		sub	sp, sp, #132
+  86              		.cfi_def_cfa_offset 152
+  87              		.loc 1 243 0
+  88 000a 9943     		bics	r1, r3
+  89 000c 0B00     		movs	r3, r1
+  90 000e 0D00     		movs	r5, r1
+ 244:Generated_Source\PSoC4/mBootloadable.c ****     uint16 idx;
+ 245:Generated_Source\PSoC4/mBootloadable.c **** 
+ 246:Generated_Source\PSoC4/mBootloadable.c **** 
+ 247:Generated_Source\PSoC4/mBootloadable.c ****     for (idx = 0u; idx < CYDEV_FLS_ROW_SIZE; idx++)
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccILbnkU.s 			page 7
+
+
+ 248:Generated_Source\PSoC4/mBootloadable.c ****     {
+ 249:Generated_Source\PSoC4/mBootloadable.c ****         rowData[idx] = mBootloadable_GET_CODE_DATA(baseAddr + idx);
+  91              		.loc 1 249 0
+  92 0010 6946     		mov	r1, sp
+ 238:Generated_Source\PSoC4/mBootloadable.c ****     #else
+  93              		.loc 1 238 0
+  94 0012 C209     		lsrs	r2, r0, #7
+  95              	.LVL3:
+  96 0014 8035     		adds	r5, r5, #128
+  97              		.loc 1 249 0
+  98 0016 CE1A     		subs	r6, r1, r3
+  99              	.LVL4:
+ 100              	.L5:
+ 101              		.loc 1 249 0 is_stmt 0 discriminator 3
+ 102 0018 1F78     		ldrb	r7, [r3]
+ 103 001a F754     		strb	r7, [r6, r3]
+ 104 001c 0133     		adds	r3, r3, #1
+ 247:Generated_Source\PSoC4/mBootloadable.c ****     {
+ 105              		.loc 1 247 0 is_stmt 1 discriminator 3
+ 106 001e AB42     		cmp	r3, r5
+ 107 0020 FAD1     		bne	.L5
+ 250:Generated_Source\PSoC4/mBootloadable.c ****     }
+ 251:Generated_Source\PSoC4/mBootloadable.c ****     rowData[address % CYDEV_FLS_ROW_SIZE] = runType;
+ 108              		.loc 1 251 0
+ 109 0022 7F23     		movs	r3, #127
+ 110 0024 1840     		ands	r0, r3
+ 111              	.LVL5:
+ 112 0026 0C54     		strb	r4, [r1, r0]
+ 252:Generated_Source\PSoC4/mBootloadable.c **** 
+ 253:Generated_Source\PSoC4/mBootloadable.c ****     #if(CY_PSOC4)
+ 254:Generated_Source\PSoC4/mBootloadable.c ****         (void) CySysFlashWriteRow((uint32) rowNum, rowData);
+ 113              		.loc 1 254 0
+ 114 0028 90B2     		uxth	r0, r2
+ 115 002a FFF7FEFF 		bl	CySysFlashWriteRow
+ 116              	.LVL6:
+ 255:Generated_Source\PSoC4/mBootloadable.c ****     #else
+ 256:Generated_Source\PSoC4/mBootloadable.c ****         (void) CyWriteRowData(arrayId, rowNum, rowData);
+ 257:Generated_Source\PSoC4/mBootloadable.c ****     #endif  /* (CY_PSOC4) */
+ 258:Generated_Source\PSoC4/mBootloadable.c **** 
+ 259:Generated_Source\PSoC4/mBootloadable.c ****     #if(CY_PSOC5)
+ 260:Generated_Source\PSoC4/mBootloadable.c ****         /***************************************************************************
+ 261:Generated_Source\PSoC4/mBootloadable.c ****         * When writing to flash, data in the instruction cache can become obsolete.
+ 262:Generated_Source\PSoC4/mBootloadable.c ****         * Therefore, the cache data does not correlate to the data just written to
+ 263:Generated_Source\PSoC4/mBootloadable.c ****         * flash. A call to CyFlushCache() is required to invalidate the data in the
+ 264:Generated_Source\PSoC4/mBootloadable.c ****         * cache and force fresh information to be loaded from flash.
+ 265:Generated_Source\PSoC4/mBootloadable.c ****         ***************************************************************************/
+ 266:Generated_Source\PSoC4/mBootloadable.c ****         CyFlushCache();
+ 267:Generated_Source\PSoC4/mBootloadable.c ****     #endif /* (CY_PSOC5) */
+ 268:Generated_Source\PSoC4/mBootloadable.c **** }
+ 117              		.loc 1 268 0
+ 118 002e 21B0     		add	sp, sp, #132
+ 119              		@ sp needed
+ 120 0030 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 121              		.cfi_endproc
+ 122              	.LFE2:
+ 123              		.size	mBootloadable_SetFlashByte, .-mBootloadable_SetFlashByte
+ 124              		.text
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccILbnkU.s 			page 8
+
+
+ 125              	.Letext0:
+ 126              		.file 2 "Generated_Source\\PSoC4\\cytypes.h"
+ 127              		.file 3 "Generated_Source\\PSoC4\\CyLib.h"
+ 128              		.file 4 "Generated_Source\\PSoC4\\CyFlash.h"
+ 129              		.file 5 "Generated_Source\\PSoC4\\mBootloadable.h"
+ 130              		.section	.debug_info,"",%progbits
+ 131              	.Ldebug_info0:
+ 132 0000 9C010000 		.4byte	0x19c
+ 133 0004 0400     		.2byte	0x4
+ 134 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 135 000a 04       		.byte	0x4
+ 136 000b 01       		.uleb128 0x1
+ 137 000c 54000000 		.4byte	.LASF26
+ 138 0010 0C       		.byte	0xc
+ 139 0011 13000000 		.4byte	.LASF27
+ 140 0015 1A010000 		.4byte	.LASF28
+ 141 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 142 001d 00000000 		.4byte	0
+ 143 0021 00000000 		.4byte	.Ldebug_line0
+ 144 0025 02       		.uleb128 0x2
+ 145 0026 01       		.byte	0x1
+ 146 0027 06       		.byte	0x6
+ 147 0028 29020000 		.4byte	.LASF0
+ 148 002c 02       		.uleb128 0x2
+ 149 002d 01       		.byte	0x1
+ 150 002e 08       		.byte	0x8
+ 151 002f EC000000 		.4byte	.LASF1
+ 152 0033 02       		.uleb128 0x2
+ 153 0034 02       		.byte	0x2
+ 154 0035 05       		.byte	0x5
+ 155 0036 FA010000 		.4byte	.LASF2
+ 156 003a 02       		.uleb128 0x2
+ 157 003b 02       		.byte	0x2
+ 158 003c 07       		.byte	0x7
+ 159 003d 41000000 		.4byte	.LASF3
+ 160 0041 02       		.uleb128 0x2
+ 161 0042 04       		.byte	0x4
+ 162 0043 05       		.byte	0x5
+ 163 0044 14020000 		.4byte	.LASF4
+ 164 0048 02       		.uleb128 0x2
+ 165 0049 04       		.byte	0x4
+ 166 004a 07       		.byte	0x7
+ 167 004b 02010000 		.4byte	.LASF5
+ 168 004f 02       		.uleb128 0x2
+ 169 0050 08       		.byte	0x8
+ 170 0051 05       		.byte	0x5
+ 171 0052 CC010000 		.4byte	.LASF6
+ 172 0056 02       		.uleb128 0x2
+ 173 0057 08       		.byte	0x8
+ 174 0058 07       		.byte	0x7
+ 175 0059 9B010000 		.4byte	.LASF7
+ 176 005d 03       		.uleb128 0x3
+ 177 005e 04       		.byte	0x4
+ 178 005f 05       		.byte	0x5
+ 179 0060 696E7400 		.ascii	"int\000"
+ 180 0064 02       		.uleb128 0x2
+ 181 0065 04       		.byte	0x4
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccILbnkU.s 			page 9
+
+
+ 182 0066 07       		.byte	0x7
+ 183 0067 86010000 		.4byte	.LASF8
+ 184 006b 04       		.uleb128 0x4
+ 185 006c 14010000 		.4byte	.LASF9
+ 186 0070 02       		.byte	0x2
+ 187 0071 FB01     		.2byte	0x1fb
+ 188 0073 2C000000 		.4byte	0x2c
+ 189 0077 04       		.uleb128 0x4
+ 190 0078 78010000 		.4byte	.LASF10
+ 191 007c 02       		.byte	0x2
+ 192 007d FC01     		.2byte	0x1fc
+ 193 007f 3A000000 		.4byte	0x3a
+ 194 0083 04       		.uleb128 0x4
+ 195 0084 7F010000 		.4byte	.LASF11
+ 196 0088 02       		.byte	0x2
+ 197 0089 FD01     		.2byte	0x1fd
+ 198 008b 48000000 		.4byte	0x48
+ 199 008f 02       		.uleb128 0x2
+ 200 0090 04       		.byte	0x4
+ 201 0091 04       		.byte	0x4
+ 202 0092 E6000000 		.4byte	.LASF12
+ 203 0096 02       		.uleb128 0x2
+ 204 0097 08       		.byte	0x8
+ 205 0098 04       		.byte	0x4
+ 206 0099 56010000 		.4byte	.LASF13
+ 207 009d 02       		.uleb128 0x2
+ 208 009e 01       		.byte	0x1
+ 209 009f 08       		.byte	0x8
+ 210 00a0 DA010000 		.4byte	.LASF14
+ 211 00a4 05       		.uleb128 0x5
+ 212 00a5 83000000 		.4byte	0x83
+ 213 00a9 02       		.uleb128 0x2
+ 214 00aa 08       		.byte	0x8
+ 215 00ab 04       		.byte	0x4
+ 216 00ac 1D020000 		.4byte	.LASF15
+ 217 00b0 02       		.uleb128 0x2
+ 218 00b1 04       		.byte	0x4
+ 219 00b2 07       		.byte	0x7
+ 220 00b3 C3010000 		.4byte	.LASF16
+ 221 00b7 06       		.uleb128 0x6
+ 222 00b8 00000000 		.4byte	.LASF17
+ 223 00bc 01       		.byte	0x1
+ 224 00bd 29       		.byte	0x29
+ 225 00be 00000000 		.4byte	.LFB1
+ 226 00c2 14000000 		.4byte	.LFE1-.LFB1
+ 227 00c6 01       		.uleb128 0x1
+ 228 00c7 9C       		.byte	0x9c
+ 229 00c8 D6000000 		.4byte	0xd6
+ 230 00cc 07       		.uleb128 0x7
+ 231 00cd 0C000000 		.4byte	.LVL0
+ 232 00d1 89010000 		.4byte	0x189
+ 233 00d5 00       		.byte	0
+ 234 00d6 06       		.uleb128 0x6
+ 235 00d7 DF010000 		.4byte	.LASF18
+ 236 00db 01       		.byte	0x1
+ 237 00dc E4       		.byte	0xe4
+ 238 00dd 00000000 		.4byte	.LFB2
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccILbnkU.s 			page 10
+
+
+ 239 00e1 32000000 		.4byte	.LFE2-.LFB2
+ 240 00e5 01       		.uleb128 0x1
+ 241 00e6 9C       		.byte	0x9c
+ 242 00e7 6E010000 		.4byte	0x16e
+ 243 00eb 08       		.uleb128 0x8
+ 244 00ec 93010000 		.4byte	.LASF19
+ 245 00f0 01       		.byte	0x1
+ 246 00f1 E4       		.byte	0xe4
+ 247 00f2 83000000 		.4byte	0x83
+ 248 00f6 00000000 		.4byte	.LLST0
+ 249 00fa 08       		.uleb128 0x8
+ 250 00fb B2010000 		.4byte	.LASF20
+ 251 00ff 01       		.byte	0x1
+ 252 0100 E4       		.byte	0xe4
+ 253 0101 6B000000 		.4byte	0x6b
+ 254 0105 21000000 		.4byte	.LLST1
+ 255 0109 09       		.uleb128 0x9
+ 256 010a 70010000 		.4byte	.LASF21
+ 257 010e 01       		.byte	0x1
+ 258 010f E6       		.byte	0xe6
+ 259 0110 83000000 		.4byte	0x83
+ 260 0114 42000000 		.4byte	.LLST2
+ 261 0118 0A       		.uleb128 0xa
+ 262 0119 FA000000 		.4byte	.LASF22
+ 263 011d 01       		.byte	0x1
+ 264 011e E7       		.byte	0xe7
+ 265 011f 6E010000 		.4byte	0x16e
+ 266 0123 03       		.uleb128 0x3
+ 267 0124 91       		.byte	0x91
+ 268 0125 E87E     		.sleb128 -152
+ 269 0127 09       		.uleb128 0x9
+ 270 0128 3A000000 		.4byte	.LASF23
+ 271 012c 01       		.byte	0x1
+ 272 012d EE       		.byte	0xee
+ 273 012e 77000000 		.4byte	0x77
+ 274 0132 63000000 		.4byte	.LLST3
+ 275 0136 0B       		.uleb128 0xb
+ 276 0137 BA010000 		.4byte	.LASF29
+ 277 013b 01       		.byte	0x1
+ 278 013c F3       		.byte	0xf3
+ 279 013d 83000000 		.4byte	0x83
+ 280 0141 0C       		.uleb128 0xc
+ 281 0142 69647800 		.ascii	"idx\000"
+ 282 0146 01       		.byte	0x1
+ 283 0147 F4       		.byte	0xf4
+ 284 0148 77000000 		.4byte	0x77
+ 285 014c 86000000 		.4byte	.LLST4
+ 286 0150 0D       		.uleb128 0xd
+ 287 0151 2E000000 		.4byte	.LVL6
+ 288 0155 94010000 		.4byte	0x194
+ 289 0159 0E       		.uleb128 0xe
+ 290 015a 01       		.uleb128 0x1
+ 291 015b 50       		.byte	0x50
+ 292 015c 09       		.uleb128 0x9
+ 293 015d F3       		.byte	0xf3
+ 294 015e 01       		.uleb128 0x1
+ 295 015f 50       		.byte	0x50
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccILbnkU.s 			page 11
+
+
+ 296 0160 37       		.byte	0x37
+ 297 0161 25       		.byte	0x25
+ 298 0162 0A       		.byte	0xa
+ 299 0163 FFFF     		.2byte	0xffff
+ 300 0165 1A       		.byte	0x1a
+ 301 0166 0E       		.uleb128 0xe
+ 302 0167 01       		.uleb128 0x1
+ 303 0168 51       		.byte	0x51
+ 304 0169 02       		.uleb128 0x2
+ 305 016a 7D       		.byte	0x7d
+ 306 016b 00       		.sleb128 0
+ 307 016c 00       		.byte	0
+ 308 016d 00       		.byte	0
+ 309 016e 0F       		.uleb128 0xf
+ 310 016f 6B000000 		.4byte	0x6b
+ 311 0173 7E010000 		.4byte	0x17e
+ 312 0177 10       		.uleb128 0x10
+ 313 0178 B0000000 		.4byte	0xb0
+ 314 017c 7F       		.byte	0x7f
+ 315 017d 00       		.byte	0
+ 316 017e 11       		.uleb128 0x11
+ 317 017f 35020000 		.4byte	.LASF30
+ 318 0183 05       		.byte	0x5
+ 319 0184 38       		.byte	0x38
+ 320 0185 A4000000 		.4byte	0xa4
+ 321 0189 12       		.uleb128 0x12
+ 322 018a 04020000 		.4byte	.LASF24
+ 323 018e 04020000 		.4byte	.LASF24
+ 324 0192 03       		.byte	0x3
+ 325 0193 F7       		.byte	0xf7
+ 326 0194 12       		.uleb128 0x12
+ 327 0195 5D010000 		.4byte	.LASF25
+ 328 0199 5D010000 		.4byte	.LASF25
+ 329 019d 04       		.byte	0x4
+ 330 019e 4E       		.byte	0x4e
+ 331 019f 00       		.byte	0
+ 332              		.section	.debug_abbrev,"",%progbits
+ 333              	.Ldebug_abbrev0:
+ 334 0000 01       		.uleb128 0x1
+ 335 0001 11       		.uleb128 0x11
+ 336 0002 01       		.byte	0x1
+ 337 0003 25       		.uleb128 0x25
+ 338 0004 0E       		.uleb128 0xe
+ 339 0005 13       		.uleb128 0x13
+ 340 0006 0B       		.uleb128 0xb
+ 341 0007 03       		.uleb128 0x3
+ 342 0008 0E       		.uleb128 0xe
+ 343 0009 1B       		.uleb128 0x1b
+ 344 000a 0E       		.uleb128 0xe
+ 345 000b 55       		.uleb128 0x55
+ 346 000c 17       		.uleb128 0x17
+ 347 000d 11       		.uleb128 0x11
+ 348 000e 01       		.uleb128 0x1
+ 349 000f 10       		.uleb128 0x10
+ 350 0010 17       		.uleb128 0x17
+ 351 0011 00       		.byte	0
+ 352 0012 00       		.byte	0
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccILbnkU.s 			page 12
+
+
+ 353 0013 02       		.uleb128 0x2
+ 354 0014 24       		.uleb128 0x24
+ 355 0015 00       		.byte	0
+ 356 0016 0B       		.uleb128 0xb
+ 357 0017 0B       		.uleb128 0xb
+ 358 0018 3E       		.uleb128 0x3e
+ 359 0019 0B       		.uleb128 0xb
+ 360 001a 03       		.uleb128 0x3
+ 361 001b 0E       		.uleb128 0xe
+ 362 001c 00       		.byte	0
+ 363 001d 00       		.byte	0
+ 364 001e 03       		.uleb128 0x3
+ 365 001f 24       		.uleb128 0x24
+ 366 0020 00       		.byte	0
+ 367 0021 0B       		.uleb128 0xb
+ 368 0022 0B       		.uleb128 0xb
+ 369 0023 3E       		.uleb128 0x3e
+ 370 0024 0B       		.uleb128 0xb
+ 371 0025 03       		.uleb128 0x3
+ 372 0026 08       		.uleb128 0x8
+ 373 0027 00       		.byte	0
+ 374 0028 00       		.byte	0
+ 375 0029 04       		.uleb128 0x4
+ 376 002a 16       		.uleb128 0x16
+ 377 002b 00       		.byte	0
+ 378 002c 03       		.uleb128 0x3
+ 379 002d 0E       		.uleb128 0xe
+ 380 002e 3A       		.uleb128 0x3a
+ 381 002f 0B       		.uleb128 0xb
+ 382 0030 3B       		.uleb128 0x3b
+ 383 0031 05       		.uleb128 0x5
+ 384 0032 49       		.uleb128 0x49
+ 385 0033 13       		.uleb128 0x13
+ 386 0034 00       		.byte	0
+ 387 0035 00       		.byte	0
+ 388 0036 05       		.uleb128 0x5
+ 389 0037 35       		.uleb128 0x35
+ 390 0038 00       		.byte	0
+ 391 0039 49       		.uleb128 0x49
+ 392 003a 13       		.uleb128 0x13
+ 393 003b 00       		.byte	0
+ 394 003c 00       		.byte	0
+ 395 003d 06       		.uleb128 0x6
+ 396 003e 2E       		.uleb128 0x2e
+ 397 003f 01       		.byte	0x1
+ 398 0040 3F       		.uleb128 0x3f
+ 399 0041 19       		.uleb128 0x19
+ 400 0042 03       		.uleb128 0x3
+ 401 0043 0E       		.uleb128 0xe
+ 402 0044 3A       		.uleb128 0x3a
+ 403 0045 0B       		.uleb128 0xb
+ 404 0046 3B       		.uleb128 0x3b
+ 405 0047 0B       		.uleb128 0xb
+ 406 0048 27       		.uleb128 0x27
+ 407 0049 19       		.uleb128 0x19
+ 408 004a 11       		.uleb128 0x11
+ 409 004b 01       		.uleb128 0x1
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccILbnkU.s 			page 13
+
+
+ 410 004c 12       		.uleb128 0x12
+ 411 004d 06       		.uleb128 0x6
+ 412 004e 40       		.uleb128 0x40
+ 413 004f 18       		.uleb128 0x18
+ 414 0050 9742     		.uleb128 0x2117
+ 415 0052 19       		.uleb128 0x19
+ 416 0053 01       		.uleb128 0x1
+ 417 0054 13       		.uleb128 0x13
+ 418 0055 00       		.byte	0
+ 419 0056 00       		.byte	0
+ 420 0057 07       		.uleb128 0x7
+ 421 0058 898201   		.uleb128 0x4109
+ 422 005b 00       		.byte	0
+ 423 005c 11       		.uleb128 0x11
+ 424 005d 01       		.uleb128 0x1
+ 425 005e 31       		.uleb128 0x31
+ 426 005f 13       		.uleb128 0x13
+ 427 0060 00       		.byte	0
+ 428 0061 00       		.byte	0
+ 429 0062 08       		.uleb128 0x8
+ 430 0063 05       		.uleb128 0x5
+ 431 0064 00       		.byte	0
+ 432 0065 03       		.uleb128 0x3
+ 433 0066 0E       		.uleb128 0xe
+ 434 0067 3A       		.uleb128 0x3a
+ 435 0068 0B       		.uleb128 0xb
+ 436 0069 3B       		.uleb128 0x3b
+ 437 006a 0B       		.uleb128 0xb
+ 438 006b 49       		.uleb128 0x49
+ 439 006c 13       		.uleb128 0x13
+ 440 006d 02       		.uleb128 0x2
+ 441 006e 17       		.uleb128 0x17
+ 442 006f 00       		.byte	0
+ 443 0070 00       		.byte	0
+ 444 0071 09       		.uleb128 0x9
+ 445 0072 34       		.uleb128 0x34
+ 446 0073 00       		.byte	0
+ 447 0074 03       		.uleb128 0x3
+ 448 0075 0E       		.uleb128 0xe
+ 449 0076 3A       		.uleb128 0x3a
+ 450 0077 0B       		.uleb128 0xb
+ 451 0078 3B       		.uleb128 0x3b
+ 452 0079 0B       		.uleb128 0xb
+ 453 007a 49       		.uleb128 0x49
+ 454 007b 13       		.uleb128 0x13
+ 455 007c 02       		.uleb128 0x2
+ 456 007d 17       		.uleb128 0x17
+ 457 007e 00       		.byte	0
+ 458 007f 00       		.byte	0
+ 459 0080 0A       		.uleb128 0xa
+ 460 0081 34       		.uleb128 0x34
+ 461 0082 00       		.byte	0
+ 462 0083 03       		.uleb128 0x3
+ 463 0084 0E       		.uleb128 0xe
+ 464 0085 3A       		.uleb128 0x3a
+ 465 0086 0B       		.uleb128 0xb
+ 466 0087 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccILbnkU.s 			page 14
+
+
+ 467 0088 0B       		.uleb128 0xb
+ 468 0089 49       		.uleb128 0x49
+ 469 008a 13       		.uleb128 0x13
+ 470 008b 02       		.uleb128 0x2
+ 471 008c 18       		.uleb128 0x18
+ 472 008d 00       		.byte	0
+ 473 008e 00       		.byte	0
+ 474 008f 0B       		.uleb128 0xb
+ 475 0090 34       		.uleb128 0x34
+ 476 0091 00       		.byte	0
+ 477 0092 03       		.uleb128 0x3
+ 478 0093 0E       		.uleb128 0xe
+ 479 0094 3A       		.uleb128 0x3a
+ 480 0095 0B       		.uleb128 0xb
+ 481 0096 3B       		.uleb128 0x3b
+ 482 0097 0B       		.uleb128 0xb
+ 483 0098 49       		.uleb128 0x49
+ 484 0099 13       		.uleb128 0x13
+ 485 009a 00       		.byte	0
+ 486 009b 00       		.byte	0
+ 487 009c 0C       		.uleb128 0xc
+ 488 009d 34       		.uleb128 0x34
+ 489 009e 00       		.byte	0
+ 490 009f 03       		.uleb128 0x3
+ 491 00a0 08       		.uleb128 0x8
+ 492 00a1 3A       		.uleb128 0x3a
+ 493 00a2 0B       		.uleb128 0xb
+ 494 00a3 3B       		.uleb128 0x3b
+ 495 00a4 0B       		.uleb128 0xb
+ 496 00a5 49       		.uleb128 0x49
+ 497 00a6 13       		.uleb128 0x13
+ 498 00a7 02       		.uleb128 0x2
+ 499 00a8 17       		.uleb128 0x17
+ 500 00a9 00       		.byte	0
+ 501 00aa 00       		.byte	0
+ 502 00ab 0D       		.uleb128 0xd
+ 503 00ac 898201   		.uleb128 0x4109
+ 504 00af 01       		.byte	0x1
+ 505 00b0 11       		.uleb128 0x11
+ 506 00b1 01       		.uleb128 0x1
+ 507 00b2 31       		.uleb128 0x31
+ 508 00b3 13       		.uleb128 0x13
+ 509 00b4 00       		.byte	0
+ 510 00b5 00       		.byte	0
+ 511 00b6 0E       		.uleb128 0xe
+ 512 00b7 8A8201   		.uleb128 0x410a
+ 513 00ba 00       		.byte	0
+ 514 00bb 02       		.uleb128 0x2
+ 515 00bc 18       		.uleb128 0x18
+ 516 00bd 9142     		.uleb128 0x2111
+ 517 00bf 18       		.uleb128 0x18
+ 518 00c0 00       		.byte	0
+ 519 00c1 00       		.byte	0
+ 520 00c2 0F       		.uleb128 0xf
+ 521 00c3 01       		.uleb128 0x1
+ 522 00c4 01       		.byte	0x1
+ 523 00c5 49       		.uleb128 0x49
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccILbnkU.s 			page 15
+
+
+ 524 00c6 13       		.uleb128 0x13
+ 525 00c7 01       		.uleb128 0x1
+ 526 00c8 13       		.uleb128 0x13
+ 527 00c9 00       		.byte	0
+ 528 00ca 00       		.byte	0
+ 529 00cb 10       		.uleb128 0x10
+ 530 00cc 21       		.uleb128 0x21
+ 531 00cd 00       		.byte	0
+ 532 00ce 49       		.uleb128 0x49
+ 533 00cf 13       		.uleb128 0x13
+ 534 00d0 2F       		.uleb128 0x2f
+ 535 00d1 0B       		.uleb128 0xb
+ 536 00d2 00       		.byte	0
+ 537 00d3 00       		.byte	0
+ 538 00d4 11       		.uleb128 0x11
+ 539 00d5 34       		.uleb128 0x34
+ 540 00d6 00       		.byte	0
+ 541 00d7 03       		.uleb128 0x3
+ 542 00d8 0E       		.uleb128 0xe
+ 543 00d9 3A       		.uleb128 0x3a
+ 544 00da 0B       		.uleb128 0xb
+ 545 00db 3B       		.uleb128 0x3b
+ 546 00dc 0B       		.uleb128 0xb
+ 547 00dd 49       		.uleb128 0x49
+ 548 00de 13       		.uleb128 0x13
+ 549 00df 3F       		.uleb128 0x3f
+ 550 00e0 19       		.uleb128 0x19
+ 551 00e1 3C       		.uleb128 0x3c
+ 552 00e2 19       		.uleb128 0x19
+ 553 00e3 00       		.byte	0
+ 554 00e4 00       		.byte	0
+ 555 00e5 12       		.uleb128 0x12
+ 556 00e6 2E       		.uleb128 0x2e
+ 557 00e7 00       		.byte	0
+ 558 00e8 3F       		.uleb128 0x3f
+ 559 00e9 19       		.uleb128 0x19
+ 560 00ea 3C       		.uleb128 0x3c
+ 561 00eb 19       		.uleb128 0x19
+ 562 00ec 6E       		.uleb128 0x6e
+ 563 00ed 0E       		.uleb128 0xe
+ 564 00ee 03       		.uleb128 0x3
+ 565 00ef 0E       		.uleb128 0xe
+ 566 00f0 3A       		.uleb128 0x3a
+ 567 00f1 0B       		.uleb128 0xb
+ 568 00f2 3B       		.uleb128 0x3b
+ 569 00f3 0B       		.uleb128 0xb
+ 570 00f4 00       		.byte	0
+ 571 00f5 00       		.byte	0
+ 572 00f6 00       		.byte	0
+ 573              		.section	.debug_loc,"",%progbits
+ 574              	.Ldebug_loc0:
+ 575              	.LLST0:
+ 576 0000 00000000 		.4byte	.LVL1
+ 577 0004 26000000 		.4byte	.LVL5
+ 578 0008 0100     		.2byte	0x1
+ 579 000a 50       		.byte	0x50
+ 580 000b 26000000 		.4byte	.LVL5
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccILbnkU.s 			page 16
+
+
+ 581 000f 32000000 		.4byte	.LFE2
+ 582 0013 0400     		.2byte	0x4
+ 583 0015 F3       		.byte	0xf3
+ 584 0016 01       		.uleb128 0x1
+ 585 0017 50       		.byte	0x50
+ 586 0018 9F       		.byte	0x9f
+ 587 0019 00000000 		.4byte	0
+ 588 001d 00000000 		.4byte	0
+ 589              	.LLST1:
+ 590 0021 00000000 		.4byte	.LVL1
+ 591 0025 08000000 		.4byte	.LVL2
+ 592 0029 0100     		.2byte	0x1
+ 593 002b 51       		.byte	0x51
+ 594 002c 08000000 		.4byte	.LVL2
+ 595 0030 32000000 		.4byte	.LFE2
+ 596 0034 0400     		.2byte	0x4
+ 597 0036 F3       		.byte	0xf3
+ 598 0037 01       		.uleb128 0x1
+ 599 0038 51       		.byte	0x51
+ 600 0039 9F       		.byte	0x9f
+ 601 003a 00000000 		.4byte	0
+ 602 003e 00000000 		.4byte	0
+ 603              	.LLST2:
+ 604 0042 00000000 		.4byte	.LVL1
+ 605 0046 26000000 		.4byte	.LVL5
+ 606 004a 0100     		.2byte	0x1
+ 607 004c 50       		.byte	0x50
+ 608 004d 26000000 		.4byte	.LVL5
+ 609 0051 32000000 		.4byte	.LFE2
+ 610 0055 0400     		.2byte	0x4
+ 611 0057 F3       		.byte	0xf3
+ 612 0058 01       		.uleb128 0x1
+ 613 0059 50       		.byte	0x50
+ 614 005a 9F       		.byte	0x9f
+ 615 005b 00000000 		.4byte	0
+ 616 005f 00000000 		.4byte	0
+ 617              	.LLST3:
+ 618 0063 14000000 		.4byte	.LVL3
+ 619 0067 2D000000 		.4byte	.LVL6-1
+ 620 006b 0100     		.2byte	0x1
+ 621 006d 52       		.byte	0x52
+ 622 006e 2D000000 		.4byte	.LVL6-1
+ 623 0072 32000000 		.4byte	.LFE2
+ 624 0076 0600     		.2byte	0x6
+ 625 0078 F3       		.byte	0xf3
+ 626 0079 01       		.uleb128 0x1
+ 627 007a 50       		.byte	0x50
+ 628 007b 37       		.byte	0x37
+ 629 007c 25       		.byte	0x25
+ 630 007d 9F       		.byte	0x9f
+ 631 007e 00000000 		.4byte	0
+ 632 0082 00000000 		.4byte	0
+ 633              	.LLST4:
+ 634 0086 14000000 		.4byte	.LVL3
+ 635 008a 18000000 		.4byte	.LVL4
+ 636 008e 0200     		.2byte	0x2
+ 637 0090 30       		.byte	0x30
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccILbnkU.s 			page 17
+
+
+ 638 0091 9F       		.byte	0x9f
+ 639 0092 00000000 		.4byte	0
+ 640 0096 00000000 		.4byte	0
+ 641              		.section	.debug_aranges,"",%progbits
+ 642 0000 24000000 		.4byte	0x24
+ 643 0004 0200     		.2byte	0x2
+ 644 0006 00000000 		.4byte	.Ldebug_info0
+ 645 000a 04       		.byte	0x4
+ 646 000b 00       		.byte	0
+ 647 000c 0000     		.2byte	0
+ 648 000e 0000     		.2byte	0
+ 649 0010 00000000 		.4byte	.LFB1
+ 650 0014 14000000 		.4byte	.LFE1-.LFB1
+ 651 0018 00000000 		.4byte	.LFB2
+ 652 001c 32000000 		.4byte	.LFE2-.LFB2
+ 653 0020 00000000 		.4byte	0
+ 654 0024 00000000 		.4byte	0
+ 655              		.section	.debug_ranges,"",%progbits
+ 656              	.Ldebug_ranges0:
+ 657 0000 00000000 		.4byte	.LFB1
+ 658 0004 14000000 		.4byte	.LFE1
+ 659 0008 00000000 		.4byte	.LFB2
+ 660 000c 32000000 		.4byte	.LFE2
+ 661 0010 00000000 		.4byte	0
+ 662 0014 00000000 		.4byte	0
+ 663              		.section	.debug_line,"",%progbits
+ 664              	.Ldebug_line0:
+ 665 0000 C8000000 		.section	.debug_str,"MS",%progbits,1
+ 665      02007500 
+ 665      00000201 
+ 665      FB0E0D00 
+ 665      01010101 
+ 666              	.LASF17:
+ 667 0000 6D426F6F 		.ascii	"mBootloadable_Load\000"
+ 667      746C6F61 
+ 667      6461626C 
+ 667      655F4C6F 
+ 667      616400
+ 668              	.LASF27:
+ 669 0013 47656E65 		.ascii	"Generated_Source\\PSoC4\\mBootloadable.c\000"
+ 669      72617465 
+ 669      645F536F 
+ 669      75726365 
+ 669      5C50536F 
+ 670              	.LASF23:
+ 671 003a 726F774E 		.ascii	"rowNum\000"
+ 671      756D00
+ 672              	.LASF3:
+ 673 0041 73686F72 		.ascii	"short unsigned int\000"
+ 673      7420756E 
+ 673      7369676E 
+ 673      65642069 
+ 673      6E7400
+ 674              	.LASF26:
+ 675 0054 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 675      43313120 
+ 675      352E342E 
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccILbnkU.s 			page 18
+
+
+ 675      31203230 
+ 675      31363036 
+ 676 0087 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 676      20726576 
+ 676      6973696F 
+ 676      6E203233 
+ 676      37373135 
+ 677 00ba 67202D4F 		.ascii	"g -Os -ffunction-sections -ffat-lto-objects\000"
+ 677      73202D66 
+ 677      66756E63 
+ 677      74696F6E 
+ 677      2D736563 
+ 678              	.LASF12:
+ 679 00e6 666C6F61 		.ascii	"float\000"
+ 679      7400
+ 680              	.LASF1:
+ 681 00ec 756E7369 		.ascii	"unsigned char\000"
+ 681      676E6564 
+ 681      20636861 
+ 681      7200
+ 682              	.LASF22:
+ 683 00fa 726F7744 		.ascii	"rowData\000"
+ 683      61746100 
+ 684              	.LASF5:
+ 685 0102 6C6F6E67 		.ascii	"long unsigned int\000"
+ 685      20756E73 
+ 685      69676E65 
+ 685      6420696E 
+ 685      7400
+ 686              	.LASF9:
+ 687 0114 75696E74 		.ascii	"uint8\000"
+ 687      3800
+ 688              	.LASF28:
+ 689 011a 433A5C55 		.ascii	"C:\\Users\\PC\\Documents\\PSoC Creator\\yellowChip\\"
+ 689      73657273 
+ 689      5C50435C 
+ 689      446F6375 
+ 689      6D656E74 
+ 690 0148 5247425F 		.ascii	"RGB_Led.cydsn\000"
+ 690      4C65642E 
+ 690      63796473 
+ 690      6E00
+ 691              	.LASF13:
+ 692 0156 646F7562 		.ascii	"double\000"
+ 692      6C6500
+ 693              	.LASF25:
+ 694 015d 43795379 		.ascii	"CySysFlashWriteRow\000"
+ 694      73466C61 
+ 694      73685772 
+ 694      69746552 
+ 694      6F7700
+ 695              	.LASF21:
+ 696 0170 666C7341 		.ascii	"flsAddr\000"
+ 696      64647200 
+ 697              	.LASF10:
+ 698 0178 75696E74 		.ascii	"uint16\000"
+ 698      313600
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccILbnkU.s 			page 19
+
+
+ 699              	.LASF11:
+ 700 017f 75696E74 		.ascii	"uint32\000"
+ 700      333200
+ 701              	.LASF8:
+ 702 0186 756E7369 		.ascii	"unsigned int\000"
+ 702      676E6564 
+ 702      20696E74 
+ 702      00
+ 703              	.LASF19:
+ 704 0193 61646472 		.ascii	"address\000"
+ 704      65737300 
+ 705              	.LASF7:
+ 706 019b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 706      206C6F6E 
+ 706      6720756E 
+ 706      7369676E 
+ 706      65642069 
+ 707              	.LASF20:
+ 708 01b2 72756E54 		.ascii	"runType\000"
+ 708      79706500 
+ 709              	.LASF29:
+ 710 01ba 62617365 		.ascii	"baseAddr\000"
+ 710      41646472 
+ 710      00
+ 711              	.LASF16:
+ 712 01c3 73697A65 		.ascii	"sizetype\000"
+ 712      74797065 
+ 712      00
+ 713              	.LASF6:
+ 714 01cc 6C6F6E67 		.ascii	"long long int\000"
+ 714      206C6F6E 
+ 714      6720696E 
+ 714      7400
+ 715              	.LASF14:
+ 716 01da 63686172 		.ascii	"char\000"
+ 716      00
+ 717              	.LASF18:
+ 718 01df 6D426F6F 		.ascii	"mBootloadable_SetFlashByte\000"
+ 718      746C6F61 
+ 718      6461626C 
+ 718      655F5365 
+ 718      74466C61 
+ 719              	.LASF2:
+ 720 01fa 73686F72 		.ascii	"short int\000"
+ 720      7420696E 
+ 720      7400
+ 721              	.LASF24:
+ 722 0204 4379536F 		.ascii	"CySoftwareReset\000"
+ 722      66747761 
+ 722      72655265 
+ 722      73657400 
+ 723              	.LASF4:
+ 724 0214 6C6F6E67 		.ascii	"long int\000"
+ 724      20696E74 
+ 724      00
+ 725              	.LASF15:
+ 726 021d 6C6F6E67 		.ascii	"long double\000"
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccILbnkU.s 			page 20
+
+
+ 726      20646F75 
+ 726      626C6500 
+ 727              	.LASF0:
+ 728 0229 7369676E 		.ascii	"signed char\000"
+ 728      65642063 
+ 728      68617200 
+ 729              	.LASF30:
+ 730 0235 63794274 		.ascii	"cyBtldrRunType\000"
+ 730      6C647252 
+ 730      756E5479 
+ 730      706500
+ 731              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
