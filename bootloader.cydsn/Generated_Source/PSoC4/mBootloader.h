@@ -26,7 +26,7 @@
 #define mBootloader_FAST_APP_VALIDATION        (0u)
 #define mBootloader_PACKET_CHECKSUM_CRC        (0u)
 #define mBootloader_WAIT_FOR_COMMAND           (1u)
-#define mBootloader_WAIT_FOR_COMMAND_TIME      (50u)
+#define mBootloader_WAIT_FOR_COMMAND_TIME      (20u)
 #define mBootloader_BOOTLOADER_APP_VALIDATION  (1u)
 
 #define mBootloader_CMD_GET_FLASH_SIZE_AVAIL   (1u)

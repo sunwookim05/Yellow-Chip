@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
   28:Generated_Source\PSoC4/Cm0plusStart.c **** 
   29:Generated_Source\PSoC4/Cm0plusStart.c **** 
   30:Generated_Source\PSoC4/Cm0plusStart.c **** #if (CY_IP_CPUSS_CM0)
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 2
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 2
 
 
   31:Generated_Source\PSoC4/Cm0plusStart.c ****     /* CPUSS Configuration register */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
   85:Generated_Source\PSoC4/Cm0plusStart.c ****     what application will be started after a software reset.
   86:Generated_Source\PSoC4/Cm0plusStart.c ****     *******************************************************************************/
   87:Generated_Source\PSoC4/Cm0plusStart.c ****     #if (__ARMCC_VERSION)
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 3
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 3
 
 
   88:Generated_Source\PSoC4/Cm0plusStart.c ****         __attribute__ ((section(".bootloaderruntype"), zero_init))
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
   53              		.code	16
   54              		.thumb_func
   55              		.type	_exit, %function
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 4
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 4
 
 
   56              	_exit:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  169:Generated_Source\PSoC4/Cm0plusStart.c ****         /* The bootloadable application image is started at Reset() handler
  170:Generated_Source\PSoC4/Cm0plusStart.c ****         * as a result of a branch instruction execution from the bootloader.
  171:Generated_Source\PSoC4/Cm0plusStart.c ****         * So, the stack pointer needs to be reset to be sure that
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 5
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 5
 
 
  172:Generated_Source\PSoC4/Cm0plusStart.c ****         * there is no garbage in the stack.
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  226:Generated_Source\PSoC4/Cm0plusStart.c ****     __cy_byte_align8 *data; /* Start address of region.  */
  227:Generated_Source\PSoC4/Cm0plusStart.c ****     size_t init_size;       /* Size of initial data.  */
  228:Generated_Source\PSoC4/Cm0plusStart.c ****     size_t zero_size;       /* Additional size to be zeroed.  */
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 6
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 6
 
 
  229:Generated_Source\PSoC4/Cm0plusStart.c **** };
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
   85              	.LFB3:
  256:Generated_Source\PSoC4/Cm0plusStart.c **** 
  257:Generated_Source\PSoC4/Cm0plusStart.c ****     while(1)
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 7
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 7
 
 
  258:Generated_Source\PSoC4/Cm0plusStart.c ****     {
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  107              		.loc 1 290 0
  108 0012 054A     		ldr	r2, .L9
  109 0014 1360     		str	r3, [r2]
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 8
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 8
 
 
  110 0016 05E0     		b	.L8
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  312:Generated_Source\PSoC4/Cm0plusStart.c **** void Start_c(void)
  313:Generated_Source\PSoC4/Cm0plusStart.c **** {
  143              		.loc 1 313 0
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 9
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 9
 
 
  144              		.cfi_startproc
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  180 0012 01C9     		ldmia	r1!, {r0}
  181              	.LVL19:
  182 0014 01C3     		stmia	r3!, {r0}
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 10
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 10
 
 
  183              	.LVL20:
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  220 0032 E9D1     		bne	.L17
  342:Generated_Source\PSoC4/Cm0plusStart.c ****         }
  343:Generated_Source\PSoC4/Cm0plusStart.c **** 
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 11
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 11
 
 
  344:Generated_Source\PSoC4/Cm0plusStart.c ****         /* Invoke static objects constructors */
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  252              		.cfi_offset 4, -8
  253              		.cfi_offset 14, -4
  367:Generated_Source\PSoC4/Cm0plusStart.c ****     #if (CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_LOADABLE || CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_LOADABLE
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 12
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 12
 
 
  368:Generated_Source\PSoC4/Cm0plusStart.c **** 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  402:Generated_Source\PSoC4/Cm0plusStart.c **** *
  403:Generated_Source\PSoC4/Cm0plusStart.c **** *******************************************************************************/
  404:Generated_Source\PSoC4/Cm0plusStart.c **** #pragma inline = never
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 13
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 13
 
 
  405:Generated_Source\PSoC4/Cm0plusStart.c **** int __low_level_init(void)
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  459:Generated_Source\PSoC4/Cm0plusStart.c ****     #ifndef CY_SYS_ROM_VECTOR_SECTION
  460:Generated_Source\PSoC4/Cm0plusStart.c ****         #define CY_SYS_ROM_VECTOR_SECTION CY_SECTION(".romvectors")
  461:Generated_Source\PSoC4/Cm0plusStart.c ****     #endif /* CY_SYS_ROM_VECTOR_SECTION */
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 14
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 14
 
 
  462:Generated_Source\PSoC4/Cm0plusStart.c ****     CY_SYS_ROM_VECTOR_SECTION
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  507:Generated_Source\PSoC4/Cm0plusStart.c ****     /* Set Ram interrupt vectors to default functions. */
  508:Generated_Source\PSoC4/Cm0plusStart.c ****     for (indexInit = 0u; indexInit < CY_NUM_VECTORS; indexInit++)
  283              		.loc 1 508 0
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 15
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 15
 
 
  284 0002 0023     		movs	r3, #0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  314              		.loc 1 529 0
  315 0024 084B     		ldr	r3, .L28+12
  316 0026 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 16
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 16
 
 
  317 0028 002B     		cmp	r3, #0
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  358              		.set	.LANCHOR1,. + 0
  359              		.type	RomVectors, %object
  360              		.size	RomVectors, 16
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 17
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 17
 
 
  361              	RomVectors:
@@ -1000,28 +1000,28 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  393 0006 00000000 		.4byte	.Ldebug_abbrev0
  394 000a 04       		.byte	0x4
  395 000b 01       		.uleb128 0x1
- 396 000c 6D020000 		.4byte	.LASF49
+ 396 000c 6F020000 		.4byte	.LASF49
  397 0010 0C       		.byte	0xc
- 398 0011 0C020000 		.4byte	.LASF50
- 399 0015 CD010000 		.4byte	.LASF51
+ 398 0011 0E020000 		.4byte	.LASF50
+ 399 0015 5A000000 		.4byte	.LASF51
  400 0019 00000000 		.4byte	.Ldebug_ranges0+0
  401 001d 00000000 		.4byte	0
  402 0021 00000000 		.4byte	.Ldebug_line0
  403 0025 02       		.uleb128 0x2
  404 0026 01       		.byte	0x1
  405 0027 06       		.byte	0x6
- 406 0028 FF020000 		.4byte	.LASF0
+ 406 0028 01030000 		.4byte	.LASF0
  407 002c 02       		.uleb128 0x2
  408 002d 01       		.byte	0x1
  409 002e 08       		.byte	0x8
- 410 002f 90000000 		.4byte	.LASF1
+ 410 002f D1000000 		.4byte	.LASF1
  411 0033 02       		.uleb128 0x2
  412 0034 02       		.byte	0x2
  413 0035 05       		.byte	0x5
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 18
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 18
 
 
- 414 0036 46020000 		.4byte	.LASF2
+ 414 0036 48020000 		.4byte	.LASF2
  415 003a 02       		.uleb128 0x2
  416 003b 02       		.byte	0x2
  417 003c 07       		.byte	0x7
@@ -1029,19 +1029,19 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  419 0041 02       		.uleb128 0x2
  420 0042 04       		.byte	0x4
  421 0043 05       		.byte	0x5
- 422 0044 58020000 		.4byte	.LASF4
+ 422 0044 5A020000 		.4byte	.LASF4
  423 0048 02       		.uleb128 0x2
  424 0049 04       		.byte	0x4
  425 004a 07       		.byte	0x7
- 426 004b B5000000 		.4byte	.LASF5
+ 426 004b F6000000 		.4byte	.LASF5
  427 004f 02       		.uleb128 0x2
  428 0050 08       		.byte	0x8
  429 0051 05       		.byte	0x5
- 430 0052 BA010000 		.4byte	.LASF6
+ 430 0052 FB010000 		.4byte	.LASF6
  431 0056 02       		.uleb128 0x2
  432 0057 08       		.byte	0x8
  433 0058 07       		.byte	0x7
- 434 0059 6C010000 		.4byte	.LASF7
+ 434 0059 AD010000 		.4byte	.LASF7
  435 005d 03       		.uleb128 0x3
  436 005e 04       		.byte	0x4
  437 005f 05       		.byte	0x5
@@ -1049,7 +1049,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  439 0064 02       		.uleb128 0x2
  440 0065 04       		.byte	0x4
  441 0066 07       		.byte	0x7
- 442 0067 52010000 		.4byte	.LASF8
+ 442 0067 93010000 		.4byte	.LASF8
  443 006b 04       		.uleb128 0x4
  444 006c 00000000 		.4byte	.LASF10
  445 0070 02       		.byte	0x2
@@ -1058,36 +1058,36 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  448 0076 02       		.uleb128 0x2
  449 0077 08       		.byte	0x8
  450 0078 04       		.byte	0x4
- 451 0079 61020000 		.4byte	.LASF9
+ 451 0079 63020000 		.4byte	.LASF9
  452 007d 05       		.uleb128 0x5
- 453 007e DC000000 		.4byte	.LASF11
+ 453 007e 1D010000 		.4byte	.LASF11
  454 0082 03       		.byte	0x3
  455 0083 FB01     		.2byte	0x1fb
  456 0085 2C000000 		.4byte	0x2c
  457 0089 05       		.uleb128 0x5
- 458 008a 41010000 		.4byte	.LASF12
+ 458 008a 82010000 		.4byte	.LASF12
  459 008e 03       		.byte	0x3
  460 008f FD01     		.2byte	0x1fd
  461 0091 48000000 		.4byte	0x48
  462 0095 02       		.uleb128 0x2
  463 0096 04       		.byte	0x4
  464 0097 04       		.byte	0x4
- 465 0098 85000000 		.4byte	.LASF13
+ 465 0098 C6000000 		.4byte	.LASF13
  466 009c 02       		.uleb128 0x2
  467 009d 08       		.byte	0x8
  468 009e 04       		.byte	0x4
- 469 009f 06010000 		.4byte	.LASF14
+ 469 009f 47010000 		.4byte	.LASF14
  470 00a3 02       		.uleb128 0x2
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 19
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 19
 
 
  471 00a4 01       		.byte	0x1
  472 00a5 08       		.byte	0x8
- 473 00a6 C8010000 		.4byte	.LASF15
+ 473 00a6 09020000 		.4byte	.LASF15
  474 00aa 06       		.uleb128 0x6
  475 00ab 89000000 		.4byte	0x89
  476 00af 05       		.uleb128 0x5
- 477 00b0 89010000 		.4byte	.LASF16
+ 477 00b0 CA010000 		.4byte	.LASF16
  478 00b4 03       		.byte	0x3
  479 00b5 B702     		.2byte	0x2b7
  480 00b7 BB000000 		.4byte	0xbb
@@ -1098,47 +1098,47 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  485 00c2 02       		.uleb128 0x2
  486 00c3 04       		.byte	0x4
  487 00c4 07       		.byte	0x7
- 488 00c5 B1010000 		.4byte	.LASF17
+ 488 00c5 F2010000 		.4byte	.LASF17
  489 00c9 09       		.uleb128 0x9
  490 00ca 04       		.byte	0x4
  491 00cb 0A       		.uleb128 0xa
  492 00cc A3000000 		.4byte	0xa3
  493 00d0 04       		.uleb128 0x4
- 494 00d1 A0010000 		.4byte	.LASF18
+ 494 00d1 E1010000 		.4byte	.LASF18
  495 00d5 01       		.byte	0x1
  496 00d6 DD       		.byte	0xdd
  497 00d7 2C000000 		.4byte	0x2c
  498 00db 0B       		.uleb128 0xb
- 499 00dc 27030000 		.4byte	.LASF52
+ 499 00dc 29030000 		.4byte	.LASF52
  500 00e0 10       		.byte	0x10
  501 00e1 01       		.byte	0x1
  502 00e2 DF       		.byte	0xdf
  503 00e3 18010000 		.4byte	0x118
  504 00e7 0C       		.uleb128 0xc
- 505 00e8 6A000000 		.4byte	.LASF19
+ 505 00e8 AB000000 		.4byte	.LASF19
  506 00ec 01       		.byte	0x1
  507 00ed E1       		.byte	0xe1
  508 00ee 18010000 		.4byte	0x118
  509 00f2 00       		.byte	0
  510 00f3 0C       		.uleb128 0xc
- 511 00f4 8B000000 		.4byte	.LASF20
+ 511 00f4 CC000000 		.4byte	.LASF20
  512 00f8 01       		.byte	0x1
  513 00f9 E2       		.byte	0xe2
  514 00fa 18010000 		.4byte	0x118
  515 00fe 04       		.byte	0x4
  516 00ff 0C       		.uleb128 0xc
- 517 0100 96010000 		.4byte	.LASF21
+ 517 0100 D7010000 		.4byte	.LASF21
  518 0104 01       		.byte	0x1
  519 0105 E3       		.byte	0xe3
  520 0106 6B000000 		.4byte	0x6b
  521 010a 08       		.byte	0x8
  522 010b 0C       		.uleb128 0xc
- 523 010c 76000000 		.4byte	.LASF22
+ 523 010c B7000000 		.4byte	.LASF22
  524 0110 01       		.byte	0x1
  525 0111 E4       		.byte	0xe4
  526 0112 6B000000 		.4byte	0x6b
  527 0116 0C       		.byte	0xc
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 20
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 20
 
 
  528 0117 00       		.byte	0
@@ -1146,7 +1146,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  530 0119 04       		.byte	0x4
  531 011a D0000000 		.4byte	0xd0
  532 011e 0D       		.uleb128 0xd
- 533 011f EE000000 		.4byte	.LASF23
+ 533 011f 2F010000 		.4byte	.LASF23
  534 0123 01       		.byte	0x1
  535 0124 6C       		.byte	0x6c
  536 0125 00000000 		.4byte	.LFB1
@@ -1159,7 +1159,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  543 0138 81030000 		.4byte	0x381
  544 013c 00       		.byte	0
  545 013d 0D       		.uleb128 0xd
- 546 013e E8000000 		.4byte	.LASF24
+ 546 013e 29010000 		.4byte	.LASF24
  547 0142 01       		.byte	0x1
  548 0143 FD       		.byte	0xfd
  549 0144 00000000 		.4byte	.LFB2
@@ -1168,7 +1168,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  552 014d 9C       		.byte	0x9c
  553 014e 73010000 		.4byte	0x173
  554 0152 0F       		.uleb128 0xf
- 555 0153 6F000000 		.4byte	.LASF26
+ 555 0153 B0000000 		.4byte	.LASF26
  556 0157 01       		.byte	0x1
  557 0158 FD       		.byte	0xfd
  558 0159 5D000000 		.4byte	0x5d
@@ -1186,7 +1186,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  570 0171 00       		.byte	0
  571 0172 00       		.byte	0
  572 0173 12       		.uleb128 0x12
- 573 0174 00010000 		.4byte	.LASF25
+ 573 0174 41010000 		.4byte	.LASF25
  574 0178 01       		.byte	0x1
  575 0179 1701     		.2byte	0x117
  576 017b C9000000 		.4byte	0xc9
@@ -1196,9 +1196,9 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  580 0188 9C       		.byte	0x9c
  581 0189 D5010000 		.4byte	0x1d5
  582 018d 13       		.uleb128 0x13
- 583 018e 20030000 		.4byte	.LASF27
+ 583 018e 22030000 		.4byte	.LASF27
  584 0192 01       		.byte	0x1
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 21
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 21
 
 
  585 0193 1701     		.2byte	0x117
@@ -1210,7 +1210,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  591 01a3 1901     		.2byte	0x119
  592 01a5 5D000000 		.4byte	0x5d
  593 01a9 15       		.uleb128 0x15
- 594 01aa 9E000000 		.4byte	.LASF28
+ 594 01aa DF000000 		.4byte	.LASF28
  595 01ae 01       		.byte	0x1
  596 01af 1A01     		.2byte	0x11a
  597 01b1 C9000000 		.4byte	0xc9
@@ -1240,13 +1240,13 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  621 01ec 9C       		.byte	0x9c
  622 01ed 72020000 		.4byte	0x272
  623 01f1 15       		.uleb128 0x15
- 624 01f2 18030000 		.4byte	.LASF31
+ 624 01f2 1A030000 		.4byte	.LASF31
  625 01f6 01       		.byte	0x1
  626 01f7 3D01     		.2byte	0x13d
  627 01f9 64000000 		.4byte	0x64
  628 01fd 78000000 		.4byte	.LLST3
  629 0201 15       		.uleb128 0x15
- 630 0202 80000000 		.4byte	.LASF32
+ 630 0202 C1000000 		.4byte	.LASF32
  631 0206 01       		.byte	0x1
  632 0207 3E01     		.2byte	0x13e
  633 0209 72020000 		.4byte	0x272
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  639 021e 19       		.uleb128 0x19
  640 021f 73726300 		.ascii	"src\000"
  641 0223 01       		.byte	0x1
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 22
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 22
 
 
  642 0224 4301     		.2byte	0x143
@@ -1271,7 +1271,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  649 0236 7D020000 		.4byte	0x27d
  650 023a C9000000 		.4byte	.LLST6
  651 023e 15       		.uleb128 0x15
- 652 023f 83010000 		.4byte	.LASF33
+ 652 023f C4010000 		.4byte	.LASF33
  653 0243 01       		.byte	0x1
  654 0244 4501     		.2byte	0x145
  655 0246 64000000 		.4byte	0x64
@@ -1299,7 +1299,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  677 027e 04       		.byte	0x4
  678 027f 89000000 		.4byte	0x89
  679 0283 17       		.uleb128 0x17
- 680 0284 E2000000 		.4byte	.LASF35
+ 680 0284 23010000 		.4byte	.LASF35
  681 0288 01       		.byte	0x1
  682 0289 6D01     		.2byte	0x16d
  683 028b 00000000 		.4byte	.LFB5
@@ -1318,10 +1318,10 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  696 02b0 DB010000 		.4byte	0x1db
  697 02b4 00       		.byte	0
  698 02b5 1A       		.uleb128 0x1a
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 23
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 23
 
 
- 699 02b6 31010000 		.4byte	.LASF53
+ 699 02b6 72010000 		.4byte	.LASF53
  700 02ba 01       		.byte	0x1
  701 02bb EB01     		.2byte	0x1eb
  702 02bd 00000000 		.4byte	.LFB6
@@ -1330,7 +1330,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  705 02c6 9C       		.byte	0x9c
  706 02c7 E5020000 		.4byte	0x2e5
  707 02cb 15       		.uleb128 0x15
- 708 02cc 48010000 		.4byte	.LASF36
+ 708 02cc 89010000 		.4byte	.LASF36
  709 02d0 01       		.byte	0x1
  710 02d1 ED01     		.2byte	0x1ed
  711 02d3 89000000 		.4byte	0x89
@@ -1340,7 +1340,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  715 02e0 C3030000 		.4byte	0x3c3
  716 02e4 00       		.byte	0
  717 02e5 1B       		.uleb128 0x1b
- 718 02e6 C7000000 		.4byte	.LASF54
+ 718 02e6 08010000 		.4byte	.LASF54
  719 02ea 01       		.byte	0x1
  720 02eb 4D       		.byte	0x4d
  721 02ec 89000000 		.4byte	0x89
@@ -1350,7 +1350,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  725 02f6 1901     		.2byte	0x119
  726 02f8 5D000000 		.4byte	0x5d
  727 02fc 1C       		.uleb128 0x1c
- 728 02fd 22010000 		.4byte	.LASF37
+ 728 02fd 63010000 		.4byte	.LASF37
  729 0301 01       		.byte	0x1
  730 0302 5E       		.byte	0x5e
  731 0303 AA000000 		.4byte	0xaa
@@ -1363,14 +1363,14 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  738 0316 1E       		.uleb128 0x1e
  739 0317 00       		.byte	0
  740 0318 1F       		.uleb128 0x1f
- 741 0319 0B030000 		.4byte	.LASF38
+ 741 0319 0D030000 		.4byte	.LASF38
  742 031d 01       		.byte	0x1
  743 031e E7       		.byte	0xe7
  744 031f 23030000 		.4byte	0x323
  745 0323 0A       		.uleb128 0xa
  746 0324 0D030000 		.4byte	0x30d
  747 0328 1F       		.uleb128 0x1f
- 748 0329 5A000000 		.4byte	.LASF39
+ 748 0329 9B000000 		.4byte	.LASF39
  749 032d 01       		.byte	0x1
  750 032e E8       		.byte	0xe8
  751 032f CB000000 		.4byte	0xcb
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  753 0334 AF000000 		.4byte	0xaf
  754 0338 43030000 		.4byte	0x343
  755 033c 20       		.uleb128 0x20
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 24
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 24
 
 
  756 033d C2000000 		.4byte	0xc2
@@ -1402,7 +1402,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  774 0365 0A       		.uleb128 0xa
  775 0366 AF000000 		.4byte	0xaf
  776 036a 21       		.uleb128 0x21
- 777 036b AA000000 		.4byte	.LASF41
+ 777 036b EB000000 		.4byte	.LASF41
  778 036f 01       		.byte	0x1
  779 0370 CF01     		.2byte	0x1cf
  780 0372 7C030000 		.4byte	0x37c
@@ -1412,8 +1412,8 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  784 037c 0A       		.uleb128 0xa
  785 037d 55030000 		.4byte	0x355
  786 0381 22       		.uleb128 0x22
- 787 0382 50020000 		.4byte	.LASF42
- 788 0386 50020000 		.4byte	.LASF42
+ 787 0382 52020000 		.4byte	.LASF42
+ 788 0386 52020000 		.4byte	.LASF42
  789 038a 04       		.byte	0x4
  790 038b 0F       		.byte	0xf
  791 038c 22       		.uleb128 0x22
@@ -1427,26 +1427,26 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  799 03a0 01       		.byte	0x1
  800 03a1 DB       		.byte	0xdb
  801 03a2 22       		.uleb128 0x22
- 802 03a3 1D010000 		.4byte	.LASF45
- 803 03a7 1D010000 		.4byte	.LASF45
+ 802 03a3 5E010000 		.4byte	.LASF45
+ 803 03a7 5E010000 		.4byte	.LASF45
  804 03ab 01       		.byte	0x1
  805 03ac D8       		.byte	0xd8
  806 03ad 22       		.uleb128 0x22
- 807 03ae 0D010000 		.4byte	.LASF46
- 808 03b2 0D010000 		.4byte	.LASF46
+ 807 03ae 4E010000 		.4byte	.LASF46
+ 808 03b2 4E010000 		.4byte	.LASF46
  809 03b6 06       		.byte	0x6
  810 03b7 89       		.byte	0x89
  811 03b8 22       		.uleb128 0x22
- 812 03b9 32020000 		.4byte	.LASF47
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 25
+ 812 03b9 34020000 		.4byte	.LASF47
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 25
 
 
- 813 03bd 32020000 		.4byte	.LASF47
+ 813 03bd 34020000 		.4byte	.LASF47
  814 03c1 01       		.byte	0x1
  815 03c2 46       		.byte	0x46
  816 03c3 22       		.uleb128 0x22
- 817 03c4 5F010000 		.4byte	.LASF48
- 818 03c8 5F010000 		.4byte	.LASF48
+ 817 03c4 A0010000 		.4byte	.LASF48
+ 818 03c8 A0010000 		.4byte	.LASF48
  819 03cc 07       		.byte	0x7
  820 03cd 16       		.byte	0x16
  821 03ce 00       		.byte	0
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  867 002b 00       		.byte	0
  868 002c 03       		.uleb128 0x3
  869 002d 0E       		.uleb128 0xe
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 26
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 26
 
 
  870 002e 3A       		.uleb128 0x3a
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  924 0064 49       		.uleb128 0x49
  925 0065 13       		.uleb128 0x13
  926 0066 00       		.byte	0
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 27
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 27
 
 
  927 0067 00       		.byte	0
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  981 009f 01       		.uleb128 0x1
  982 00a0 13       		.uleb128 0x13
  983 00a1 00       		.byte	0
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 28
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 28
 
 
  984 00a2 00       		.byte	0
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  1038 00df 27       		.uleb128 0x27
  1039 00e0 19       		.uleb128 0x19
  1040 00e1 49       		.uleb128 0x49
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 29
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 29
 
 
  1041 00e2 13       		.uleb128 0x13
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  1095 0119 49       		.uleb128 0x49
  1096 011a 13       		.uleb128 0x13
  1097 011b 02       		.uleb128 0x2
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 30
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 30
 
 
  1098 011c 17       		.uleb128 0x17
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  1152 0154 00       		.byte	0
  1153 0155 00       		.byte	0
  1154 0156 19       		.uleb128 0x19
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 31
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 31
 
 
  1155 0157 34       		.uleb128 0x34
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  1209 018e 00       		.byte	0
  1210 018f 03       		.uleb128 0x3
  1211 0190 0E       		.uleb128 0xe
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 32
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 32
 
 
  1212 0191 3A       		.uleb128 0x3a
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  1266 01c7 00       		.byte	0
  1267 01c8 03       		.uleb128 0x3
  1268 01c9 0E       		.uleb128 0xe
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 33
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 33
 
 
  1269 01ca 3A       		.uleb128 0x3a
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  1323 0036 53       		.byte	0x53
  1324 0037 0A000000 		.4byte	.LVL6
  1325 003b 30000000 		.4byte	.LFE3
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 34
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 34
 
 
  1326 003f 0400     		.2byte	0x4
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  1380 00c5 00000000 		.4byte	0
  1381              	.LLST6:
  1382 00c9 0C000000 		.4byte	.LVL16
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 35
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 35
 
 
  1383 00cd 30000000 		.4byte	.LVL27
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  1437 000b 00       		.byte	0
  1438 000c 0000     		.2byte	0
  1439 000e 0000     		.2byte	0
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 36
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 36
 
 
  1440 0010 00000000 		.4byte	.LFB1
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  1481              	.LASF30:
  1482 002d 53746172 		.ascii	"Start_c\000"
  1482      745F6300 
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 37
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 37
 
 
  1483              	.LASF34:
@@ -2174,230 +2174,230 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 1
  1488      7369676E 
  1488      65642069 
  1488      6E7400
- 1489              	.LASF39:
- 1490 005a 5F5F6379 		.ascii	"__cy_region_num\000"
- 1490      5F726567 
- 1490      696F6E5F 
- 1490      6E756D00 
- 1491              	.LASF19:
- 1492 006a 696E6974 		.ascii	"init\000"
- 1492      00
- 1493              	.LASF26:
- 1494 006f 73746174 		.ascii	"status\000"
- 1494      757300
- 1495              	.LASF22:
- 1496 0076 7A65726F 		.ascii	"zero_size\000"
- 1496      5F73697A 
- 1496      6500
- 1497              	.LASF32:
- 1498 0080 72707472 		.ascii	"rptr\000"
- 1498      00
- 1499              	.LASF13:
- 1500 0085 666C6F61 		.ascii	"float\000"
- 1500      7400
- 1501              	.LASF20:
- 1502 008b 64617461 		.ascii	"data\000"
- 1502      00
- 1503              	.LASF1:
- 1504 0090 756E7369 		.ascii	"unsigned char\000"
- 1504      676E6564 
- 1504      20636861 
- 1504      7200
- 1505              	.LASF28:
- 1506 009e 72657475 		.ascii	"returnValue\000"
- 1506      726E5661 
- 1506      6C756500 
- 1507              	.LASF41:
- 1508 00aa 526F6D56 		.ascii	"RomVectors\000"
- 1508      6563746F 
- 1508      727300
- 1509              	.LASF5:
- 1510 00b5 6C6F6E67 		.ascii	"long unsigned int\000"
- 1510      20756E73 
- 1510      69676E65 
- 1510      6420696E 
- 1510      7400
- 1511              	.LASF54:
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 38
+ 1489              	.LASF51:
+ 1490 005a 433A5C55 		.ascii	"C:\\Users\\PC\\Documents\\GitHub_Commit\\Yellow-Chi"
+ 1490      73657273 
+ 1490      5C50435C 
+ 1490      446F6375 
+ 1490      6D656E74 
+ 1491 0088 705C626F 		.ascii	"p\\bootloader.cydsn\000"
+ 1491      6F746C6F 
+ 1491      61646572 
+ 1491      2E637964 
+ 1491      736E00
+ 1492              	.LASF39:
+ 1493 009b 5F5F6379 		.ascii	"__cy_region_num\000"
+ 1493      5F726567 
+ 1493      696F6E5F 
+ 1493      6E756D00 
+ 1494              	.LASF19:
+ 1495 00ab 696E6974 		.ascii	"init\000"
+ 1495      00
+ 1496              	.LASF26:
+ 1497 00b0 73746174 		.ascii	"status\000"
+ 1497      757300
+ 1498              	.LASF22:
+ 1499 00b7 7A65726F 		.ascii	"zero_size\000"
+ 1499      5F73697A 
+ 1499      6500
+ 1500              	.LASF32:
+ 1501 00c1 72707472 		.ascii	"rptr\000"
+ 1501      00
+ 1502              	.LASF13:
+ 1503 00c6 666C6F61 		.ascii	"float\000"
+ 1503      7400
+ 1504              	.LASF20:
+ 1505 00cc 64617461 		.ascii	"data\000"
+ 1505      00
+ 1506              	.LASF1:
+ 1507 00d1 756E7369 		.ascii	"unsigned char\000"
+ 1507      676E6564 
+ 1507      20636861 
+ 1507      7200
+ 1508              	.LASF28:
+ 1509 00df 72657475 		.ascii	"returnValue\000"
+ 1509      726E5661 
+ 1509      6C756500 
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 38
 
 
- 1512 00c7 63795379 		.ascii	"cySysNoInitDataValid\000"
- 1512      734E6F49 
- 1512      6E697444 
- 1512      61746156 
- 1512      616C6964 
- 1513              	.LASF11:
- 1514 00dc 75696E74 		.ascii	"uint8\000"
- 1514      3800
- 1515              	.LASF35:
- 1516 00e2 52657365 		.ascii	"Reset\000"
- 1516      7400
- 1517              	.LASF24:
- 1518 00e8 5F657869 		.ascii	"_exit\000"
- 1518      7400
- 1519              	.LASF23:
- 1520 00ee 496E7444 		.ascii	"IntDefaultHandler\000"
- 1520      65666175 
- 1520      6C744861 
- 1520      6E646C65 
- 1520      7200
- 1521              	.LASF25:
- 1522 0100 5F736272 		.ascii	"_sbrk\000"
- 1522      6B00
- 1523              	.LASF14:
- 1524 0106 646F7562 		.ascii	"double\000"
- 1524      6C6500
- 1525              	.LASF46:
- 1526 010d 43795379 		.ascii	"CySysWdtDisable\000"
- 1526      73576474 
- 1526      44697361 
- 1526      626C6500 
- 1527              	.LASF45:
- 1528 011d 6D61696E 		.ascii	"main\000"
- 1528      00
- 1529              	.LASF37:
- 1530 0122 63794274 		.ascii	"cyBtldrRunType\000"
- 1530      6C647252 
- 1530      756E5479 
- 1530      706500
- 1531              	.LASF53:
- 1532 0131 696E6974 		.ascii	"initialize_psoc\000"
- 1532      69616C69 
- 1532      7A655F70 
- 1532      736F6300 
- 1533              	.LASF12:
- 1534 0141 75696E74 		.ascii	"uint32\000"
- 1534      333200
- 1535              	.LASF36:
- 1536 0148 696E6465 		.ascii	"indexInit\000"
- 1536      78496E69 
- 1536      7400
- 1537              	.LASF8:
- 1538 0152 756E7369 		.ascii	"unsigned int\000"
- 1538      676E6564 
- 1538      20696E74 
- 1538      00
- 1539              	.LASF48:
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 39
+ 1510              	.LASF41:
+ 1511 00eb 526F6D56 		.ascii	"RomVectors\000"
+ 1511      6563746F 
+ 1511      727300
+ 1512              	.LASF5:
+ 1513 00f6 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1513      20756E73 
+ 1513      69676E65 
+ 1513      6420696E 
+ 1513      7400
+ 1514              	.LASF54:
+ 1515 0108 63795379 		.ascii	"cySysNoInitDataValid\000"
+ 1515      734E6F49 
+ 1515      6E697444 
+ 1515      61746156 
+ 1515      616C6964 
+ 1516              	.LASF11:
+ 1517 011d 75696E74 		.ascii	"uint8\000"
+ 1517      3800
+ 1518              	.LASF35:
+ 1519 0123 52657365 		.ascii	"Reset\000"
+ 1519      7400
+ 1520              	.LASF24:
+ 1521 0129 5F657869 		.ascii	"_exit\000"
+ 1521      7400
+ 1522              	.LASF23:
+ 1523 012f 496E7444 		.ascii	"IntDefaultHandler\000"
+ 1523      65666175 
+ 1523      6C744861 
+ 1523      6E646C65 
+ 1523      7200
+ 1524              	.LASF25:
+ 1525 0141 5F736272 		.ascii	"_sbrk\000"
+ 1525      6B00
+ 1526              	.LASF14:
+ 1527 0147 646F7562 		.ascii	"double\000"
+ 1527      6C6500
+ 1528              	.LASF46:
+ 1529 014e 43795379 		.ascii	"CySysWdtDisable\000"
+ 1529      73576474 
+ 1529      44697361 
+ 1529      626C6500 
+ 1530              	.LASF45:
+ 1531 015e 6D61696E 		.ascii	"main\000"
+ 1531      00
+ 1532              	.LASF37:
+ 1533 0163 63794274 		.ascii	"cyBtldrRunType\000"
+ 1533      6C647252 
+ 1533      756E5479 
+ 1533      706500
+ 1534              	.LASF53:
+ 1535 0172 696E6974 		.ascii	"initialize_psoc\000"
+ 1535      69616C69 
+ 1535      7A655F70 
+ 1535      736F6300 
+ 1536              	.LASF12:
+ 1537 0182 75696E74 		.ascii	"uint32\000"
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 39
 
 
- 1540 015f 63796669 		.ascii	"cyfitter_cfg\000"
- 1540      74746572 
- 1540      5F636667 
- 1540      00
- 1541              	.LASF7:
- 1542 016c 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1542      206C6F6E 
- 1542      6720756E 
- 1542      7369676E 
- 1542      65642069 
- 1543              	.LASF33:
- 1544 0183 6C696D69 		.ascii	"limit\000"
- 1544      7400
- 1545              	.LASF16:
- 1546 0189 63796973 		.ascii	"cyisraddress\000"
- 1546      72616464 
- 1546      72657373 
- 1546      00
- 1547              	.LASF21:
- 1548 0196 696E6974 		.ascii	"init_size\000"
- 1548      5F73697A 
- 1548      6500
- 1549              	.LASF18:
- 1550 01a0 5F5F6379 		.ascii	"__cy_byte_align8\000"
- 1550      5F627974 
- 1550      655F616C 
- 1550      69676E38 
- 1550      00
- 1551              	.LASF17:
- 1552 01b1 73697A65 		.ascii	"sizetype\000"
- 1552      74797065 
- 1552      00
- 1553              	.LASF6:
- 1554 01ba 6C6F6E67 		.ascii	"long long int\000"
- 1554      206C6F6E 
- 1554      6720696E 
- 1554      7400
- 1555              	.LASF15:
- 1556 01c8 63686172 		.ascii	"char\000"
- 1556      00
- 1557              	.LASF51:
- 1558 01cd 433A5C55 		.ascii	"C:\\Users\\PC\\Documents\\PSoC Creator\\yellowChip\\"
- 1558      73657273 
- 1558      5C50435C 
- 1558      446F6375 
- 1558      6D656E74 
- 1559 01fb 626F6F74 		.ascii	"bootloader.cydsn\000"
- 1559      6C6F6164 
- 1559      65722E63 
- 1559      7964736E 
+ 1537      333200
+ 1538              	.LASF36:
+ 1539 0189 696E6465 		.ascii	"indexInit\000"
+ 1539      78496E69 
+ 1539      7400
+ 1540              	.LASF8:
+ 1541 0193 756E7369 		.ascii	"unsigned int\000"
+ 1541      676E6564 
+ 1541      20696E74 
+ 1541      00
+ 1542              	.LASF48:
+ 1543 01a0 63796669 		.ascii	"cyfitter_cfg\000"
+ 1543      74746572 
+ 1543      5F636667 
+ 1543      00
+ 1544              	.LASF7:
+ 1545 01ad 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1545      206C6F6E 
+ 1545      6720756E 
+ 1545      7369676E 
+ 1545      65642069 
+ 1546              	.LASF33:
+ 1547 01c4 6C696D69 		.ascii	"limit\000"
+ 1547      7400
+ 1548              	.LASF16:
+ 1549 01ca 63796973 		.ascii	"cyisraddress\000"
+ 1549      72616464 
+ 1549      72657373 
+ 1549      00
+ 1550              	.LASF21:
+ 1551 01d7 696E6974 		.ascii	"init_size\000"
+ 1551      5F73697A 
+ 1551      6500
+ 1552              	.LASF18:
+ 1553 01e1 5F5F6379 		.ascii	"__cy_byte_align8\000"
+ 1553      5F627974 
+ 1553      655F616C 
+ 1553      69676E38 
+ 1553      00
+ 1554              	.LASF17:
+ 1555 01f2 73697A65 		.ascii	"sizetype\000"
+ 1555      74797065 
+ 1555      00
+ 1556              	.LASF6:
+ 1557 01fb 6C6F6E67 		.ascii	"long long int\000"
+ 1557      206C6F6E 
+ 1557      6720696E 
+ 1557      7400
+ 1558              	.LASF15:
+ 1559 0209 63686172 		.ascii	"char\000"
  1559      00
  1560              	.LASF50:
- 1561 020c 47656E65 		.ascii	"Generated_Source\\PSoC4\\Cm0plusStart.c\000"
+ 1561 020e 47656E65 		.ascii	"Generated_Source\\PSoC4\\Cm0plusStart.c\000"
  1561      72617465 
  1561      645F536F 
  1561      75726365 
  1561      5C50536F 
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 40
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 40
 
 
  1562              	.LASF47:
- 1563 0232 43794274 		.ascii	"CyBtldr_CheckLaunch\000"
+ 1563 0234 43794274 		.ascii	"CyBtldr_CheckLaunch\000"
  1563      6C64725F 
  1563      43686563 
  1563      6B4C6175 
  1563      6E636800 
  1564              	.LASF2:
- 1565 0246 73686F72 		.ascii	"short int\000"
+ 1565 0248 73686F72 		.ascii	"short int\000"
  1565      7420696E 
  1565      7400
  1566              	.LASF42:
- 1567 0250 5F5F6572 		.ascii	"__errno\000"
+ 1567 0252 5F5F6572 		.ascii	"__errno\000"
  1567      726E6F00 
  1568              	.LASF4:
- 1569 0258 6C6F6E67 		.ascii	"long int\000"
+ 1569 025a 6C6F6E67 		.ascii	"long int\000"
  1569      20696E74 
  1569      00
  1570              	.LASF9:
- 1571 0261 6C6F6E67 		.ascii	"long double\000"
+ 1571 0263 6C6F6E67 		.ascii	"long double\000"
  1571      20646F75 
  1571      626C6500 
  1572              	.LASF49:
- 1573 026d 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1573 026f 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
  1573      43313120 
  1573      352E342E 
  1573      31203230 
  1573      31363036 
- 1574 02a0 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 1574 02a2 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
  1574      20726576 
  1574      6973696F 
  1574      6E203233 
  1574      37373135 
- 1575 02d3 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 1575 02d5 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
  1575      67202D66 
  1575      66756E63 
  1575      74696F6E 
  1575      2D736563 
  1576              	.LASF0:
- 1577 02ff 7369676E 		.ascii	"signed char\000"
+ 1577 0301 7369676E 		.ascii	"signed char\000"
  1577      65642063 
  1577      68617200 
  1578              	.LASF38:
- 1579 030b 5F5F6379 		.ascii	"__cy_regions\000"
+ 1579 030d 5F5F6379 		.ascii	"__cy_regions\000"
  1579      5F726567 
  1579      696F6E73 
  1579      00
  1580              	.LASF31:
- 1581 0318 72656769 		.ascii	"regions\000"
+ 1581 031a 72656769 		.ascii	"regions\000"
  1581      6F6E7300 
  1582              	.LASF27:
- 1583 0320 6E627974 		.ascii	"nbytes\000"
+ 1583 0322 6E627974 		.ascii	"nbytes\000"
  1583      657300
  1584              	.LASF52:
- 1585 0327 5F5F6379 		.ascii	"__cy_region\000"
+ 1585 0329 5F5F6379 		.ascii	"__cy_region\000"
  1585      5F726567 
  1585      696F6E00 
  1586              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
-ARM GAS  C:\Users\PC\AppData\Local\Temp\cckdM2H5.s 			page 41
+ARM GAS  C:\Users\PC\AppData\Local\Temp\ccFHMywc.s 			page 41
 
 

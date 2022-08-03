@@ -3,17 +3,17 @@
 <!--This file is machine generated and read. It is not intended to be edited by hand.-->
 <!--Due to this, there is no schema for this file.-->
 <CyGuid_2867d519-54d2-4c01-9830-c51cb08bc3dd type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWorkspaceSerialize" version="5" xml_contents_version="3" name="yellowChip" persistent="yellowChip.cywrk" platform="NOT_USED">
-<current_project name=".\RGB_Led.cydsn\RGB_Led.cyprj" />
+<current_project name=".\bootloader.cydsn\bootloader.cyprj" />
 <wrkspc_folders />
 <files />
 <projects>
-<v>.\bootloader.cydsn\bootloader.cyprj</v>
 <v>.\Oled.cydsn\Oled.cyprj</v>
 <v>.\TestLed.cydsn\TestLed.cyprj</v>
 <v>.\RGB_Led.cydsn\RGB_Led.cyprj</v>
 <v>.\PWM.cydsn\PWM.cyprj</v>
 <v>.\BUZZER.cydsn\BUZZER.cyprj</v>
 <v>.\ADC.cydsn\ADC.cyprj</v>
+<v>.\bootloader.cydsn\bootloader.cyprj</v>
 </projects>
 <workspace_id v="39ead030-e4c4-4181-9728-b9cfbe86549b" />
 <WriteAppVersionLastSavedWith v="4.4.0.80" />

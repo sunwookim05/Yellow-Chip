@@ -11,13 +11,15 @@
 */
 #include "project.h"
 
-int main(void) {
+int main(void)
+{
     CyGlobalIntEnable; /* Enable global interrupts. */
+    mUART_Start();
 
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
-    mUART_Start();
-    mBootloader_Start();
-    for(;;) {
+
+    for(;;)
+    {
         /* Place your application code here. */
     }
 }

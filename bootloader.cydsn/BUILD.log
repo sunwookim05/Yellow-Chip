@@ -1,5 +1,15 @@
---------------- Build Started: 07/27/2022 11:22:29 Project: bootloader, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+--------------- Build Started: 08/03/2022 14:57:38 Project: bootloader, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
 The code generation step is up to date.
-The compile step is up to date, no work needs to be done.
-The link step is up to date, no work needs to be done.
---------------- Build Succeeded: 07/27/2022 11:22:29 ---------------
+arm-none-eabi-gcc.exe -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c main.c -o .\CortexM0p\ARM_GCC_541\Debug\main.o
+arm-none-eabi-ar.exe -rs .\CortexM0p\ARM_GCC_541\Debug\bootloader.a .\CortexM0p\ARM_GCC_541\Debug\mBootloader.o .\CortexM0p\ARM_GCC_541\Debug\mUART.o .\CortexM0p\ARM_GCC_541\Debug\mUART_SPI_UART.o .\CortexM0p\ARM_GCC_541\Debug\mUART_SPI_UART_INT.o .\CortexM0p\ARM_GCC_541\Debug\mUART_PM.o .\CortexM0p\ARM_GCC_541\Debug\mUART_UART.o .\CortexM0p\ARM_GCC_541\Debug\mUART_BOOT.o .\CortexM0p\ARM_GCC_541\Debug\mUART_UART_BOOT.o .\CortexM0p\ARM_GCC_541\Debug\mUART_SCBCLK.o .\CortexM0p\ARM_GCC_541\Debug\mUART_tx.o .\CortexM0p\ARM_GCC_541\Debug\mUART_tx_PM.o .\CortexM0p\ARM_GCC_541\Debug\mUART_rx.o .\CortexM0p\ARM_GCC_541\Debug\mUART_rx_PM.o .\CortexM0p\ARM_GCC_541\Debug\CyFlash.o .\CortexM0p\ARM_GCC_541\Debug\CyLib.o .\CortexM0p\ARM_GCC_541\Debug\cyPm.o .\CortexM0p\ARM_GCC_541\Debug\cyutils.o .\CortexM0p\ARM_GCC_541\Debug\CyLFClk.o .\CortexM0p\ARM_GCC_541\Debug\cy_em_eeprom.o .\CortexM0p\ARM_GCC_541\Debug\CyBootAsmGnu.o
+arm-none-eabi-ar.exe: creating .\CortexM0p\ARM_GCC_541\Debug\bootloader.a
+arm-none-eabi-gcc.exe -Wl,--start-group -o C:\Users\PC\Documents\GitHub_Commit\Yellow-Chip\bootloader.cydsn\CortexM0p\ARM_GCC_541\Debug\bootloader.elf .\CortexM0p\ARM_GCC_541\Debug\main.o .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o .\CortexM0p\ARM_GCC_541\Debug\bootloader.a -mcpu=cortex-m0plus -mthumb -L Generated_Source\PSoC4 -Wl,-Map,.\CortexM0p\ARM_GCC_541\Debug/bootloader.map -T Generated_Source\PSoC4\cm0plusgcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -Og -ffat-lto-objects -Wl,--end-group
+.\CortexM0p\ARM_GCC_541\Debug\bootloader.a(mBootloader.o): In function `mBootloader_WritePacket':
+C:\Users\PC\Documents\GitHub_Commit\Yellow-Chip\bootloader.cydsn/Generated_Source\PSoC4/mBootloader.c:2779: undefined reference to `CyBtldrCommWrite'
+.\CortexM0p\ARM_GCC_541\Debug\bootloader.a(mBootloader.o): In function `mBootloader_HostLink':
+C:\Users\PC\Documents\GitHub_Commit\Yellow-Chip\bootloader.cydsn/Generated_Source\PSoC4/mBootloader.c:1697: undefined reference to `CyBtldrCommStart'
+C:\Users\PC\Documents\GitHub_Commit\Yellow-Chip\bootloader.cydsn/Generated_Source\PSoC4/mBootloader.c:1708: undefined reference to `CyBtldrCommRead'
+C:\Users\PC\Documents\GitHub_Commit\Yellow-Chip\bootloader.cydsn/Generated_Source\PSoC4/mBootloader.c:2678: undefined reference to `CyBtldrCommStop'
+collect2.exe: error: ld returned 1 exit status
+The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
+--------------- Build Failed: 08/03/2022 14:57:39 ---------------

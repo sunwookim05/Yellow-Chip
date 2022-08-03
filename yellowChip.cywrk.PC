@@ -13,10 +13,9 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="yellowChip\RGB_Led">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="yellowChip\bootloader\Generated_Source">
 <ExpandedNodeIds>
 <v>yellowChip</v>
-<v>yellowChip\ADC</v>
 <v>yellowChip\ADC\TopDesign</v>
 <v>yellowChip\ADC\ADC.cydwr</v>
 <v>yellowChip\ADC\ADC.cydwr\Pins</v>
@@ -31,6 +30,7 @@
 <v>yellowChip\ADC\Source Files</v>
 <v>yellowChip\ADC\Source Files\main.c</v>
 <v>yellowChip\ADC\Generated_Source\PSoC4</v>
+<v>yellowChip\bootloader</v>
 <v>yellowChip\bootloader\TopDesign</v>
 <v>yellowChip\bootloader\bootloader.cydwr</v>
 <v>yellowChip\bootloader\bootloader.cydwr\Pins</v>
@@ -44,7 +44,6 @@
 <v>yellowChip\bootloader\Header Files\cyapicallbacks.h</v>
 <v>yellowChip\bootloader\Source Files</v>
 <v>yellowChip\bootloader\Source Files\main.c</v>
-<v>yellowChip\bootloader\Generated_Source</v>
 <v>yellowChip\bootloader\Generated_Source\PSoC4</v>
 <v>yellowChip\BUZZER\TopDesign</v>
 <v>yellowChip\BUZZER\BUZZER.cydwr</v>
@@ -128,21 +127,21 @@
 <VisibleNodeIds>
 <v>yellowChip</v>
 <v>yellowChip\ADC</v>
-<v>yellowChip\ADC\TopDesign</v>
-<v>yellowChip\ADC\ADC.cydwr</v>
-<v>yellowChip\ADC\ADC.cydwr\Pins</v>
-<v>yellowChip\ADC\ADC.cydwr\Analog</v>
-<v>yellowChip\ADC\ADC.cydwr\Clocks</v>
-<v>yellowChip\ADC\ADC.cydwr\Interrupts</v>
-<v>yellowChip\ADC\ADC.cydwr\System</v>
-<v>yellowChip\ADC\ADC.cydwr\Directives</v>
-<v>yellowChip\ADC\ADC.cydwr\Flash Security</v>
-<v>yellowChip\ADC\Header Files</v>
-<v>yellowChip\ADC\Header Files\cyapicallbacks.h</v>
-<v>yellowChip\ADC\Source Files</v>
-<v>yellowChip\ADC\Source Files\main.c</v>
-<v>yellowChip\ADC\Generated_Source</v>
 <v>yellowChip\bootloader</v>
+<v>yellowChip\bootloader\TopDesign</v>
+<v>yellowChip\bootloader\bootloader.cydwr</v>
+<v>yellowChip\bootloader\bootloader.cydwr\Pins</v>
+<v>yellowChip\bootloader\bootloader.cydwr\Analog</v>
+<v>yellowChip\bootloader\bootloader.cydwr\Clocks</v>
+<v>yellowChip\bootloader\bootloader.cydwr\Interrupts</v>
+<v>yellowChip\bootloader\bootloader.cydwr\System</v>
+<v>yellowChip\bootloader\bootloader.cydwr\Directives</v>
+<v>yellowChip\bootloader\bootloader.cydwr\Flash Security</v>
+<v>yellowChip\bootloader\Header Files</v>
+<v>yellowChip\bootloader\Header Files\cyapicallbacks.h</v>
+<v>yellowChip\bootloader\Source Files</v>
+<v>yellowChip\bootloader\Source Files\main.c</v>
+<v>yellowChip\bootloader\Generated_Source</v>
 <v>yellowChip\BUZZER</v>
 <v>yellowChip\Oled</v>
 <v>yellowChip\PWM</v>
@@ -266,7 +265,6 @@
 <v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Debug\Listing Files\mUART_PM.lst</v>
 <v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Debug\Listing Files\mUART_rx.lst</v>
 <v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Debug\Listing Files\mUART_rx_PM.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Debug\Listing Files\mUART_SCB_IRQ.lst</v>
 <v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Debug\Listing Files\mUART_SCBCLK.lst</v>
 <v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Debug\Listing Files\mUART_SPI_UART.lst</v>
 <v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Debug\Listing Files\mUART_SPI_UART_INT.lst</v>
@@ -274,43 +272,9 @@
 <v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Debug\Listing Files\mUART_tx_PM.lst</v>
 <v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Debug\Listing Files\mUART_UART.lst</v>
 <v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Debug\Listing Files\mUART_UART_BOOT.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Debug\Listing Files\pLed.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Debug\Listing Files\pLed_PM.lst</v>
 <v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Debug\bootloader.elf</v>
 <v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Debug\bootloader.hex</v>
 <v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Debug\bootloader.map</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\Listing Files</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\Listing Files\Cm0plusStart.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\Listing Files\cy_em_eeprom.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\Listing Files\CyBootAsmGnu.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\Listing Files\cyfitter_cfg.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\Listing Files\CyFlash.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\Listing Files\CyLFClk.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\Listing Files\CyLib.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\Listing Files\cymetadata.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\Listing Files\cyPm.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\Listing Files\cyutils.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\Listing Files\main.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\Listing Files\mBootloader.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\Listing Files\mUART.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\Listing Files\mUART_BOOT.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\Listing Files\mUART_PM.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\Listing Files\mUART_rx.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\Listing Files\mUART_rx_PM.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\Listing Files\mUART_SCB_IRQ.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\Listing Files\mUART_SCBCLK.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\Listing Files\mUART_SPI_UART.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\Listing Files\mUART_SPI_UART_INT.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\Listing Files\mUART_tx.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\Listing Files\mUART_tx_PM.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\Listing Files\mUART_UART.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\Listing Files\mUART_UART_BOOT.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\Listing Files\pLed.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\Listing Files\pLed_PM.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\bootloader.elf</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\bootloader.hex</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Release\bootloader.map</v>
 <v>yellowChip\bootloader\bootloader.gpdsc</v>
 <v>yellowChip\bootloader\bootloader.rpt</v>
 <v>yellowChip\bootloader\bootloader_timing.html</v>
@@ -795,55 +759,9 @@
 <VisibleNodeIds>
 <v>yellowChip</v>
 <v>yellowChip\ADC</v>
-<v>yellowChip\ADC\CortexM0p</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\Cm0plusStart.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\cybootloader.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\mADC_Adc.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\mADC_Adc_INT.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\mADC_ISR.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\mADC_Structure.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\main.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\mBootloadable.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\mUART.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\mUART_BOOT.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\mUART_PM.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\mUART_rx.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\mUART_rx_PM.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\mUART_SCBCLK.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\mUART_SPI_UART.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\mUART_SPI_UART_INT.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\mUART_tx.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\mUART_tx_PM.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\mUART_UART.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\Listing Files\mUART_UART_BOOT.lst</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\ADC.cyacd</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\ADC.elf</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\ADC.hex</v>
-<v>yellowChip\ADC\CortexM0p\ARM_GCC_541\Debug\ADC.map</v>
-<v>yellowChip\ADC\ADC.gpdsc</v>
 <v>yellowChip\ADC\ADC.rpt</v>
 <v>yellowChip\ADC\ADC_timing.html</v>
 <v>yellowChip\bootloader</v>
-<v>yellowChip\bootloader\CortexM0p</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Debug</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Debug\Listing Files</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Debug\Listing Files\Cm0plusStart.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>yellowChip\bootloader\CortexM0p\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -870,7 +788,6 @@
 <v>yellowChip\bootloader\System Reference Guides\cy_boot_v6_0</v>
 <v>yellowChip\bootloader\System Reference Guides\cy_lfclk_v1_20</v>
 <v>yellowChip\bootloader\Bootloader_v1_60.pdf</v>
-<v>yellowChip\bootloader\cy_pins_v2_20.pdf</v>
 <v>yellowChip\bootloader\SCB_P4_v4_0.pdf</v>
 <v>yellowChip\BUZZER</v>
 <v>yellowChip\BUZZER\PSoC 4 Architecture TRM</v>
@@ -947,7 +864,6 @@
 <v>yellowChip\bootloader\System Reference Guides\cy_boot_v6_0</v>
 <v>yellowChip\bootloader\System Reference Guides\cy_lfclk_v1_20</v>
 <v>yellowChip\bootloader\Bootloader_v1_60.pdf</v>
-<v>yellowChip\bootloader\cy_pins_v2_20.pdf</v>
 <v>yellowChip\bootloader\SCB_P4_v4_0.pdf</v>
 <v>yellowChip\BUZZER</v>
 <v>yellowChip\BUZZER\PSoC 4 Architecture TRM</v>
@@ -981,6 +897,7 @@
 <v>yellowChip\PWM\cy_clock_v2_20.pdf</v>
 <v>yellowChip\PWM\cy_pins_v2_20</v>
 <v>yellowChip\PWM\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>yellowChip\PWM\SCB_P4_v4_0.pdf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
@@ -995,9 +912,8 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\RGB_Led.cydsn\main.c" />
-<name v=".\RGB_Led.cydsn\RGB_Led.cydwr" />
-<name v=".\ADC.cydsn\main.c" />
+<name v=".\bootloader.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\bootloader.cydsn\main.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -1005,7 +921,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1316, 751" SelectedTabbedMdiWindow="633f7117-eff7-4dc2-a802-52fa17b0667d"><DocumentWindow Key="C:\Users\PC\Documents\PSoC Creator\yellowChip\RGB_Led.cydsn\main.c" Guid="633f7117-eff7-4dc2-a802-52fa17b0667d" /><DocumentWindow Key="C:\Users\PC\Documents\PSoC Creator\yellowChip\RGB_Led.cydsn\RGB_Led.cydwr" Guid="6aee4861-f55f-484c-a1a3-6d262f13434d" /><DocumentWindow Key="C:\Users\PC\Documents\PSoC Creator\yellowChip\ADC.cydsn\main.c" Guid="5b09e8e6-a54c-491f-95c3-1c574a3fe910" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="fafd66f5-4b1b-4ce7-984e-078ee604e8ab" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1316, 751" SelectedTabbedMdiWindow="bd4621ef-0c8b-48d9-9b68-1227fb3d1c53"><DocumentWindow Key="C:\Users\PC\Documents\GitHub_Commit\Yellow-Chip\bootloader.cydsn\TopDesign\TopDesign.cysch" Guid="82a17eef-1ae8-43db-9706-63ce908ecc23" /><DocumentWindow Key="C:\Users\PC\Documents\GitHub_Commit\Yellow-Chip\bootloader.cydsn\main.c" Guid="bd4621ef-0c8b-48d9-9b68-1227fb3d1c53" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="Debug" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

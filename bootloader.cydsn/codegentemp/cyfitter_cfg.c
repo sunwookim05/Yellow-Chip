@@ -239,22 +239,19 @@ void cyfitter_cfg(void)
 
 	{
 		/* HSIOM Starting address: CYDEV_HSIOM_BASE */
+		CY_SET_REG32((void *)(CYREG_HSIOM_PORT_SEL1), 0x00000099u);
 		CY_SET_REG32((void *)(CYREG_HSIOM_PORT_SEL3), 0x0000EE00u);
-		CY_SET_REG32((void *)(CYREG_HSIOM_PORT_SEL4), 0x00000099u);
 
 	}
 
 	/* Perform second pass device configuration. These items must be configured in specific order after the regular configuration is done. */
 	/* IOPINS0_1 Starting address: CYDEV_GPIO_PRT1_BASE */
-	CY_SET_REG32((void *)(CYREG_GPIO_PRT1_PC), 0x00C00000u);
+	CY_SET_REG32((void *)(CYDEV_GPIO_PRT1_BASE), 0x00000002u);
+	CY_SET_REG32((void *)(CYREG_GPIO_PRT1_PC), 0x00000031u);
+	CY_SET_REG32((void *)(CYREG_GPIO_PRT1_PC2), 0x00000002u);
 
 	/* IOPINS0_3 Starting address: CYDEV_GPIO_PRT3_BASE */
 	CY_SET_REG32((void *)(CYREG_GPIO_PRT3_PC), 0x00000D80u);
-
-	/* IOPINS0_4 Starting address: CYDEV_GPIO_PRT4_BASE */
-	CY_SET_REG32((void *)(CYDEV_GPIO_PRT4_BASE), 0x00000002u);
-	CY_SET_REG32((void *)(CYREG_GPIO_PRT4_PC), 0x00000031u);
-	CY_SET_REG32((void *)(CYREG_GPIO_PRT4_PC2), 0x00000002u);
 
 
 	/* Setup clocks based on selections from Clock DWR */

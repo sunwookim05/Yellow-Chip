@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
   28:Generated_Source\PSoC4/mUART_UART_BOOT.c **** *  Starts the UART component.
   29:Generated_Source\PSoC4/mUART_UART_BOOT.c **** *
   30:Generated_Source\PSoC4/mUART_UART_BOOT.c **** *******************************************************************************/
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 2
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 2
 
 
   31:Generated_Source\PSoC4/mUART_UART_BOOT.c **** void mUART_UartCyBtldrCommStart(void)
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
   65              		@ sp needed
   66 0006 10BD     		pop	{r4, pc}
   67              		.cfi_endproc
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 3
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 3
 
 
   68              	.LFE2:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
   64:Generated_Source\PSoC4/mUART_UART_BOOT.c **** 
   65:Generated_Source\PSoC4/mUART_UART_BOOT.c **** /*******************************************************************************
   66:Generated_Source\PSoC4/mUART_UART_BOOT.c **** * Function Name: mUART_UartCyBtldrCommRead
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 4
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 4
 
 
   67:Generated_Source\PSoC4/mUART_UART_BOOT.c **** ****************************************************************************//**
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  130              	.LVL6:
   97:Generated_Source\PSoC4/mUART_UART_BOOT.c ****     {
   98:Generated_Source\PSoC4/mUART_UART_BOOT.c ****         status = CYRET_TIMEOUT;
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 5
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 5
 
 
   99:Generated_Source\PSoC4/mUART_UART_BOOT.c ****         timeoutMs = ((uint32) 10u * timeOut); /* Convert from 10mS check to 1mS checks */
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  117:Generated_Source\PSoC4/mUART_UART_BOOT.c ****                 *count = (uint16) byteCount;
  167              		.loc 1 117 0
  168 003a 019B     		ldr	r3, [sp, #4]
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 6
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 6
 
 
  169 003c 1D80     		strh	r5, [r3]
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  129:Generated_Source\PSoC4/mUART_UART_BOOT.c ****         {
  207              		.loc 1 129 0 discriminator 3
  208 0062 0134     		adds	r4, r4, #1
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 7
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 7
 
 
  209              	.LVL27:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  147:Generated_Source\PSoC4/mUART_UART_BOOT.c **** *  data elements from the buffer are sent.
  148:Generated_Source\PSoC4/mUART_UART_BOOT.c **** *
  149:Generated_Source\PSoC4/mUART_UART_BOOT.c **** *  \param pData: Pointer to the block of data to be written to the bootloader
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 8
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 8
 
 
  150:Generated_Source\PSoC4/mUART_UART_BOOT.c **** *   host.
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  274 0016 02E0     		b	.L16
  275              	.LVL38:
  276              	.L17:
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 9
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 9
 
 
  167:Generated_Source\PSoC4/mUART_UART_BOOT.c **** 
@@ -520,28 +520,28 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  303 0006 00000000 		.4byte	.Ldebug_abbrev0
  304 000a 04       		.byte	0x4
  305 000b 01       		.uleb128 0x1
- 306 000c 4A020000 		.4byte	.LASF39
+ 306 000c 47020000 		.4byte	.LASF39
  307 0010 0C       		.byte	0xc
  308 0011 33000000 		.4byte	.LASF40
- 309 0015 37010000 		.4byte	.LASF41
+ 309 0015 6F000000 		.4byte	.LASF41
  310 0019 00000000 		.4byte	.Ldebug_ranges0+0
  311 001d 00000000 		.4byte	0
  312 0021 00000000 		.4byte	.Ldebug_line0
  313 0025 02       		.uleb128 0x2
  314 0026 01       		.byte	0x1
  315 0027 06       		.byte	0x6
- 316 0028 DC020000 		.4byte	.LASF0
+ 316 0028 D9020000 		.4byte	.LASF0
  317 002c 02       		.uleb128 0x2
  318 002d 01       		.byte	0x1
  319 002e 08       		.byte	0x8
- 320 002f 00010000 		.4byte	.LASF1
+ 320 002f FF000000 		.4byte	.LASF1
  321 0033 02       		.uleb128 0x2
  322 0034 02       		.byte	0x2
  323 0035 05       		.byte	0x5
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 10
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 10
 
 
- 324 0036 2B020000 		.4byte	.LASF2
+ 324 0036 28020000 		.4byte	.LASF2
  325 003a 02       		.uleb128 0x2
  326 003b 02       		.byte	0x2
  327 003c 07       		.byte	0x7
@@ -549,19 +549,19 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  329 0041 02       		.uleb128 0x2
  330 0042 04       		.byte	0x4
  331 0043 05       		.byte	0x5
- 332 0044 35020000 		.4byte	.LASF4
+ 332 0044 32020000 		.4byte	.LASF4
  333 0048 02       		.uleb128 0x2
  334 0049 04       		.byte	0x4
  335 004a 07       		.byte	0x7
- 336 004b C3000000 		.4byte	.LASF5
+ 336 004b 0D010000 		.4byte	.LASF5
  337 004f 02       		.uleb128 0x2
  338 0050 08       		.byte	0x8
  339 0051 05       		.byte	0x5
- 340 0052 D6010000 		.4byte	.LASF6
+ 340 0052 D3010000 		.4byte	.LASF6
  341 0056 02       		.uleb128 0x2
  342 0057 08       		.byte	0x8
  343 0058 07       		.byte	0x7
- 344 0059 8A010000 		.4byte	.LASF7
+ 344 0059 87010000 		.4byte	.LASF7
  345 005d 03       		.uleb128 0x3
  346 005e 04       		.byte	0x4
  347 005f 05       		.byte	0x5
@@ -569,36 +569,36 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  349 0064 02       		.uleb128 0x2
  350 0065 04       		.byte	0x4
  351 0066 07       		.byte	0x7
- 352 0067 7D010000 		.4byte	.LASF8
+ 352 0067 7A010000 		.4byte	.LASF8
  353 006b 04       		.uleb128 0x4
- 354 006c D5000000 		.4byte	.LASF9
+ 354 006c 1F010000 		.4byte	.LASF9
  355 0070 02       		.byte	0x2
  356 0071 FB01     		.2byte	0x1fb
  357 0073 2C000000 		.4byte	0x2c
  358 0077 04       		.uleb128 0x4
- 359 0078 30010000 		.4byte	.LASF10
+ 359 0078 6C010000 		.4byte	.LASF10
  360 007c 02       		.byte	0x2
  361 007d FC01     		.2byte	0x1fc
  362 007f 3A000000 		.4byte	0x3a
  363 0083 04       		.uleb128 0x4
- 364 0084 76010000 		.4byte	.LASF11
+ 364 0084 73010000 		.4byte	.LASF11
  365 0088 02       		.byte	0x2
  366 0089 FD01     		.2byte	0x1fd
  367 008b 48000000 		.4byte	0x48
  368 008f 02       		.uleb128 0x2
  369 0090 04       		.byte	0x4
  370 0091 04       		.byte	0x4
- 371 0092 B8000000 		.4byte	.LASF12
+ 371 0092 F9000000 		.4byte	.LASF12
  372 0096 02       		.uleb128 0x2
  373 0097 08       		.byte	0x8
  374 0098 04       		.byte	0x4
- 375 0099 0E010000 		.4byte	.LASF13
+ 375 0099 4A010000 		.4byte	.LASF13
  376 009d 02       		.uleb128 0x2
  377 009e 01       		.byte	0x1
  378 009f 08       		.byte	0x8
- 379 00a0 EE010000 		.4byte	.LASF14
+ 379 00a0 EB010000 		.4byte	.LASF14
  380 00a4 04       		.uleb128 0x4
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 11
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 11
 
 
  381 00a5 0A000000 		.4byte	.LASF15
@@ -608,16 +608,16 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  385 00b0 02       		.uleb128 0x2
  386 00b1 08       		.byte	0x8
  387 00b2 04       		.byte	0x4
- 388 00b3 3E020000 		.4byte	.LASF16
+ 388 00b3 3B020000 		.4byte	.LASF16
  389 00b7 02       		.uleb128 0x2
  390 00b8 04       		.byte	0x4
  391 00b9 07       		.byte	0x7
- 392 00ba C1010000 		.4byte	.LASF17
+ 392 00ba BE010000 		.4byte	.LASF17
  393 00be 05       		.uleb128 0x5
  394 00bf 04       		.byte	0x4
  395 00c0 6B000000 		.4byte	0x6b
  396 00c4 06       		.uleb128 0x6
- 397 00c5 10020000 		.4byte	.LASF18
+ 397 00c5 0D020000 		.4byte	.LASF18
  398 00c9 01       		.byte	0x1
  399 00ca 1F       		.byte	0x1f
  400 00cb 00000000 		.4byte	.LFB1
@@ -630,7 +630,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  407 00de 92020000 		.4byte	0x292
  408 00e2 00       		.byte	0
  409 00e3 06       		.uleb128 0x6
- 410 00e4 E8020000 		.4byte	.LASF19
+ 410 00e4 E5020000 		.4byte	.LASF19
  411 00e8 01       		.byte	0x1
  412 00e9 2C       		.byte	0x2c
  413 00ea 00000000 		.4byte	.LFB2
@@ -643,7 +643,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  420 00fd 9D020000 		.4byte	0x29d
  421 0101 00       		.byte	0
  422 0102 06       		.uleb128 0x6
- 423 0103 6F000000 		.4byte	.LASF20
+ 423 0103 B0000000 		.4byte	.LASF20
  424 0107 01       		.byte	0x1
  425 0108 39       		.byte	0x39
  426 0109 00000000 		.4byte	.LFB3
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  435 0121 0A000000 		.4byte	.LVL3
  436 0125 B4020000 		.4byte	0x2b4
  437 0129 00       		.byte	0
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 12
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 12
 
 
  438 012a 08       		.uleb128 0x8
@@ -672,13 +672,13 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  446 013e 9C       		.byte	0x9c
  447 013f 05020000 		.4byte	0x205
  448 0143 09       		.uleb128 0x9
- 449 0144 91000000 		.4byte	.LASF21
+ 449 0144 D2000000 		.4byte	.LASF21
  450 0148 01       		.byte	0x1
  451 0149 57       		.byte	0x57
  452 014a BE000000 		.4byte	0xbe
  453 014e 00000000 		.4byte	.LLST0
  454 0152 09       		.uleb128 0x9
- 455 0153 BE000000 		.4byte	.LASF22
+ 455 0153 FF020000 		.4byte	.LASF22
  456 0157 01       		.byte	0x1
  457 0158 57       		.byte	0x57
  458 0159 77000000 		.4byte	0x77
@@ -690,19 +690,19 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  464 0168 05020000 		.4byte	0x205
  465 016c 7C000000 		.4byte	.LLST2
  466 0170 09       		.uleb128 0x9
- 467 0171 A1010000 		.4byte	.LASF24
+ 467 0171 9E010000 		.4byte	.LASF24
  468 0175 01       		.byte	0x1
  469 0176 57       		.byte	0x57
  470 0177 6B000000 		.4byte	0x6b
  471 017b DC000000 		.4byte	.LLST3
  472 017f 0A       		.uleb128 0xa
- 473 0180 8A000000 		.4byte	.LASF25
+ 473 0180 CB000000 		.4byte	.LASF25
  474 0184 01       		.byte	0x1
  475 0185 59       		.byte	0x59
  476 0186 A4000000 		.4byte	0xa4
  477 018a 2F010000 		.4byte	.LLST4
  478 018e 0A       		.uleb128 0xa
- 479 018f F6000000 		.4byte	.LASF26
+ 479 018f 40010000 		.4byte	.LASF26
  480 0193 01       		.byte	0x1
  481 0194 5A       		.byte	0x5a
  482 0195 83000000 		.4byte	0x83
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  492 01af 01       		.byte	0x1
  493 01b0 5C       		.byte	0x5c
  494 01b1 83000000 		.4byte	0x83
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 13
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 13
 
 
  495 01b5 DF010000 		.4byte	.LLST7
@@ -760,7 +760,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  531 0206 04       		.byte	0x4
  532 0207 77000000 		.4byte	0x77
  533 020b 08       		.uleb128 0x8
- 534 020c 15010000 		.4byte	.LASF29
+ 534 020c 51010000 		.4byte	.LASF29
  535 0210 01       		.byte	0x1
  536 0211 A3       		.byte	0xa3
  537 0212 A4000000 		.4byte	0xa4
@@ -770,15 +770,15 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  541 021f 9C       		.byte	0x9c
  542 0220 87020000 		.4byte	0x287
  543 0224 09       		.uleb128 0x9
- 544 0225 91000000 		.4byte	.LASF21
+ 544 0225 D2000000 		.4byte	.LASF21
  545 0229 01       		.byte	0x1
  546 022a A3       		.byte	0xa3
  547 022b 87020000 		.4byte	0x287
  548 022f FE010000 		.4byte	.LLST8
  549 0233 09       		.uleb128 0x9
- 550 0234 BE000000 		.4byte	.LASF22
+ 550 0234 FF020000 		.4byte	.LASF22
  551 0238 01       		.byte	0x1
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 14
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 14
 
 
  552 0239 A3       		.byte	0xa3
@@ -791,13 +791,13 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  559 0249 05020000 		.4byte	0x205
  560 024d 8B020000 		.4byte	.LLST10
  561 0251 09       		.uleb128 0x9
- 562 0252 A1010000 		.4byte	.LASF24
+ 562 0252 9E010000 		.4byte	.LASF24
  563 0256 01       		.byte	0x1
  564 0257 A3       		.byte	0xa3
  565 0258 6B000000 		.4byte	0x6b
  566 025c CD020000 		.4byte	.LLST11
  567 0260 0A       		.uleb128 0xa
- 568 0261 8A000000 		.4byte	.LASF25
+ 568 0261 CB000000 		.4byte	.LASF25
  569 0265 01       		.byte	0x1
  570 0266 A5       		.byte	0xa5
  571 0267 A4000000 		.4byte	0xa4
@@ -826,51 +826,51 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  594 028d 0F       		.uleb128 0xf
  595 028e 6B000000 		.4byte	0x6b
  596 0292 10       		.uleb128 0x10
- 597 0293 CA010000 		.4byte	.LASF30
- 598 0297 CA010000 		.4byte	.LASF30
+ 597 0293 C7010000 		.4byte	.LASF30
+ 598 0297 C7010000 		.4byte	.LASF30
  599 029b 03       		.byte	0x3
  600 029c 72       		.byte	0x72
  601 029d 10       		.uleb128 0x10
- 602 029e 97000000 		.4byte	.LASF31
- 603 02a2 97000000 		.4byte	.LASF31
+ 602 029e D8000000 		.4byte	.LASF31
+ 603 02a2 D8000000 		.4byte	.LASF31
  604 02a6 03       		.byte	0x3
  605 02a7 73       		.byte	0x73
  606 02a8 11       		.uleb128 0x11
- 607 02a9 02030000 		.4byte	.LASF32
- 608 02ad 02030000 		.4byte	.LASF32
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 15
+ 607 02a9 04030000 		.4byte	.LASF32
+ 608 02ad 04030000 		.4byte	.LASF32
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 15
 
 
  609 02b1 04       		.byte	0x4
  610 02b2 3F03     		.2byte	0x33f
  611 02b4 11       		.uleb128 0x11
- 612 02b5 DB000000 		.4byte	.LASF33
- 613 02b9 DB000000 		.4byte	.LASF33
+ 612 02b5 25010000 		.4byte	.LASF33
+ 613 02b9 25010000 		.4byte	.LASF33
  614 02bd 04       		.byte	0x4
  615 02be 4703     		.2byte	0x347
  616 02c0 11       		.uleb128 0x11
- 617 02c1 F3010000 		.4byte	.LASF34
- 618 02c5 F3010000 		.4byte	.LASF34
+ 617 02c1 F0010000 		.4byte	.LASF34
+ 618 02c5 F0010000 		.4byte	.LASF34
  619 02c9 04       		.byte	0x4
  620 02ca 3E03     		.2byte	0x33e
  621 02cc 10       		.uleb128 0x10
- 622 02cd E4010000 		.4byte	.LASF35
- 623 02d1 E4010000 		.4byte	.LASF35
+ 622 02cd E1010000 		.4byte	.LASF35
+ 623 02d1 E1010000 		.4byte	.LASF35
  624 02d5 05       		.byte	0x5
  625 02d6 ED       		.byte	0xed
  626 02d7 10       		.uleb128 0x10
- 627 02d8 1D030000 		.4byte	.LASF36
- 628 02dc 1D030000 		.4byte	.LASF36
+ 627 02d8 1F030000 		.4byte	.LASF36
+ 628 02dc 1F030000 		.4byte	.LASF36
  629 02e0 05       		.byte	0x5
  630 02e1 EC       		.byte	0xec
  631 02e2 11       		.uleb128 0x11
- 632 02e3 A9010000 		.4byte	.LASF37
- 633 02e7 A9010000 		.4byte	.LASF37
+ 632 02e3 A6010000 		.4byte	.LASF37
+ 633 02e7 A6010000 		.4byte	.LASF37
  634 02eb 04       		.byte	0x4
  635 02ec 3D03     		.2byte	0x33d
  636 02ee 11       		.uleb128 0x11
- 637 02ef A2000000 		.4byte	.LASF38
- 638 02f3 A2000000 		.4byte	.LASF38
+ 637 02ef E3000000 		.4byte	.LASF38
+ 638 02f3 E3000000 		.4byte	.LASF38
  639 02f7 04       		.byte	0x4
  640 02f8 4503     		.2byte	0x345
  641 02fa 00       		.byte	0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  663 0013 02       		.uleb128 0x2
  664 0014 24       		.uleb128 0x24
  665 0015 00       		.byte	0
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 16
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 16
 
 
  666 0016 0B       		.uleb128 0xb
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  720 004c 11       		.uleb128 0x11
  721 004d 01       		.uleb128 0x1
  722 004e 12       		.uleb128 0x12
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 17
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 17
 
 
  723 004f 06       		.uleb128 0x6
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  777 0089 49       		.uleb128 0x49
  778 008a 13       		.uleb128 0x13
  779 008b 02       		.uleb128 0x2
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 18
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 18
 
 
  780 008c 17       		.uleb128 0x17
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  834 00c7 898201   		.uleb128 0x4109
  835 00ca 01       		.byte	0x1
  836 00cb 11       		.uleb128 0x11
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 19
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 19
 
 
  837 00cc 01       		.uleb128 0x1
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  891 000b 18000000 		.4byte	.LVL9
  892 000f 6A000000 		.4byte	.LVL28
  893 0013 0100     		.2byte	0x1
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 20
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 20
 
 
  894 0015 57       		.byte	0x57
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  948 0097 44000000 		.4byte	.LVL20
  949 009b 0400     		.2byte	0x4
  950 009d F3       		.byte	0xf3
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 21
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 21
 
 
  951 009e 01       		.uleb128 0x1
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  1005 0118 53       		.byte	0x53
  1006 0119 72000000 		.4byte	.LVL31
  1007 011d 7A000000 		.4byte	.LFE4
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 22
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 22
 
 
  1008 0121 0400     		.2byte	0x4
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  1062 01a1 50       		.byte	0x50
  1063 01a2 28000000 		.4byte	.LVL14
  1064 01a6 44000000 		.4byte	.LVL20
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 23
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 23
 
 
  1065 01aa 0100     		.2byte	0x1
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  1119 022f 9F       		.byte	0x9f
  1120 0230 1C000000 		.4byte	.LVL40
  1121 0234 1E000000 		.4byte	.LVL41
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 24
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 24
 
 
  1122 0238 0100     		.2byte	0x1
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  1176 02bb 20000000 		.4byte	.LFE5
  1177 02bf 0400     		.2byte	0x4
  1178 02c1 F3       		.byte	0xf3
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 25
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 25
 
 
  1179 02c2 01       		.uleb128 0x1
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  1233 0004 0200     		.2byte	0x2
  1234 0006 00000000 		.4byte	.Ldebug_info0
  1235 000a 04       		.byte	0x4
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 26
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 26
 
 
  1236 000b 00       		.byte	0
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  1277 0033 47656E65 		.ascii	"Generated_Source\\PSoC4\\mUART_UART_BOOT.c\000"
  1277      72617465 
  1277      645F536F 
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 27
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 27
 
 
  1277      75726365 
@@ -1569,190 +1569,190 @@ ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 1
  1279      7369676E 
  1279      65642069 
  1279      6E7400
- 1280              	.LASF20:
- 1281 006f 6D554152 		.ascii	"mUART_UartCyBtldrCommReset\000"
- 1281      545F5561 
- 1281      72744379 
- 1281      42746C64 
- 1281      72436F6D 
- 1282              	.LASF25:
- 1283 008a 73746174 		.ascii	"status\000"
- 1283      757300
- 1284              	.LASF21:
- 1285 0091 70446174 		.ascii	"pData\000"
- 1285      6100
- 1286              	.LASF31:
- 1287 0097 6D554152 		.ascii	"mUART_Stop\000"
- 1287      545F5374 
- 1287      6F7000
- 1288              	.LASF38:
- 1289 00a2 6D554152 		.ascii	"mUART_SpiUartPutArray\000"
- 1289      545F5370 
- 1289      69556172 
- 1289      74507574 
- 1289      41727261 
- 1290              	.LASF12:
- 1291 00b8 666C6F61 		.ascii	"float\000"
- 1291      7400
- 1292              	.LASF22:
- 1293 00be 73697A65 		.ascii	"size\000"
- 1293      00
- 1294              	.LASF5:
- 1295 00c3 6C6F6E67 		.ascii	"long unsigned int\000"
- 1295      20756E73 
- 1295      69676E65 
- 1295      6420696E 
- 1295      7400
- 1296              	.LASF9:
- 1297 00d5 75696E74 		.ascii	"uint8\000"
- 1297      3800
- 1298              	.LASF33:
- 1299 00db 6D554152 		.ascii	"mUART_SpiUartClearTxBuffer\000"
- 1299      545F5370 
- 1299      69556172 
- 1299      74436C65 
- 1299      61725478 
- 1300              	.LASF26:
- 1301 00f6 62797465 		.ascii	"byteCount\000"
- 1301      436F756E 
- 1301      7400
- 1302              	.LASF1:
- 1303 0100 756E7369 		.ascii	"unsigned char\000"
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 28
+ 1280              	.LASF41:
+ 1281 006f 433A5C55 		.ascii	"C:\\Users\\PC\\Documents\\GitHub_Commit\\Yellow-Chi"
+ 1281      73657273 
+ 1281      5C50435C 
+ 1281      446F6375 
+ 1281      6D656E74 
+ 1282 009d 705C626F 		.ascii	"p\\bootloader.cydsn\000"
+ 1282      6F746C6F 
+ 1282      61646572 
+ 1282      2E637964 
+ 1282      736E00
+ 1283              	.LASF20:
+ 1284 00b0 6D554152 		.ascii	"mUART_UartCyBtldrCommReset\000"
+ 1284      545F5561 
+ 1284      72744379 
+ 1284      42746C64 
+ 1284      72436F6D 
+ 1285              	.LASF25:
+ 1286 00cb 73746174 		.ascii	"status\000"
+ 1286      757300
+ 1287              	.LASF21:
+ 1288 00d2 70446174 		.ascii	"pData\000"
+ 1288      6100
+ 1289              	.LASF31:
+ 1290 00d8 6D554152 		.ascii	"mUART_Stop\000"
+ 1290      545F5374 
+ 1290      6F7000
+ 1291              	.LASF38:
+ 1292 00e3 6D554152 		.ascii	"mUART_SpiUartPutArray\000"
+ 1292      545F5370 
+ 1292      69556172 
+ 1292      74507574 
+ 1292      41727261 
+ 1293              	.LASF12:
+ 1294 00f9 666C6F61 		.ascii	"float\000"
+ 1294      7400
+ 1295              	.LASF1:
+ 1296 00ff 756E7369 		.ascii	"unsigned char\000"
+ 1296      676E6564 
+ 1296      20636861 
+ 1296      7200
+ 1297              	.LASF5:
+ 1298 010d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1298      20756E73 
+ 1298      69676E65 
+ 1298      6420696E 
+ 1298      7400
+ 1299              	.LASF9:
+ 1300 011f 75696E74 		.ascii	"uint8\000"
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 28
 
 
- 1303      676E6564 
- 1303      20636861 
- 1303      7200
- 1304              	.LASF13:
- 1305 010e 646F7562 		.ascii	"double\000"
- 1305      6C6500
- 1306              	.LASF29:
- 1307 0115 6D554152 		.ascii	"mUART_UartCyBtldrCommWrite\000"
- 1307      545F5561 
- 1307      72744379 
- 1307      42746C64 
- 1307      72436F6D 
- 1308              	.LASF10:
- 1309 0130 75696E74 		.ascii	"uint16\000"
- 1309      313600
- 1310              	.LASF41:
- 1311 0137 433A5C55 		.ascii	"C:\\Users\\PC\\Documents\\PSoC Creator\\yellowChip\\"
- 1311      73657273 
- 1311      5C50435C 
- 1311      446F6375 
- 1311      6D656E74 
- 1312 0165 626F6F74 		.ascii	"bootloader.cydsn\000"
- 1312      6C6F6164 
- 1312      65722E63 
- 1312      7964736E 
- 1312      00
- 1313              	.LASF11:
- 1314 0176 75696E74 		.ascii	"uint32\000"
- 1314      333200
- 1315              	.LASF8:
- 1316 017d 756E7369 		.ascii	"unsigned int\000"
- 1316      676E6564 
- 1316      20696E74 
- 1316      00
- 1317              	.LASF7:
- 1318 018a 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1318      206C6F6E 
- 1318      6720756E 
- 1318      7369676E 
- 1318      65642069 
- 1319              	.LASF24:
- 1320 01a1 74696D65 		.ascii	"timeOut\000"
- 1320      4F757400 
- 1321              	.LASF37:
- 1322 01a9 6D554152 		.ascii	"mUART_SpiUartReadRxData\000"
- 1322      545F5370 
- 1322      69556172 
- 1322      74526561 
- 1322      64527844 
- 1323              	.LASF17:
- 1324 01c1 73697A65 		.ascii	"sizetype\000"
- 1324      74797065 
- 1324      00
- 1325              	.LASF30:
- 1326 01ca 6D554152 		.ascii	"mUART_Start\000"
- 1326      545F5374 
- 1326      61727400 
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 29
+ 1300      3800
+ 1301              	.LASF33:
+ 1302 0125 6D554152 		.ascii	"mUART_SpiUartClearTxBuffer\000"
+ 1302      545F5370 
+ 1302      69556172 
+ 1302      74436C65 
+ 1302      61725478 
+ 1303              	.LASF26:
+ 1304 0140 62797465 		.ascii	"byteCount\000"
+ 1304      436F756E 
+ 1304      7400
+ 1305              	.LASF13:
+ 1306 014a 646F7562 		.ascii	"double\000"
+ 1306      6C6500
+ 1307              	.LASF29:
+ 1308 0151 6D554152 		.ascii	"mUART_UartCyBtldrCommWrite\000"
+ 1308      545F5561 
+ 1308      72744379 
+ 1308      42746C64 
+ 1308      72436F6D 
+ 1309              	.LASF10:
+ 1310 016c 75696E74 		.ascii	"uint16\000"
+ 1310      313600
+ 1311              	.LASF11:
+ 1312 0173 75696E74 		.ascii	"uint32\000"
+ 1312      333200
+ 1313              	.LASF8:
+ 1314 017a 756E7369 		.ascii	"unsigned int\000"
+ 1314      676E6564 
+ 1314      20696E74 
+ 1314      00
+ 1315              	.LASF7:
+ 1316 0187 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1316      206C6F6E 
+ 1316      6720756E 
+ 1316      7369676E 
+ 1316      65642069 
+ 1317              	.LASF24:
+ 1318 019e 74696D65 		.ascii	"timeOut\000"
+ 1318      4F757400 
+ 1319              	.LASF37:
+ 1320 01a6 6D554152 		.ascii	"mUART_SpiUartReadRxData\000"
+ 1320      545F5370 
+ 1320      69556172 
+ 1320      74526561 
+ 1320      64527844 
+ 1321              	.LASF17:
+ 1322 01be 73697A65 		.ascii	"sizetype\000"
+ 1322      74797065 
+ 1322      00
+ 1323              	.LASF30:
+ 1324 01c7 6D554152 		.ascii	"mUART_Start\000"
+ 1324      545F5374 
+ 1324      61727400 
+ 1325              	.LASF6:
+ 1326 01d3 6C6F6E67 		.ascii	"long long int\000"
+ 1326      206C6F6E 
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 29
 
 
- 1327              	.LASF6:
- 1328 01d6 6C6F6E67 		.ascii	"long long int\000"
- 1328      206C6F6E 
- 1328      6720696E 
- 1328      7400
- 1329              	.LASF35:
- 1330 01e4 43794465 		.ascii	"CyDelayUs\000"
- 1330      6C617955 
- 1330      7300
- 1331              	.LASF14:
- 1332 01ee 63686172 		.ascii	"char\000"
- 1332      00
- 1333              	.LASF34:
- 1334 01f3 6D554152 		.ascii	"mUART_SpiUartGetRxBufferSize\000"
- 1334      545F5370 
- 1334      69556172 
- 1334      74476574 
- 1334      52784275 
- 1335              	.LASF18:
- 1336 0210 6D554152 		.ascii	"mUART_UartCyBtldrCommStart\000"
- 1336      545F5561 
- 1336      72744379 
- 1336      42746C64 
- 1336      72436F6D 
- 1337              	.LASF2:
- 1338 022b 73686F72 		.ascii	"short int\000"
- 1338      7420696E 
- 1338      7400
- 1339              	.LASF4:
- 1340 0235 6C6F6E67 		.ascii	"long int\000"
- 1340      20696E74 
- 1340      00
- 1341              	.LASF16:
- 1342 023e 6C6F6E67 		.ascii	"long double\000"
- 1342      20646F75 
- 1342      626C6500 
- 1343              	.LASF39:
- 1344 024a 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 1344      43313120 
- 1344      352E342E 
- 1344      31203230 
- 1344      31363036 
- 1345 027d 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
- 1345      20726576 
- 1345      6973696F 
- 1345      6E203233 
- 1345      37373135 
- 1346 02b0 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
- 1346      67202D66 
- 1346      66756E63 
- 1346      74696F6E 
- 1346      2D736563 
- 1347              	.LASF0:
- 1348 02dc 7369676E 		.ascii	"signed char\000"
- 1348      65642063 
- 1348      68617200 
- 1349              	.LASF19:
-ARM GAS  C:\Users\PC\AppData\Local\Temp\ccKGKOUt.s 			page 30
+ 1326      6720696E 
+ 1326      7400
+ 1327              	.LASF35:
+ 1328 01e1 43794465 		.ascii	"CyDelayUs\000"
+ 1328      6C617955 
+ 1328      7300
+ 1329              	.LASF14:
+ 1330 01eb 63686172 		.ascii	"char\000"
+ 1330      00
+ 1331              	.LASF34:
+ 1332 01f0 6D554152 		.ascii	"mUART_SpiUartGetRxBufferSize\000"
+ 1332      545F5370 
+ 1332      69556172 
+ 1332      74476574 
+ 1332      52784275 
+ 1333              	.LASF18:
+ 1334 020d 6D554152 		.ascii	"mUART_UartCyBtldrCommStart\000"
+ 1334      545F5561 
+ 1334      72744379 
+ 1334      42746C64 
+ 1334      72436F6D 
+ 1335              	.LASF2:
+ 1336 0228 73686F72 		.ascii	"short int\000"
+ 1336      7420696E 
+ 1336      7400
+ 1337              	.LASF4:
+ 1338 0232 6C6F6E67 		.ascii	"long int\000"
+ 1338      20696E74 
+ 1338      00
+ 1339              	.LASF16:
+ 1340 023b 6C6F6E67 		.ascii	"long double\000"
+ 1340      20646F75 
+ 1340      626C6500 
+ 1341              	.LASF39:
+ 1342 0247 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1342      43313120 
+ 1342      352E342E 
+ 1342      31203230 
+ 1342      31363036 
+ 1343 027a 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 1343      20726576 
+ 1343      6973696F 
+ 1343      6E203233 
+ 1343      37373135 
+ 1344 02ad 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 1344      67202D66 
+ 1344      66756E63 
+ 1344      74696F6E 
+ 1344      2D736563 
+ 1345              	.LASF0:
+ 1346 02d9 7369676E 		.ascii	"signed char\000"
+ 1346      65642063 
+ 1346      68617200 
+ 1347              	.LASF19:
+ 1348 02e5 6D554152 		.ascii	"mUART_UartCyBtldrCommStop\000"
+ 1348      545F5561 
+ 1348      72744379 
+ARM GAS  C:\Users\PC\AppData\Local\Temp\cc841lxQ.s 			page 30
 
 
- 1350 02e8 6D554152 		.ascii	"mUART_UartCyBtldrCommStop\000"
- 1350      545F5561 
- 1350      72744379 
- 1350      42746C64 
- 1350      72436F6D 
+ 1348      42746C64 
+ 1348      72436F6D 
+ 1349              	.LASF22:
+ 1350 02ff 73697A65 		.ascii	"size\000"
+ 1350      00
  1351              	.LASF32:
- 1352 0302 6D554152 		.ascii	"mUART_SpiUartClearRxBuffer\000"
+ 1352 0304 6D554152 		.ascii	"mUART_SpiUartClearRxBuffer\000"
  1352      545F5370 
  1352      69556172 
  1352      74436C65 
  1352      61725278 
  1353              	.LASF36:
- 1354 031d 43794465 		.ascii	"CyDelay\000"
+ 1354 031f 43794465 		.ascii	"CyDelay\000"
  1354      6C617900 
  1355              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

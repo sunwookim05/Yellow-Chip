@@ -62,7 +62,7 @@
 #endif /* (!mUART_CY_SCBIP_V1) */
 
 /* Interrupts remove options */
-#define mUART_REMOVE_SCB_IRQ             (0u)
+#define mUART_REMOVE_SCB_IRQ             (1u)
 #define mUART_SCB_IRQ_INTERNAL           (0u == mUART_REMOVE_SCB_IRQ)
 
 #define mUART_REMOVE_UART_RX_WAKEUP_IRQ  (1u)

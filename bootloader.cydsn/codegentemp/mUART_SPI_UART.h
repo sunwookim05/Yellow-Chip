@@ -74,16 +74,16 @@
 #define mUART_UART_DROP_ON_FRAME_ERR     (0u)
 #define mUART_UART_DROP_ON_PARITY_ERR    (0u)
 #define mUART_UART_WAKE_ENABLE           (0u)
-#define mUART_UART_RX_BUFFER_SIZE        (64u)
-#define mUART_UART_TX_BUFFER_SIZE        (64u)
+#define mUART_UART_RX_BUFFER_SIZE        (8u)
+#define mUART_UART_TX_BUFFER_SIZE        (8u)
 #define mUART_UART_MP_MODE_ENABLE        (0u)
 #define mUART_UART_MP_ACCEPT_ADDRESS     (0u)
 #define mUART_UART_MP_RX_ADDRESS         (0x2u)
 #define mUART_UART_MP_RX_ADDRESS_MASK    (0xFFu)
 
-#define mUART_UART_INTERRUPT_MODE        (1u)
+#define mUART_UART_INTERRUPT_MODE        (0u)
 
-#define mUART_UART_INTR_RX_MASK          (0x4u)
+#define mUART_UART_INTR_RX_MASK          (0x0u)
 #define mUART_UART_INTR_TX_MASK          (0x0u)
 
 #define mUART_UART_RX_TRIGGER_LEVEL      (7u)
